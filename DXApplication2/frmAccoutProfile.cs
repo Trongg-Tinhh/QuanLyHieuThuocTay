@@ -51,15 +51,17 @@ namespace DXApplication2
 
         private void frmAccoutProfile_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*if (btnLuu.Enabled == true)*/
-            var result =MessageBox.Show("Thông tin chỉnh sửa chưa được LƯU. Bạn muốn thoát? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if ( result != DialogResult.Yes)
+            if (btnLuu.Enabled == true)
+            {
+                var result = MessageBox.Show("Thông tin chỉnh sửa chưa được LƯU. Bạn muốn thoát? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result != DialogResult.Yes)
                 {
                     e.Cancel = true;
                 }
                 else
-            {
-                btnLuu_Click(sender,e);
+                {
+                    btnLuu_Click(sender, e);
+                }
             }
         }
     }

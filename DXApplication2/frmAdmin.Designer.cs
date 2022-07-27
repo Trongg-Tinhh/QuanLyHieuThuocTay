@@ -33,58 +33,58 @@
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbNhanVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txbUserName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbCCCD = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txbPassWord = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txbSDT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txbVaiTro = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button6 = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.tapSanPham = new DevExpress.XtraTab.XtraTabPage();
             this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
             this.tablePanel4 = new DevExpress.Utils.Layout.TablePanel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txbTenSP = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txbThanhPhan = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txbMoTo = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbDonVi = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.cmbLoaiSP = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txbCongDung = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txbNSX = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txbDoTuoi = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
@@ -92,6 +92,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.tapListHD = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.tacAdmin)).BeginInit();
             this.tacAdmin.SuspendLayout();
             this.tapTaiKhoan.SuspendLayout();
@@ -120,7 +121,7 @@
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,7 +141,8 @@
             this.tacAdmin.TabIndex = 1;
             this.tacAdmin.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tapTaiKhoan,
-            this.tapSanPham});
+            this.tapSanPham,
+            this.tapListHD});
             // 
             // tapTaiKhoan
             // 
@@ -195,7 +197,7 @@
             // panel1
             // 
             this.tablePanel2.SetColumn(this.panel1, 0);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txbNhanVien);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,17 +207,16 @@
             this.tablePanel2.SetRow(this.panel1, 0);
             this.panel1.Size = new System.Drawing.Size(261, 49);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // textBox1
+            // txbNhanVien
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(0, 21);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 28);
-            this.textBox1.TabIndex = 2;
+            this.txbNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbNhanVien.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNhanVien.Location = new System.Drawing.Point(0, 21);
+            this.txbNhanVien.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbNhanVien.Name = "txbNhanVien";
+            this.txbNhanVien.Size = new System.Drawing.Size(261, 28);
+            this.txbNhanVien.TabIndex = 2;
             // 
             // label1
             // 
@@ -232,7 +233,7 @@
             // panel2
             // 
             this.tablePanel2.SetColumn(this.panel2, 0);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txbUserName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -242,18 +243,16 @@
             this.tablePanel2.SetRow(this.panel2, 1);
             this.panel2.Size = new System.Drawing.Size(261, 49);
             this.panel2.TabIndex = 4;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // textBox3
+            // txbUserName
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(0, 21);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(261, 28);
-            this.textBox3.TabIndex = 1;
+            this.txbUserName.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbUserName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbUserName.Location = new System.Drawing.Point(0, 21);
+            this.txbUserName.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbUserName.Name = "txbUserName";
+            this.txbUserName.Size = new System.Drawing.Size(261, 28);
+            this.txbUserName.TabIndex = 1;
             // 
             // label2
             // 
@@ -270,7 +269,7 @@
             // panel3
             // 
             this.tablePanel2.SetColumn(this.panel3, 1);
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.txbCCCD);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,17 +279,16 @@
             this.tablePanel2.SetRow(this.panel3, 0);
             this.panel3.Size = new System.Drawing.Size(261, 49);
             this.panel3.TabIndex = 1;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // textBox2
+            // txbCCCD
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(0, 21);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 28);
-            this.textBox2.TabIndex = 1;
+            this.txbCCCD.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbCCCD.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCCCD.Location = new System.Drawing.Point(0, 21);
+            this.txbCCCD.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbCCCD.Name = "txbCCCD";
+            this.txbCCCD.Size = new System.Drawing.Size(261, 28);
+            this.txbCCCD.TabIndex = 1;
             // 
             // label3
             // 
@@ -308,7 +306,7 @@
             // 
             this.tablePanel2.SetColumn(this.panel4, 1);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.textBox4);
+            this.panel4.Controls.Add(this.txbPassWord);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(273, 55);
@@ -317,7 +315,6 @@
             this.tablePanel2.SetRow(this.panel4, 1);
             this.panel4.Size = new System.Drawing.Size(261, 49);
             this.panel4.TabIndex = 5;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label4
             // 
@@ -331,22 +328,21 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Mật khẩu:";
             // 
-            // textBox4
+            // txbPassWord
             // 
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(0, 21);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(261, 28);
-            this.textBox4.TabIndex = 1;
-            this.textBox4.UseSystemPasswordChar = true;
+            this.txbPassWord.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbPassWord.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPassWord.Location = new System.Drawing.Point(0, 21);
+            this.txbPassWord.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbPassWord.Name = "txbPassWord";
+            this.txbPassWord.Size = new System.Drawing.Size(261, 28);
+            this.txbPassWord.TabIndex = 1;
+            this.txbPassWord.UseSystemPasswordChar = true;
             // 
             // panel7
             // 
             this.tablePanel2.SetColumn(this.panel7, 2);
-            this.panel7.Controls.Add(this.textBox6);
+            this.panel7.Controls.Add(this.txbSDT);
             this.panel7.Controls.Add(this.label7);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -356,17 +352,17 @@
             this.tablePanel2.SetRow(this.panel7, 0);
             this.panel7.Size = new System.Drawing.Size(261, 49);
             this.panel7.TabIndex = 6;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
-            // textBox6
+            // txbSDT
             // 
-            this.textBox6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(0, 21);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(261, 28);
-            this.textBox6.TabIndex = 1;
+            this.txbSDT.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbSDT.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSDT.Location = new System.Drawing.Point(0, 21);
+            this.txbSDT.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbSDT.Name = "txbSDT";
+            this.txbSDT.Size = new System.Drawing.Size(261, 28);
+            this.txbSDT.TabIndex = 1;
+            this.txbSDT.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label7
             // 
@@ -384,7 +380,7 @@
             // 
             this.tablePanel2.SetColumn(this.panel5, 2);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.textBox5);
+            this.panel5.Controls.Add(this.txbVaiTro);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel5.Location = new System.Drawing.Point(542, 55);
@@ -393,7 +389,6 @@
             this.tablePanel2.SetRow(this.panel5, 1);
             this.panel5.Size = new System.Drawing.Size(261, 49);
             this.panel5.TabIndex = 3;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // label5
             // 
@@ -407,15 +402,15 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Vai trò:";
             // 
-            // textBox5
+            // txbVaiTro
             // 
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(0, 21);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(261, 28);
-            this.textBox5.TabIndex = 1;
+            this.txbVaiTro.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbVaiTro.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbVaiTro.Location = new System.Drawing.Point(0, 21);
+            this.txbVaiTro.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbVaiTro.Name = "txbVaiTro";
+            this.txbVaiTro.Size = new System.Drawing.Size(261, 28);
+            this.txbVaiTro.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
@@ -425,8 +420,8 @@
             this.tableLayoutPanel3.Controls.Add(this.button6, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.btnXoa, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnThem, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnThanhToan, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.btnLuu, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnLuu, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.btnSua, 0, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(816, 115);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -445,6 +440,7 @@
             this.button6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button6.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button6.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.Black;
             this.button6.Location = new System.Drawing.Point(4, 266);
             this.button6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button6.MaximumSize = new System.Drawing.Size(132, 52);
@@ -458,7 +454,9 @@
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnXoa.Enabled = false;
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.Black;
             this.btnXoa.Location = new System.Drawing.Point(4, 68);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnXoa.MaximumSize = new System.Drawing.Size(132, 52);
@@ -473,6 +471,7 @@
             // 
             this.btnThem.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.Black;
             this.btnThem.Location = new System.Drawing.Point(4, 2);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnThem.MaximumSize = new System.Drawing.Size(132, 52);
@@ -482,34 +481,40 @@
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnThanhToan.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.Location = new System.Drawing.Point(4, 200);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnThanhToan.MaximumSize = new System.Drawing.Size(132, 52);
-            this.btnThanhToan.MinimumSize = new System.Drawing.Size(132, 52);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(132, 52);
-            this.btnThanhToan.TabIndex = 11;
-            this.btnThanhToan.Text = "Lưu";
-            this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnLuu
             // 
             this.btnLuu.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLuu.Enabled = false;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(4, 134);
+            this.btnLuu.ForeColor = System.Drawing.Color.Black;
+            this.btnLuu.Location = new System.Drawing.Point(4, 200);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnLuu.MaximumSize = new System.Drawing.Size(132, 52);
             this.btnLuu.MinimumSize = new System.Drawing.Size(132, 52);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(132, 52);
-            this.btnLuu.TabIndex = 9;
-            this.btnLuu.Text = "Sửa";
+            this.btnLuu.TabIndex = 11;
+            this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnSua.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.Black;
+            this.btnSua.Location = new System.Drawing.Point(4, 134);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnSua.MaximumSize = new System.Drawing.Size(132, 52);
+            this.btnSua.MinimumSize = new System.Drawing.Size(132, 52);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(132, 52);
+            this.btnSua.TabIndex = 9;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // tapSanPham
             // 
@@ -566,7 +571,7 @@
             // panel6
             // 
             this.tablePanel4.SetColumn(this.panel6, 0);
-            this.panel6.Controls.Add(this.textBox7);
+            this.panel6.Controls.Add(this.txbTenSP);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -577,15 +582,15 @@
             this.panel6.Size = new System.Drawing.Size(261, 54);
             this.panel6.TabIndex = 0;
             // 
-            // textBox7
+            // txbTenSP
             // 
-            this.textBox7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox7.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(0, 26);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(261, 28);
-            this.textBox7.TabIndex = 2;
+            this.txbTenSP.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbTenSP.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenSP.Location = new System.Drawing.Point(0, 26);
+            this.txbTenSP.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbTenSP.Name = "txbTenSP";
+            this.txbTenSP.Size = new System.Drawing.Size(261, 28);
+            this.txbTenSP.TabIndex = 2;
             // 
             // label6
             // 
@@ -602,7 +607,7 @@
             // panel8
             // 
             this.tablePanel4.SetColumn(this.panel8, 0);
-            this.panel8.Controls.Add(this.textBox8);
+            this.panel8.Controls.Add(this.txbThanhPhan);
             this.panel8.Controls.Add(this.label8);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -613,15 +618,15 @@
             this.panel8.Size = new System.Drawing.Size(261, 54);
             this.panel8.TabIndex = 4;
             // 
-            // textBox8
+            // txbThanhPhan
             // 
-            this.textBox8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox8.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(0, 26);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(261, 28);
-            this.textBox8.TabIndex = 1;
+            this.txbThanhPhan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbThanhPhan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbThanhPhan.Location = new System.Drawing.Point(0, 26);
+            this.txbThanhPhan.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbThanhPhan.Name = "txbThanhPhan";
+            this.txbThanhPhan.Size = new System.Drawing.Size(261, 28);
+            this.txbThanhPhan.TabIndex = 1;
             // 
             // label8
             // 
@@ -638,7 +643,7 @@
             // panel14
             // 
             this.tablePanel4.SetColumn(this.panel14, 2);
-            this.panel14.Controls.Add(this.textBox14);
+            this.panel14.Controls.Add(this.txbMoTo);
             this.panel14.Controls.Add(this.label14);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -649,15 +654,15 @@
             this.panel14.Size = new System.Drawing.Size(261, 54);
             this.panel14.TabIndex = 6;
             // 
-            // textBox14
+            // txbMoTo
             // 
-            this.textBox14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(0, 26);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(261, 28);
-            this.textBox14.TabIndex = 1;
+            this.txbMoTo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbMoTo.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMoTo.Location = new System.Drawing.Point(0, 26);
+            this.txbMoTo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbMoTo.Name = "txbMoTo";
+            this.txbMoTo.Size = new System.Drawing.Size(261, 28);
+            this.txbMoTo.TabIndex = 1;
             // 
             // label14
             // 
@@ -674,7 +679,7 @@
             // panel13
             // 
             this.tablePanel4.SetColumn(this.panel13, 1);
-            this.panel13.Controls.Add(this.comboBox2);
+            this.panel13.Controls.Add(this.cmbDonVi);
             this.panel13.Controls.Add(this.label13);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -685,15 +690,14 @@
             this.panel13.Size = new System.Drawing.Size(261, 54);
             this.panel13.TabIndex = 6;
             // 
-            // comboBox2
+            // cmbDonVi
             // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(0, 25);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(261, 29);
-            this.comboBox2.TabIndex = 9;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cmbDonVi.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cmbDonVi.FormattingEnabled = true;
+            this.cmbDonVi.Location = new System.Drawing.Point(0, 25);
+            this.cmbDonVi.Name = "cmbDonVi";
+            this.cmbDonVi.Size = new System.Drawing.Size(261, 29);
+            this.cmbDonVi.TabIndex = 9;
             // 
             // label13
             // 
@@ -752,7 +756,7 @@
             // 
             this.tablePanel4.SetColumn(this.panel10, 1);
             this.panel10.Controls.Add(this.label10);
-            this.panel10.Controls.Add(this.textBox10);
+            this.panel10.Controls.Add(this.txbCongDung);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel10.Location = new System.Drawing.Point(273, 60);
@@ -774,21 +778,21 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Công dụng";
             // 
-            // textBox10
+            // txbCongDung
             // 
-            this.textBox10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox10.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(0, 26);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(261, 28);
-            this.textBox10.TabIndex = 1;
-            this.textBox10.UseSystemPasswordChar = true;
+            this.txbCongDung.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbCongDung.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCongDung.Location = new System.Drawing.Point(0, 26);
+            this.txbCongDung.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbCongDung.Name = "txbCongDung";
+            this.txbCongDung.Size = new System.Drawing.Size(261, 28);
+            this.txbCongDung.TabIndex = 1;
+            this.txbCongDung.UseSystemPasswordChar = true;
             // 
             // panel11
             // 
             this.tablePanel4.SetColumn(this.panel11, 2);
-            this.panel11.Controls.Add(this.textBox11);
+            this.panel11.Controls.Add(this.txbNSX);
             this.panel11.Controls.Add(this.label11);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -799,15 +803,15 @@
             this.panel11.Size = new System.Drawing.Size(261, 54);
             this.panel11.TabIndex = 6;
             // 
-            // textBox11
+            // txbNSX
             // 
-            this.textBox11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox11.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(0, 26);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(261, 28);
-            this.textBox11.TabIndex = 1;
+            this.txbNSX.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbNSX.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNSX.Location = new System.Drawing.Point(0, 26);
+            this.txbNSX.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbNSX.Name = "txbNSX";
+            this.txbNSX.Size = new System.Drawing.Size(261, 28);
+            this.txbNSX.TabIndex = 1;
             // 
             // label11
             // 
@@ -825,7 +829,7 @@
             // 
             this.tablePanel4.SetColumn(this.panel12, 2);
             this.panel12.Controls.Add(this.label12);
-            this.panel12.Controls.Add(this.textBox12);
+            this.panel12.Controls.Add(this.txbDoTuoi);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel12.Location = new System.Drawing.Point(542, 60);
@@ -847,20 +851,20 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Độ tuổi:";
             // 
-            // textBox12
+            // txbDoTuoi
             // 
-            this.textBox12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox12.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(0, 26);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(261, 28);
-            this.textBox12.TabIndex = 1;
+            this.txbDoTuoi.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbDoTuoi.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDoTuoi.Location = new System.Drawing.Point(0, 26);
+            this.txbDoTuoi.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbDoTuoi.Name = "txbDoTuoi";
+            this.txbDoTuoi.Size = new System.Drawing.Size(261, 28);
+            this.txbDoTuoi.TabIndex = 1;
             // 
             // panel15
             // 
             this.tablePanel4.SetColumn(this.panel15, 0);
-            this.panel15.Controls.Add(this.numericUpDown1);
+            this.panel15.Controls.Add(this.nudSoLuong);
             this.panel15.Controls.Add(this.label15);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -871,15 +875,15 @@
             this.panel15.Size = new System.Drawing.Size(261, 54);
             this.panel15.TabIndex = 6;
             // 
-            // numericUpDown1
+            // nudSoLuong
             // 
-            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.numericUpDown1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(0, 26);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(261, 28);
-            this.numericUpDown1.TabIndex = 1;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudSoLuong.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.nudSoLuong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudSoLuong.Location = new System.Drawing.Point(0, 26);
+            this.nudSoLuong.Name = "nudSoLuong";
+            this.nudSoLuong.Size = new System.Drawing.Size(261, 28);
+            this.nudSoLuong.TabIndex = 1;
+            this.nudSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label15
             // 
@@ -987,6 +991,12 @@
             this.button5.Text = "Sửa";
             this.button5.UseVisualStyleBackColor = false;
             // 
+            // tapListHD
+            // 
+            this.tapListHD.Name = "tapListHD";
+            this.tapListHD.Size = new System.Drawing.Size(956, 470);
+            this.tapListHD.Text = "Danh sách hóa đơn";
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -997,7 +1007,6 @@
             this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
-            this.Load += new System.EventHandler(this.frmAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tacAdmin)).EndInit();
             this.tacAdmin.ResumeLayout(false);
             this.tapTaiKhoan.ResumeLayout(false);
@@ -1041,7 +1050,7 @@
             this.panel12.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1052,50 +1061,50 @@
         private DevExpress.XtraTab.XtraTabControl tacAdmin;
         private DevExpress.XtraTab.XtraTabPage tapTaiKhoan;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbNhanVien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbCCCD;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txbUserName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txbSDT;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txbPassWord;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txbVaiTro;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnSua;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
         private DevExpress.XtraTab.XtraTabPage tapSanPham;
         private DevExpress.Utils.Layout.TablePanel tablePanel3;
         private DevExpress.Utils.Layout.TablePanel tablePanel4;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txbTenSP;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txbThanhPhan;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txbCongDung;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txbNSX;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txbDoTuoi;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -1104,14 +1113,15 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txbMoTo;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.NumericUpDown nudSoLuong;
+        private System.Windows.Forms.ComboBox cmbDonVi;
         private System.Windows.Forms.ComboBox cmbLoaiSP;
+        private DevExpress.XtraTab.XtraTabPage tapListHD;
     }
 }
