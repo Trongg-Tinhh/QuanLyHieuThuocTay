@@ -72,7 +72,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbLoaiSP = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -710,7 +710,7 @@
             // panel9
             // 
             this.tablePanel4.SetColumn(this.panel9, 1);
-            this.panel9.Controls.Add(this.comboBox1);
+            this.panel9.Controls.Add(this.cmbLoaiSP);
             this.panel9.Controls.Add(this.label9);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -721,20 +721,20 @@
             this.panel9.Size = new System.Drawing.Size(261, 54);
             this.panel9.TabIndex = 1;
             // 
-            // comboBox1
+            // cmbLoaiSP
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbLoaiSP.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cmbLoaiSP.FormattingEnabled = true;
+            this.cmbLoaiSP.Items.AddRange(new object[] {
             "thuoc",
             "1",
             "4",
             "4"});
-            this.comboBox1.Location = new System.Drawing.Point(0, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(261, 29);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
+            this.cmbLoaiSP.Location = new System.Drawing.Point(0, 25);
+            this.cmbLoaiSP.Name = "cmbLoaiSP";
+            this.cmbLoaiSP.Size = new System.Drawing.Size(261, 29);
+            this.cmbLoaiSP.TabIndex = 9;
+            this.cmbLoaiSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // label9
             // 
@@ -1112,6 +1112,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbLoaiSP;
     }
 }
