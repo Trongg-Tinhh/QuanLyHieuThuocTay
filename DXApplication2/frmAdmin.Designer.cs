@@ -442,7 +442,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button6.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button6.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(4, 266);
@@ -457,7 +457,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnXoa.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Location = new System.Drawing.Point(4, 68);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -471,7 +471,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.BackColor = System.Drawing.Color.Cyan;
+            this.btnThem.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(4, 2);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -485,7 +485,7 @@
             // 
             // btnThanhToan
             // 
-            this.btnThanhToan.BackColor = System.Drawing.Color.Lime;
+            this.btnThanhToan.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnThanhToan.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.Location = new System.Drawing.Point(4, 200);
             this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -499,7 +499,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.BackColor = System.Drawing.Color.Cyan;
+            this.btnLuu.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Location = new System.Drawing.Point(4, 134);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -918,7 +918,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(4, 226);
@@ -933,7 +933,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.OrangeRed;
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button2.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(4, 58);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -947,7 +947,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Cyan;
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button3.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(4, 2);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -961,7 +961,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Lime;
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(4, 170);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -975,7 +975,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Cyan;
+            this.button5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button5.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(4, 114);
             this.button5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
