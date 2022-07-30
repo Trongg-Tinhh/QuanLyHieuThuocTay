@@ -39,6 +39,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.chbMatKhau = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,9 +63,9 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txbUserName);
-            this.panel1.Location = new System.Drawing.Point(56, 78);
+            this.panel1.Location = new System.Drawing.Point(56, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(539, 63);
+            this.panel1.Size = new System.Drawing.Size(539, 51);
             this.panel1.TabIndex = 1;
             // 
             // label2
@@ -72,7 +73,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(42, 25);
+            this.label2.Location = new System.Drawing.Point(42, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 24);
             this.label2.TabIndex = 1;
@@ -81,7 +82,7 @@
             // txbUserName
             // 
             this.txbUserName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUserName.Location = new System.Drawing.Point(197, 22);
+            this.txbUserName.Location = new System.Drawing.Point(197, 11);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.Size = new System.Drawing.Size(330, 32);
             this.txbUserName.TabIndex = 0;
@@ -91,9 +92,9 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txbPassWord);
-            this.panel2.Location = new System.Drawing.Point(56, 147);
+            this.panel2.Location = new System.Drawing.Point(56, 143);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(539, 63);
+            this.panel2.Size = new System.Drawing.Size(539, 51);
             this.panel2.TabIndex = 2;
             // 
             // label3
@@ -101,7 +102,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(91, 25);
+            this.label3.Location = new System.Drawing.Point(91, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 24);
             this.label3.TabIndex = 1;
@@ -110,7 +111,7 @@
             // txbPassWord
             // 
             this.txbPassWord.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassWord.Location = new System.Drawing.Point(197, 22);
+            this.txbPassWord.Location = new System.Drawing.Point(197, 11);
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.Size = new System.Drawing.Size(330, 32);
             this.txbPassWord.TabIndex = 0;
@@ -145,6 +146,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.chbMatKhau);
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.panel1);
@@ -159,10 +161,22 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnDangNhap);
             this.flowLayoutPanel1.Controls.Add(this.btnThoat);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(175, 226);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(175, 241);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(292, 63);
             this.flowLayoutPanel1.TabIndex = 5;
+            // 
+            // chbMatKhau
+            // 
+            this.chbMatKhau.AutoSize = true;
+            this.chbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbMatKhau.Location = new System.Drawing.Point(257, 203);
+            this.chbMatKhau.Name = "chbMatKhau";
+            this.chbMatKhau.Size = new System.Drawing.Size(162, 24);
+            this.chbMatKhau.TabIndex = 6;
+            this.chbMatKhau.Text = "Hiện thị mật khẩu";
+            this.chbMatKhau.UseVisualStyleBackColor = true;
+            this.chbMatKhau.CheckedChanged += new System.EventHandler(this.chbMatKhau_CheckedChanged);
             // 
             // frmLogin
             // 
@@ -206,6 +220,7 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.CheckBox chbMatKhau;
     }
 }
 

@@ -37,5 +37,13 @@ namespace DXApplication2
             }
         }
 
+        private void chbMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chbMatKhau.Checked==true)
+            {
+                txbPassWord.UseSystemPasswordChar = false;
+            }
+            else txbPassWord.UseSystemPasswordChar = true;
+        }
     }
 }
