@@ -371,9 +371,10 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label6);
+            this.MinimumSize = new System.Drawing.Size(503, 594);
             this.Name = "frmAccoutProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thông tin các nhân";
+            this.Text = "Thông tin cá nhân";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAccoutProfile_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

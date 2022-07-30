@@ -95,12 +95,18 @@
             this.tapListHD = new DevExpress.XtraTab.XtraTabPage();
             this.tablePanel5 = new DevExpress.Utils.Layout.TablePanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.label22 = new System.Windows.Forms.Label();
             this.tablePanel6 = new DevExpress.Utils.Layout.TablePanel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dateTimeOffsetEdit1 = new DevExpress.XtraEditors.DateTimeOffsetEdit();
             this.label17 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -114,12 +120,6 @@
             this.panel21 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.tacAdmin)).BeginInit();
             this.tacAdmin.SuspendLayout();
             this.tapTaiKhoan.SuspendLayout();
@@ -154,16 +154,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).BeginInit();
             this.tablePanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel6)).BeginInit();
             this.tablePanel6.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeOffsetEdit1.Properties)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel21.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // tacAdmin
@@ -1074,6 +1075,72 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(950, 352);
             this.tableLayoutPanel2.TabIndex = 9;
             // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.listView2);
+            this.panel23.Controls.Add(this.label23);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel23.Location = new System.Drawing.Point(573, 3);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(374, 346);
+            this.panel23.TabIndex = 3;
+            // 
+            // listView2
+            // 
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(0, 24);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(374, 322);
+            this.listView2.TabIndex = 12;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label23.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Blue;
+            this.label23.Location = new System.Drawing.Point(0, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(169, 24);
+            this.label23.TabIndex = 10;
+            this.label23.Text = "Chi tiết hóa đơn";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.listView1);
+            this.panel22.Controls.Add(this.label22);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel22.Location = new System.Drawing.Point(3, 3);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(564, 346);
+            this.panel22.TabIndex = 2;
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(0, 24);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(564, 322);
+            this.listView1.TabIndex = 11;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label22.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Blue;
+            this.label22.Location = new System.Drawing.Point(0, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(202, 24);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "Danh sách hóa đơn";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // tablePanel6
             // 
             this.tablePanel6.AutoScroll = true;
@@ -1136,7 +1203,7 @@
             // panel17
             // 
             this.tablePanel6.SetColumn(this.panel17, 0);
-            this.panel17.Controls.Add(this.textBox2);
+            this.panel17.Controls.Add(this.dateTimeOffsetEdit1);
             this.panel17.Controls.Add(this.label17);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1147,15 +1214,19 @@
             this.panel17.Size = new System.Drawing.Size(261, 49);
             this.panel17.TabIndex = 4;
             // 
-            // textBox2
+            // dateTimeOffsetEdit1
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(0, 21);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 28);
-            this.textBox2.TabIndex = 1;
+            this.dateTimeOffsetEdit1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dateTimeOffsetEdit1.EditValue = null;
+            this.dateTimeOffsetEdit1.Location = new System.Drawing.Point(0, 21);
+            this.dateTimeOffsetEdit1.Name = "dateTimeOffsetEdit1";
+            this.dateTimeOffsetEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeOffsetEdit1.Properties.Appearance.Options.UseFont = true;
+            this.dateTimeOffsetEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateTimeOffsetEdit1.Properties.MaskSettings.Set("mask", "d");
+            this.dateTimeOffsetEdit1.Size = new System.Drawing.Size(261, 28);
+            this.dateTimeOffsetEdit1.TabIndex = 1;
             // 
             // label17
             // 
@@ -1314,72 +1385,6 @@
             this.textBox6.Size = new System.Drawing.Size(261, 28);
             this.textBox6.TabIndex = 1;
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label22.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Blue;
-            this.label22.Location = new System.Drawing.Point(0, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(202, 24);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "Danh sách hóa đơn";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panel22
-            // 
-            this.panel22.Controls.Add(this.listView1);
-            this.panel22.Controls.Add(this.label22);
-            this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel22.Location = new System.Drawing.Point(3, 3);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(564, 346);
-            this.panel22.TabIndex = 2;
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.listView2);
-            this.panel23.Controls.Add(this.label23);
-            this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel23.Location = new System.Drawing.Point(573, 3);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(374, 346);
-            this.panel23.TabIndex = 3;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label23.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Blue;
-            this.label23.Location = new System.Drawing.Point(0, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(169, 24);
-            this.label23.TabIndex = 10;
-            this.label23.Text = "Chi tiết hóa đơn";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 24);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(564, 322);
-            this.listView1.TabIndex = 11;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView2
-            // 
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(0, 24);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(374, 322);
-            this.listView2.TabIndex = 12;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1387,6 +1392,7 @@
             this.ClientSize = new System.Drawing.Size(958, 500);
             this.Controls.Add(this.tacAdmin);
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MinimumSize = new System.Drawing.Size(960, 540);
             this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
@@ -1439,12 +1445,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).EndInit();
             this.tablePanel5.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel6)).EndInit();
             this.tablePanel6.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeOffsetEdit1.Properties)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel19.ResumeLayout(false);
@@ -1453,10 +1464,6 @@
             this.panel20.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1534,7 +1541,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.TextBox textBox3;
@@ -1555,5 +1561,6 @@
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label22;
+        private DevExpress.XtraEditors.DateTimeOffsetEdit dateTimeOffsetEdit1;
     }
 }
