@@ -20,9 +20,8 @@ namespace DXApplication2
 
         private void frmBanHang_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet1.SanPham' table. You can move, or remove it, as needed.
-            this.sanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet1.SanPham);
-
+            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.SanPham' table. You can move, or remove it, as needed.
+            this.sanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.SanPham);
         }
 
         private void label10_Click(object sender, EventArgs e)

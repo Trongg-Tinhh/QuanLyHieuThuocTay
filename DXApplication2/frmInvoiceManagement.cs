@@ -20,10 +20,13 @@ namespace DXApplication2
 
         private void frmInvoiceManagement_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet1.ChiTietHoaDon' table. You can move, or remove it, as needed.
-            this.chiTietHoaDonTableAdapter.Fill(this.quanLyHieuThuocTayDataSet1.ChiTietHoaDon);
-            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet1.HoaDon' table. You can move, or remove it, as needed.
-            this.hoaDonTableAdapter.Fill(this.quanLyHieuThuocTayDataSet1.HoaDon);
+            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.HoaDon' table. You can move, or remove it, as needed.
+            this.hoaDonTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.HoaDon);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

@@ -20,9 +20,13 @@ namespace DXApplication2
 
         private void frmAccountManagement_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet1.TaiKhoan' table. You can move, or remove it, as needed.
-            this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet1.TaiKhoan);
+            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.TaiKhoan' table. You can move, or remove it, as needed.
+            this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.TaiKhoan);
 
+        }
+
+        private void dgvTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }
