@@ -18,7 +18,7 @@ namespace DXApplication2
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            frmTableManager f = new frmTableManager();
+            frmMain f = new frmMain();
             this.Hide();
             f.ShowDialog();//uu tien thang ben tren
             this.Show();

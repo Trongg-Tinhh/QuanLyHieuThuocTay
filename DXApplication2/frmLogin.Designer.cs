@@ -38,8 +38,8 @@
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.chbMatKhau = new System.Windows.Forms.CheckBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -51,19 +51,19 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(218, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 34);
+            this.label1.Size = new System.Drawing.Size(187, 34);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Đăng nhập";
+            this.label1.Text = "ĐĂNG NHẬP";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txbUserName);
-            this.panel1.Location = new System.Drawing.Point(56, 74);
+            this.panel1.Location = new System.Drawing.Point(27, 73);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(539, 51);
             this.panel1.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(42, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 24);
@@ -92,7 +92,7 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txbPassWord);
-            this.panel2.Location = new System.Drawing.Point(56, 143);
+            this.panel2.Location = new System.Drawing.Point(27, 142);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(539, 51);
             this.panel2.TabIndex = 2;
@@ -101,8 +101,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(91, 14);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(94, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 24);
             this.label3.TabIndex = 1;
@@ -124,7 +124,7 @@
             this.btnDangNhap.ForeColor = System.Drawing.Color.Black;
             this.btnDangNhap.Location = new System.Drawing.Point(3, 3);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(132, 52);
+            this.btnDangNhap.Size = new System.Drawing.Size(120, 40);
             this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
@@ -136,9 +136,9 @@
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.Black;
-            this.btnThoat.Location = new System.Drawing.Point(141, 3);
+            this.btnThoat.Location = new System.Drawing.Point(129, 3);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(132, 52);
+            this.btnThoat.Size = new System.Drawing.Size(120, 40);
             this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -157,26 +157,26 @@
             this.panel3.Size = new System.Drawing.Size(638, 320);
             this.panel3.TabIndex = 5;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btnDangNhap);
-            this.flowLayoutPanel1.Controls.Add(this.btnThoat);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(175, 241);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(292, 63);
-            this.flowLayoutPanel1.TabIndex = 5;
-            // 
             // chbMatKhau
             // 
             this.chbMatKhau.AutoSize = true;
             this.chbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbMatKhau.Location = new System.Drawing.Point(257, 203);
+            this.chbMatKhau.Location = new System.Drawing.Point(257, 199);
             this.chbMatKhau.Name = "chbMatKhau";
             this.chbMatKhau.Size = new System.Drawing.Size(162, 24);
             this.chbMatKhau.TabIndex = 6;
             this.chbMatKhau.Text = "Hiện thị mật khẩu";
             this.chbMatKhau.UseVisualStyleBackColor = true;
             this.chbMatKhau.CheckedChanged += new System.EventHandler(this.chbMatKhau_CheckedChanged);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnDangNhap);
+            this.flowLayoutPanel1.Controls.Add(this.btnThoat);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(181, 239);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(292, 49);
+            this.flowLayoutPanel1.TabIndex = 5;
             // 
             // frmLogin
             // 
@@ -191,6 +191,8 @@
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(640, 360);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

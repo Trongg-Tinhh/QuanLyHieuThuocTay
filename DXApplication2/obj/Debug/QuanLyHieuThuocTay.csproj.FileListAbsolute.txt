@@ -88,9 +88,7 @@ D:\winform\DXApplication2\DXApplication2\bin\Debug\ja\DevExpress.Office.v22.1.Co
 D:\winform\DXApplication2\DXApplication2\obj\Debug\QuanLyHieuThuocTay.csproj.AssemblyReference.cache
 D:\winform\DXApplication2\DXApplication2\obj\Debug\QuanLyHieuThuocTay.csproj.SuggestedBindingRedirects.cache
 D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.frmAccoutProfile.resources
-D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.frmAdmin.resources
 D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.frmLogin.resources
-D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.frmTableManager.resources
 D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.Properties.Resources.resources
 D:\winform\DXApplication2\DXApplication2\obj\Debug\QuanLyHieuThuocTay.csproj.GenerateResource.cache
 D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.exe.licenses
@@ -98,3 +96,9 @@ D:\winform\DXApplication2\DXApplication2\obj\Debug\QuanLyHieuThuocTay.csproj.Cor
 D:\winform\DXApplication2\DXApplication2\obj\Debug\QuanLyHieuThuocTay.csproj.CopyComplete
 D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.exe
 D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.pdb
+D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.frmMain.resources
+D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.frmBanHang.resources
+D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.frmChangePassword.resources
+D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.frmAccountManagement.resources
+D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.frmInvoiceManagement.resources
+D:\winform\DXApplication2\DXApplication2\obj\Debug\DXApplication2.frmProductManagement.resources

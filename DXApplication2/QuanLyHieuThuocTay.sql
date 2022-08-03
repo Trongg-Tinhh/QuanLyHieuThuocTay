@@ -1,4 +1,4 @@
-create database QuanLyHieuThuocTay
+﻿create database QuanLyHieuThuocTay
 use QuanLyHieuThuocTay
 
 use master
@@ -51,12 +51,14 @@ create table BangGia(
 			on update cascade
 			on delete no action
 )
-
+DROP TABLE ChiTietHoaDon
+DROP TABLE HoaDon
+DROP TABLE TaiKhoan
 create table TaiKhoan
 (
 	tenDangNhap		varchar(30) primary key,
 	matKhau			varchar(30) not null 
-						check (len(matKhau) > 8),
+						check (len(matKhau) >= 8),
 	tenNhanVien		nvarchar(30) not null,
 	SDT				char(10)
 						check(len(SDT)=10),
@@ -64,7 +66,6 @@ create table TaiKhoan
 						check(len(CCCD)=12),
 	vaiTro			bit default 0 -- 0 la nhan vien, 1 la admin
 )
-
 
 create table HoaDon(
 	maHD			char(10) primary key,
@@ -102,3 +103,42 @@ create table ChiTietHoaDon
 			on update cascade
 			on delete no action
 )
+
+
+INSERT INTO dbo.TaiKhoan
+(
+    tenDangNhap,
+    matKhau,
+    tenNhanVien,
+    SDT,
+    CCCD,
+    vaiTro
+)
+VALUES
+(   'trongtinh',  -- tenDangNhap - varchar(30)
+    'trongtinh123',  -- matKhau - varchar(30)
+    N'Trọng Tính', -- tenNhanVien - nvarchar(30)
+    '0839035423',  -- SDT - char(10)
+    '123456789000',  -- CCCD - char(12)
+    NULL -- vaiTro - bit
+    )
+	
+INSERT INTO dbo.TaiKhoan
+(
+    tenDangNhap,
+    matKhau,
+    tenNhanVien,
+    SDT,
+    CCCD,
+    vaiTro
+)
+VALUES
+(   'admin',  -- tenDangNhap - varchar(30)
+    'admin123',  -- matKhau - varchar(30)
+    N'A D M I N', -- tenNhanVien - nvarchar(30)
+    '0123456789',  -- SDT - char(10)
+    '001234567890',  -- CCCD - char(12)
+    1 -- vaiTro - bit
+    )
+
+	SELECT * FROM dbo.TaiKhoan

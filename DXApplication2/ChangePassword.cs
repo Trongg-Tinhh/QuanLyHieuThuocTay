@@ -11,16 +11,11 @@ using System.Windows.Forms;
 
 namespace DXApplication2
 {
-    public partial class frmAccoutProfile : DevExpress.XtraEditors.XtraForm
+    public partial class frmChangePassword : DevExpress.XtraEditors.XtraForm
     {
-        public frmAccoutProfile()
+        public frmChangePassword()
         {
             InitializeComponent();
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
