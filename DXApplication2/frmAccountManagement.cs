@@ -22,7 +22,6 @@ namespace DXApplication2
         {
             // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.TaiKhoan' table. You can move, or remove it, as needed.
             this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.TaiKhoan);
-
         }
 
         private void dgvTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)

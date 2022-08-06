@@ -20,9 +20,8 @@ namespace DXApplication2
 
         private void frmProductManagement_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.SanPham' table. You can move, or remove it, as needed.
-            this.sanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.SanPham);
-
+            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.DanhSachSanPham' table. You can move, or remove it, as needed.
+            this.danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
         }
     }
 }

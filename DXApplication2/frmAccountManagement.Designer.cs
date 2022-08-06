@@ -30,14 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.maTaiKhoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenDangNhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matKhauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNhanVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cCCDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vaiTroDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewDSTK = new System.Windows.Forms.DataGridView();
             this.taiKhoanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyHieuThuocTayDataSet = new DXApplication2.QuanLyHieuThuocTayDataSet();
             this.label6 = new System.Windows.Forms.Label();
@@ -68,9 +61,15 @@
             this.button6 = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.taiKhoanTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.TaiKhoanTableAdapter();
+            this.maTaiKhoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenDangNhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhanVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCCDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vaiTroDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDSTK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyHieuThuocTayDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
@@ -90,7 +89,7 @@
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 85F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 15F)});
-            this.tablePanel1.Controls.Add(this.dataGridView1);
+            this.tablePanel1.Controls.Add(this.dataGridViewDSTK);
             this.tablePanel1.Controls.Add(this.label6);
             this.tablePanel1.Controls.Add(this.tablePanel2);
             this.tablePanel1.Controls.Add(this.tableLayoutPanel3);
@@ -105,94 +104,31 @@
             this.tablePanel1.Size = new System.Drawing.Size(958, 500);
             this.tablePanel1.TabIndex = 9;
             // 
-            // dataGridView1
+            // dataGridViewDSTK
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.tablePanel1.SetColumn(this.dataGridView1, 0);
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewDSTK.AllowUserToAddRows = false;
+            this.dataGridViewDSTK.AllowUserToDeleteRows = false;
+            this.dataGridViewDSTK.AutoGenerateColumns = false;
+            this.dataGridViewDSTK.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tablePanel1.SetColumn(this.dataGridViewDSTK, 0);
+            this.dataGridViewDSTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDSTK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maTaiKhoanDataGridViewTextBoxColumn,
             this.tenDangNhapDataGridViewTextBoxColumn,
-            this.matKhauDataGridViewTextBoxColumn,
             this.tenNhanVienDataGridViewTextBoxColumn,
             this.sDTDataGridViewTextBoxColumn,
             this.cCCDDataGridViewTextBoxColumn,
             this.vaiTroDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.taiKhoanBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 140);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.tablePanel1.SetRow(this.dataGridView1, 2);
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(808, 357);
-            this.dataGridView1.TabIndex = 10;
-            // 
-            // maTaiKhoanDataGridViewTextBoxColumn
-            // 
-            this.maTaiKhoanDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.maTaiKhoanDataGridViewTextBoxColumn.DataPropertyName = "maTaiKhoan";
-            this.maTaiKhoanDataGridViewTextBoxColumn.HeaderText = "maTaiKhoan";
-            this.maTaiKhoanDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maTaiKhoanDataGridViewTextBoxColumn.Name = "maTaiKhoanDataGridViewTextBoxColumn";
-            this.maTaiKhoanDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenDangNhapDataGridViewTextBoxColumn
-            // 
-            this.tenDangNhapDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenDangNhapDataGridViewTextBoxColumn.DataPropertyName = "tenDangNhap";
-            this.tenDangNhapDataGridViewTextBoxColumn.HeaderText = "tenDangNhap";
-            this.tenDangNhapDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenDangNhapDataGridViewTextBoxColumn.Name = "tenDangNhapDataGridViewTextBoxColumn";
-            this.tenDangNhapDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // matKhauDataGridViewTextBoxColumn
-            // 
-            this.matKhauDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.matKhauDataGridViewTextBoxColumn.DataPropertyName = "matKhau";
-            this.matKhauDataGridViewTextBoxColumn.HeaderText = "matKhau";
-            this.matKhauDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.matKhauDataGridViewTextBoxColumn.Name = "matKhauDataGridViewTextBoxColumn";
-            this.matKhauDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenNhanVienDataGridViewTextBoxColumn
-            // 
-            this.tenNhanVienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenNhanVienDataGridViewTextBoxColumn.DataPropertyName = "tenNhanVien";
-            this.tenNhanVienDataGridViewTextBoxColumn.HeaderText = "tenNhanVien";
-            this.tenNhanVienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenNhanVienDataGridViewTextBoxColumn.Name = "tenNhanVienDataGridViewTextBoxColumn";
-            this.tenNhanVienDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sDTDataGridViewTextBoxColumn
-            // 
-            this.sDTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
-            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
-            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
-            this.sDTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cCCDDataGridViewTextBoxColumn
-            // 
-            this.cCCDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cCCDDataGridViewTextBoxColumn.DataPropertyName = "CCCD";
-            this.cCCDDataGridViewTextBoxColumn.HeaderText = "CCCD";
-            this.cCCDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cCCDDataGridViewTextBoxColumn.Name = "cCCDDataGridViewTextBoxColumn";
-            this.cCCDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vaiTroDataGridViewCheckBoxColumn
-            // 
-            this.vaiTroDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.vaiTroDataGridViewCheckBoxColumn.DataPropertyName = "vaiTro";
-            this.vaiTroDataGridViewCheckBoxColumn.HeaderText = "vaiTro";
-            this.vaiTroDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.vaiTroDataGridViewCheckBoxColumn.Name = "vaiTroDataGridViewCheckBoxColumn";
-            this.vaiTroDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.dataGridViewDSTK.DataSource = this.taiKhoanBindingSource;
+            this.dataGridViewDSTK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewDSTK.Location = new System.Drawing.Point(3, 140);
+            this.dataGridViewDSTK.Name = "dataGridViewDSTK";
+            this.dataGridViewDSTK.ReadOnly = true;
+            this.tablePanel1.SetRow(this.dataGridViewDSTK, 2);
+            this.dataGridViewDSTK.RowHeadersWidth = 51;
+            this.dataGridViewDSTK.RowTemplate.Height = 24;
+            this.dataGridViewDSTK.Size = new System.Drawing.Size(808, 357);
+            this.dataGridViewDSTK.TabIndex = 10;
             // 
             // taiKhoanBindingSource
             // 
@@ -576,6 +512,58 @@
             // 
             this.taiKhoanTableAdapter.ClearBeforeFill = true;
             // 
+            // maTaiKhoanDataGridViewTextBoxColumn
+            // 
+            this.maTaiKhoanDataGridViewTextBoxColumn.DataPropertyName = "maTaiKhoan";
+            this.maTaiKhoanDataGridViewTextBoxColumn.HeaderText = "Mã tài khoản";
+            this.maTaiKhoanDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.maTaiKhoanDataGridViewTextBoxColumn.Name = "maTaiKhoanDataGridViewTextBoxColumn";
+            this.maTaiKhoanDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenDangNhapDataGridViewTextBoxColumn
+            // 
+            this.tenDangNhapDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenDangNhapDataGridViewTextBoxColumn.DataPropertyName = "tenDangNhap";
+            this.tenDangNhapDataGridViewTextBoxColumn.HeaderText = "Tên đăng nhập";
+            this.tenDangNhapDataGridViewTextBoxColumn.MinimumWidth = 150;
+            this.tenDangNhapDataGridViewTextBoxColumn.Name = "tenDangNhapDataGridViewTextBoxColumn";
+            this.tenDangNhapDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenNhanVienDataGridViewTextBoxColumn
+            // 
+            this.tenNhanVienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenNhanVienDataGridViewTextBoxColumn.DataPropertyName = "tenNhanVien";
+            this.tenNhanVienDataGridViewTextBoxColumn.HeaderText = "Tên nhân viên";
+            this.tenNhanVienDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.tenNhanVienDataGridViewTextBoxColumn.Name = "tenNhanVienDataGridViewTextBoxColumn";
+            this.tenNhanVienDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sDTDataGridViewTextBoxColumn
+            // 
+            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
+            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
+            this.sDTDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cCCDDataGridViewTextBoxColumn
+            // 
+            this.cCCDDataGridViewTextBoxColumn.DataPropertyName = "CCCD";
+            this.cCCDDataGridViewTextBoxColumn.HeaderText = "CCCD";
+            this.cCCDDataGridViewTextBoxColumn.MinimumWidth = 125;
+            this.cCCDDataGridViewTextBoxColumn.Name = "cCCDDataGridViewTextBoxColumn";
+            this.cCCDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cCCDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // vaiTroDataGridViewCheckBoxColumn
+            // 
+            this.vaiTroDataGridViewCheckBoxColumn.DataPropertyName = "vaiTro";
+            this.vaiTroDataGridViewCheckBoxColumn.HeaderText = "Vai trò";
+            this.vaiTroDataGridViewCheckBoxColumn.MinimumWidth = 80;
+            this.vaiTroDataGridViewCheckBoxColumn.Name = "vaiTroDataGridViewCheckBoxColumn";
+            this.vaiTroDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.vaiTroDataGridViewCheckBoxColumn.Width = 80;
+            // 
             // frmAccountManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -589,7 +577,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDSTK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyHieuThuocTayDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
@@ -641,13 +629,12 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewDSTK;
         private QuanLyHieuThuocTayDataSet quanLyHieuThuocTayDataSet;
         private System.Windows.Forms.BindingSource taiKhoanBindingSource;
         private QuanLyHieuThuocTayDataSetTableAdapters.TaiKhoanTableAdapter taiKhoanTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn maTaiKhoanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenDangNhapDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matKhauDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVienDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cCCDDataGridViewTextBoxColumn;

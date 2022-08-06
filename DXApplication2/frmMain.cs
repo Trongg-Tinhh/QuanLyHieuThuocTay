@@ -43,7 +43,7 @@ namespace DXApplication2
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có thoát chương trình? ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop) != System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Bạn muốn đăng xuất? ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
             }

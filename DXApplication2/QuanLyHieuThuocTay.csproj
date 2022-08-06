@@ -109,6 +109,9 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyHieuThuocTayDataSet.cs">
+      <DependentUpon>QuanLyHieuThuocTayDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyHieuThuocTayDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
