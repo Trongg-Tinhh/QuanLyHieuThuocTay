@@ -1,6 +1,7 @@
 ﻿create database QuanLyHieuThuocTay
 use QuanLyHieuThuocTay
 
+create database quanly
 use master
 drop database QuanLyHieuThuocTay
 ----------------------------------------------------------------
