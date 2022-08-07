@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,10 +25,36 @@ namespace DXApplication2
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            frmMain f = new frmMain();
-            this.Hide();
-            f.ShowDialog();//uu tien thang ben tren
-            this.Show();
+            //Ket no database
+            SqlConnection sqlCon = new SqlConnection(DataConnection.DataConnectionString.ConnectionString);
+            try
+            {
+                sqlCon.Open();
+                string User = txbUserName.Text;
+                string Pass = txbPassWord.Text;
+                String sql = "Select * from TaiKhoan where tenDangNhap = @tendangnhap and matKhau = @matkhau";
+                SqlCommand cmd = new SqlCommand(sql, sqlCon);
+                cmd.Parameters.Add(new SqlParameter("@tendangnhap", User));
+                cmd.Parameters.Add(new SqlParameter("@matKhau", Pass));
+                SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                if (sqlDataReader.Read() == true)
+                {
+                    frmMain f = new frmMain();
+                    this.Hide();
+                    f.ShowDialog();//uu tien thang ben tren
+                    txbPassWord.Text = "";
+                    txbUserName.Text = "";
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Tên đăng nhập hoặc Mật khẩu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi kết nối", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
