@@ -62,7 +62,8 @@ namespace DXApplication2
             btnSua.Enabled = false;
             btnHuy.Enabled = false; 
             btnLuu.Enabled = false;
-            dataGridViewDSTK.Enabled=true;           
+            dataGridViewDSTK.Enabled=true;
+            this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.TaiKhoan);
         }
         public void checkText()
         {
@@ -92,8 +93,8 @@ namespace DXApplication2
                 if (txbNhanVien.Text=="") mess += "\nChưa nhập tên hiển thị.";
                 if (taiKhoanTableAdapter.checkTenDangNhap(txbUserName.Text) > 0) mess += "\nTên đăng nhập đã tồn tại.";
                 if (txbPassWord.Text.Length < 8) mess += "\nMật khẩu phải trên 8 kí tự.";
-                if (txbCCCD.Text.Length<12) mess+="\nSố CCCD không hợp lệ." ;
-                if (txbSDT.Text.Length <10) mess += "\nSDT không hợp lệ.";
+                if (txbCCCD.Text.Length!=12) mess+="\nSố CCCD không hợp lệ." ;
+                if (txbSDT.Text.Length !=10) mess += "\nSDT không hợp lệ.";
                 if (mess != "")
                     MessageBox.Show(mess, "Thêm thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else

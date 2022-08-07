@@ -12,12 +12,8 @@ namespace DXApplication2
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
-        private int? maTK;
-        public int? getMaTK()
-        {
-            maTK = taiKhoanTableAdapter.getMaTaiKhoan(txbUserName.Text);
-            return maTK;
-        }
+        public static int? maTK;
+
         public frmLogin()
         {
             InitializeComponent();
@@ -39,6 +35,7 @@ namespace DXApplication2
                 SqlDataReader sqlDataReader = cmd.ExecuteReader();
                 if (sqlDataReader.Read() == true)
                 {
+                    maTK = taiKhoanTableAdapter.getMaTaiKhoan(User);
                     frmMain f = new frmMain();
                     this.Hide();
                     f.ShowDialog();//uu tien thang ben tren
