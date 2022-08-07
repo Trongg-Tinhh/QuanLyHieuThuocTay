@@ -77,6 +77,9 @@ namespace DXApplication2
             sanPhamBindingSource.ResumeBinding();
             dataGridViewThuoc.AllowUserToAddRows = true;
             dataGridViewThuoc.AllowUserToDeleteRows = true;
+            btnThem.Enabled = false;
+            btnXoa.Enabled = true;
+            btnHuy.Enabled = true;
             btnSua.BackColor = System.Drawing.Color.Blue;
             btnHuy.BackColor = System.Drawing.Color.Red;
         }
@@ -86,8 +89,16 @@ namespace DXApplication2
             sanPhamBindingSource.ResumeBinding();
             dataGridViewThuoc.AllowUserToAddRows = false;
             dataGridViewThuoc.AllowUserToDeleteRows = false;
+            btnThem.Enabled = true;
+            btnXoa.Enabled = false;
+            btnHuy.Enabled = false;
             btnSua.BackColor = Color.DarkGray;
             btnHuy.BackColor = Color.DarkGray;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
