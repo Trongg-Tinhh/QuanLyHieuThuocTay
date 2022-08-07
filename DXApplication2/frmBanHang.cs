@@ -77,9 +77,34 @@ namespace DXApplication2
             danhSachSanPhamTableAdapter.FillByTen_Loai_CongDung_DoTuoi(quanLyHieuThuocTayDataSet.DanhSachSanPham, tenSP, loaiSP, congDung, doTuoi);
         }
 
-        private void buttonClearData_Click(object sender, EventArgs e)
+        private void btnClearData_Click(object sender, EventArgs e)
         {
             ClearData(); 
+        }
+
+        private void btnXoaThuoc_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listViewChiTietHoaDon.Items)
+                if(item.Selected)
+                    listViewChiTietHoaDon.Items.Remove(item);
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            decimal? total = 0;
+            foreach(ListViewItem item in listViewChiTietHoaDon.Items)
+            {
+                string maSP = item.SubItems[0].Text.ToString();
+                string tenSP = item.SubItems[1].Text.ToString();
+                string loaiSP = item.SubItems[2].Text.ToString();
+                int soLuong = int.Parse(item.SubItems[3].Text.ToString());
+                decimal? donGia = decimal.Parse(item.SubItems[4].Text);
+
+                total += donGia*soLuong;
+
+                MessageBox.Show(string.Format("{0} {1} {2} {3}", maSP, tenSP, loaiSP, soLuong));
+            }
+            lblThanhTien.Text = "Tổng tiền: " + total.ToString() + "VND";
         }
     }
 }
