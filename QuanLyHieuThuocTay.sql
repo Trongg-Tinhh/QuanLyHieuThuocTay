@@ -1,10 +1,11 @@
 ﻿create database QuanLyHieuThuocTay
+go
 use QuanLyHieuThuocTay
 
-use master
-drop database QuanLyHieuThuocTay
+-- use master
+-- drop database QuanLyHieuThuocTay
 ----------------------------------------------------------------
-drop table NhaSanXuat
+-- drop table NhaSanXuat
 create table NhaSanXuat(
 	maNSX	INT IDENTITY(100,1) PRIMARY KEY,
 	tenNSX	nvarchar(200) not null
@@ -79,9 +80,9 @@ values ('KTR',N'Khẩu trang y tế')
 SELECT * FROM LoaiSanPham
 
 -----------------------------------------------------------------------------------------------------------------
-DROP TABLE BangGia
-DROP TABLE ChiTietHoaDon
-DROP TABLE SanPham
+-- DROP TABLE BangGia
+-- DROP TABLE ChiTietHoaDon
+-- DROP TABLE SanPham
 
 create table SanPham(
 	maSP			char(10) primary key,
@@ -142,7 +143,7 @@ SELECT * FROM SanPham
 
 ---------------------------------------------------------------------------------------------------------------------
 
-DROP TABLE BangGia
+-- DROP TABLE BangGia
 create table BangGia(
 	maSP		char(10),
 	ngay		date not null,
@@ -193,9 +194,9 @@ values ('015KTR013','2022/07/20',50000)
 SELECT * FROM SanPham
 SELECT * FROM BangGia
 --------------------------------------------------------------------------------------------
-DROP TABLE ChiTietHoaDon
-DROP TABLE HoaDon
-DROP TABLE TaiKhoan
+-- DROP TABLE ChiTietHoaDon
+-- DROP TABLE HoaDon
+-- DROP TABLE TaiKhoan
 create table TaiKhoan
 (
 	maTaiKhoan		INT IDENTITY(100,1) PRIMARY KEY,

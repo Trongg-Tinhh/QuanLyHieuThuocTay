@@ -8071,7 +8071,7 @@ SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM Tai
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT\tsp.maSP,sp.tenSP,sp.maLoai,l.tenLoai,sp.congDung,sp.thanhPhanChinh,sp.doTu" +
@@ -8079,6 +8079,30 @@ SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM Tai
                 "bo.LoaiSanPham l, dbo.NhaSanXuat nsx\r\nWHERE sp.maLoai=l.maLoai AND sp.maNSX=nsx." +
                 "maNSX";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT	sp.maSP,sp.tenSP,sp.maLoai,l.tenLoai,sp.congDung,sp.thanhPhanChinh,sp.doTuoi,sp.soLuong,		sp.donViTinh,sp.maNSX,nsx.tenNSX,sp.moTa
+FROM dbo.SanPham sp, dbo.LoaiSanPham l, dbo.NhaSanXuat nsx
+WHERE sp.maLoai=l.maLoai AND sp.maNSX=nsx.maNSX
+AND sp.tenSP LIKE '%' + @tenSP + '%'
+AND l.tenLoai LIKE '%' + @tenLoai + '%'
+AND sp.congDung LIKE '%' + @congDung + '%'
+AND sp.doTuoi LIKE '%' + @doTuoi + '%'";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenSP", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "tenSP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenLoai", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenLoai", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@congDung", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "congDung", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@doTuoi", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "doTuoi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT TOP(1) donGia\r\nFROM BangGia\r\nWHERE maSP = @maSP\r\nORDER BY Ngay DESC";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maSP", global::System.Data.SqlDbType.Char, 10, global::System.Data.ParameterDirection.Input, 0, 0, "maSP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT TOP (1) maSP\r\nFROM     SanPham\r\nWHERE  (tenSP = @tenSP)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenSP", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "tenSP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8103,6 +8127,111 @@ SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM Tai
             QuanLyHieuThuocTayDataSet.DanhSachSanPhamDataTable dataTable = new QuanLyHieuThuocTayDataSet.DanhSachSanPhamDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByTen_Loai_CongDung_DoTuoi(QuanLyHieuThuocTayDataSet.DanhSachSanPhamDataTable dataTable, string tenSP, string tenLoai, string congDung, string doTuoi) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((tenSP == null)) {
+                throw new global::System.ArgumentNullException("tenSP");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tenSP));
+            }
+            if ((tenLoai == null)) {
+                throw new global::System.ArgumentNullException("tenLoai");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(tenLoai));
+            }
+            if ((congDung == null)) {
+                throw new global::System.ArgumentNullException("congDung");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(congDung));
+            }
+            if ((doTuoi == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(doTuoi));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<decimal> GetGiaByMa(string maSP) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((maSP == null)) {
+                throw new global::System.ArgumentNullException("maSP");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(maSP));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<decimal>();
+            }
+            else {
+                return new global::System.Nullable<decimal>(((decimal)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string GetMaByTen(string tenSP) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((tenSP == null)) {
+                throw new global::System.ArgumentNullException("tenSP");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(tenSP));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
+            }
         }
     }
     
