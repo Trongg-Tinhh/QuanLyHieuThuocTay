@@ -91,6 +91,15 @@ namespace DXApplication2
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            string tenKH = txbTenKH.Text;
+            string sdt = txbSDT.Text;
+            DateTime ngayBan;
+            string ngayBanStr = dateTimeEditNgayBan.Text;
+            if(ngayBanStr == null || ngayBanStr == "") 
+                ngayBan = DateTime.Now;
+            else
+                ngayBan = DateTime.Parse(ngayBanStr);
+
             decimal? total = 0;
             foreach(ListViewItem item in listViewChiTietHoaDon.Items)
             {

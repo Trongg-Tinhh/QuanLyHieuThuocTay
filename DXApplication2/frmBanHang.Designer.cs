@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tablePanel = new DevExpress.Utils.Layout.TablePanel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnXoaThuoc = new System.Windows.Forms.Button();
+            this.buttonClearData = new System.Windows.Forms.Button();
             this.listViewChiTietHoaDon = new System.Windows.Forms.ListView();
             this.columnMaSP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTenSP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -80,11 +83,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.danhSachSanPhamTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.DanhSachSanPhamTableAdapter();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.buttonClearData = new System.Windows.Forms.Button();
-            this.btnXoaThuoc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel)).BeginInit();
             this.tablePanel.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachSanPhamBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyHieuThuocTayDataSet)).BeginInit();
@@ -102,7 +103,6 @@
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablePanel
@@ -128,6 +128,38 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 10F)});
             this.tablePanel.Size = new System.Drawing.Size(1200, 675);
             this.tablePanel.TabIndex = 2;
+            // 
+            // panel6
+            // 
+            this.tablePanel.SetColumn(this.panel6, 0);
+            this.panel6.Controls.Add(this.btnXoaThuoc);
+            this.panel6.Controls.Add(this.buttonClearData);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(3, 611);
+            this.panel6.Name = "panel6";
+            this.tablePanel.SetRow(this.panel6, 2);
+            this.panel6.Size = new System.Drawing.Size(656, 61);
+            this.panel6.TabIndex = 15;
+            // 
+            // btnXoaThuoc
+            // 
+            this.btnXoaThuoc.Location = new System.Drawing.Point(472, 13);
+            this.btnXoaThuoc.Name = "btnXoaThuoc";
+            this.btnXoaThuoc.Size = new System.Drawing.Size(120, 40);
+            this.btnXoaThuoc.TabIndex = 1;
+            this.btnXoaThuoc.Text = "Xóa thuốc";
+            this.btnXoaThuoc.UseVisualStyleBackColor = true;
+            this.btnXoaThuoc.Click += new System.EventHandler(this.btnXoaThuoc_Click);
+            // 
+            // buttonClearData
+            // 
+            this.buttonClearData.Location = new System.Drawing.Point(51, 13);
+            this.buttonClearData.Name = "buttonClearData";
+            this.buttonClearData.Size = new System.Drawing.Size(120, 40);
+            this.buttonClearData.TabIndex = 0;
+            this.buttonClearData.Text = "Xóa dữ liệu";
+            this.buttonClearData.UseVisualStyleBackColor = true;
+            this.buttonClearData.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // listViewChiTietHoaDon
             // 
@@ -671,38 +703,6 @@
             // 
             this.danhSachSanPhamTableAdapter.ClearBeforeFill = true;
             // 
-            // panel6
-            // 
-            this.tablePanel.SetColumn(this.panel6, 0);
-            this.panel6.Controls.Add(this.btnXoaThuoc);
-            this.panel6.Controls.Add(this.buttonClearData);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(3, 611);
-            this.panel6.Name = "panel6";
-            this.tablePanel.SetRow(this.panel6, 2);
-            this.panel6.Size = new System.Drawing.Size(656, 61);
-            this.panel6.TabIndex = 15;
-            // 
-            // buttonClearData
-            // 
-            this.buttonClearData.Location = new System.Drawing.Point(51, 13);
-            this.buttonClearData.Name = "buttonClearData";
-            this.buttonClearData.Size = new System.Drawing.Size(120, 40);
-            this.buttonClearData.TabIndex = 0;
-            this.buttonClearData.Text = "Xóa dữ liệu";
-            this.buttonClearData.UseVisualStyleBackColor = true;
-            this.buttonClearData.Click += new System.EventHandler(this.btnClearData_Click);
-            // 
-            // btnXoaThuoc
-            // 
-            this.btnXoaThuoc.Location = new System.Drawing.Point(472, 13);
-            this.btnXoaThuoc.Name = "btnXoaThuoc";
-            this.btnXoaThuoc.Size = new System.Drawing.Size(120, 40);
-            this.btnXoaThuoc.TabIndex = 1;
-            this.btnXoaThuoc.Text = "Xóa thuốc";
-            this.btnXoaThuoc.UseVisualStyleBackColor = true;
-            this.btnXoaThuoc.Click += new System.EventHandler(this.btnXoaThuoc_Click);
-            // 
             // frmBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -716,6 +716,7 @@
             this.Load += new System.EventHandler(this.frmBanHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel)).EndInit();
             this.tablePanel.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachSanPhamBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyHieuThuocTayDataSet)).EndInit();
@@ -743,7 +744,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
