@@ -31,7 +31,8 @@ namespace DXApplication2
             txbDoTuoi.Text = null;
             numericSoLuong.Value = 0;
         }
-
+        
+        // chức năng click vào 1 dòng ở dgv dữ liệu sẽ sổ lên trên textbox
         private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -48,9 +49,10 @@ namespace DXApplication2
             txbCongDung.Text = congDung;
             txbDoTuoi.Text = doTuoi;
             numericSoLuong.Value = 0;
-            numericSoLuong.Maximum = soLuongToiDa;
+            numericSoLuong.Maximum = soLuongToiDa; // quy định số lượng không được vượt quá số lượng tồn trong kho
         }
 
+        // thêm sản phẩm vào bảng bên phải
         private void btnThem_Click(object sender, EventArgs e)
         {
             string tenSP = txbTenSP.Text;
@@ -70,14 +72,13 @@ namespace DXApplication2
                 maSP, tenSP, loaiSP, soLuong.ToString(), donGia.ToString(),
             };
 
+            // mỗi lần thêm sẽ kiểm tra xem thông tin có trùng lặp hay không
             foreach (ListViewItem item in listViewChiTietHoaDon.Items)
             {
                 string maItem = item.SubItems[0].Text.ToString();
-                string temItem = item.SubItems[1].Text.ToString();
-                string loaiItem = item.SubItems[2].Text.ToString();
-                int soLuongItem = int.Parse(item.SubItems[3].Text.ToString());
-                decimal? donGiaItem = decimal.Parse(item.SubItems[4].Text);
 
+                // nếu trùng thì hỏi người dùng có muốn ghi đè hay không
+                // nếu ghi đè thì chỉ ghi đè số lượng
                 if (maItem == maSP)
                 {
                     DialogResult result = MessageBox.Show("Thêm trùng sản phẩm. Ghi đè lên sản phẩm hiện có?", "Thông báo", MessageBoxButtons.YesNo);
@@ -92,6 +93,7 @@ namespace DXApplication2
             ClearData();
         }
 
+        // chức năng lọc sản phẩm
         private void FillEvent(object sender, EventArgs e)
         {
             string tenSP = txbTenSP.Text;
@@ -114,8 +116,10 @@ namespace DXApplication2
                     listViewChiTietHoaDon.Items.Remove(item);
         }
 
+        // chức năng thanh toán. Khi nhấn thanh toán sẽ lấy hết dữ liệu từ các textbox và listview để tiến hành tính tiền.
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            // lấy thông tin hóa đơn để lưu vào db.
             string tenKH = txbTenKH.Text;
             string sdt = txbSDT.Text;
             DateTime ngayBan;
@@ -125,6 +129,7 @@ namespace DXApplication2
             else
                 ngayBan = DateTime.Parse(ngayBanStr);
 
+            // kiểm tra các ràng buộc
             if (tenKH == null || tenKH == "")
             {
                 MessageBox.Show("Tên khách hàng không được rỗng", "Thông báo", MessageBoxButtons.OK);
@@ -141,7 +146,7 @@ namespace DXApplication2
                 return;
             }
 
-
+            // lấy hết dữ liệu từ listview để tính tiền và lưu vào db
             decimal? total = 0;
             foreach(ListViewItem item in listViewChiTietHoaDon.Items)
             {
