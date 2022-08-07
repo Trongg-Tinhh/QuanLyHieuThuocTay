@@ -32,6 +32,7 @@ namespace DXApplication2
         private void dataGridViewDSTK_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int numRow= e.RowIndex;
+            if (numRow < 0) return;
             txbNhanVien.Text = dataGridViewDSTK.Rows[numRow].Cells[1].Value.ToString();
             txbUserName.Text = dataGridViewDSTK.Rows[numRow].Cells[2].Value.ToString();
             txbPassWord.Text = dataGridViewDSTK.Rows[numRow].Cells[3].Value.ToString();

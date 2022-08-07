@@ -104,6 +104,7 @@
             // 
             // tabBanHang
             // 
+            this.tabBanHang.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("tabBanHang.ImageOptions.SvgImage")));
             this.tabBanHang.Name = "tabBanHang";
             this.tabBanHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.tabBanHang.Text = "Bán hàng";

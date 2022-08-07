@@ -146,7 +146,7 @@ DROP TABLE BangGia
 create table BangGia(
 	maSP		char(10),
 	ngay		date not null,
-	donGia		decimal(18,3) not null 
+	donGia		decimal(18,0) not null 
 					check (DonGia > 0.0),
 
 	primary key(maSP,ngay),
@@ -231,7 +231,7 @@ create table HoaDon(
 	ngayBan			date not null,
 	SDT				char(10),
 	maTaiKhoan		int,
-	thanhTien		decimal(18,3) not null 
+	thanhTien		decimal(18,0) not null 
 						check (thanhTien >= 0),
 	foreign key (maTaiKhoan) 
 		references TaiKhoan(maTaiKhoan)
@@ -255,7 +255,7 @@ create table ChiTietHoaDon
 	maSP	char(10) not null,
 	soLuong		int not null
 					check (soLuong > 0),
-	donGia		decimal(18,3) not null
+	donGia		decimal(18,0) not null
 					check (DonGia >= 0),
 
 	primary key(maHD,maSP),
