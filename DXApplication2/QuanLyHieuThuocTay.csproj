@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataConnection\DataConnectionString.cs" />
     <Compile Include="frmAccountManagement.cs">
       <SubType>Form</SubType>
     </Compile>

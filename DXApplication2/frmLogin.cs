@@ -11,6 +11,12 @@ namespace DXApplication2
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
+        private int? maTK;
+        public int? getMaTK()
+        {
+            maTK = taiKhoanTableAdapter.getMaTaiKhoan(txbUserName.Text);
+            return maTK;
+        }
         public frmLogin()
         {
             InitializeComponent();
@@ -44,6 +50,18 @@ namespace DXApplication2
                 txbPassWord.UseSystemPasswordChar = false;
             }
             else txbPassWord.UseSystemPasswordChar = true;
+        }
+
+        private void txbUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.TaiKhoan' table. You can move, or remove it, as needed.
+            this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.TaiKhoan);
+
         }
     }
 }
