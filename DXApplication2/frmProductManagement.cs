@@ -18,6 +18,7 @@ namespace DXApplication2
         {
             InitializeComponent();
         }
+        private bool edit = false;
         String StringConnect = @"Data Source=TRANNGHIEP;Initial Catalog=QuanLyHieuThuocTay;Integrated Security=True";
         private void frmProductManagement_Load(object sender, EventArgs e)
         {
@@ -61,12 +62,12 @@ namespace DXApplication2
                     else
                     {
                         sanPhamTableAdapter.InsertQuerySanPham(MaThuoc, txtTenSP.Text.Trim(), cmbLoaiSP.SelectedValue.ToString(),int.Parse(cmbMaNSX.SelectedValue.ToString()), txbThanhPhan.Text, txbDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text, int.Parse(nudSoLuong.Value.ToString()), txbMoTa.Text);
-                        MessageBox.Show("Đã thêm sách " + txtTenSP.Text.Trim());
-                    }    
-
+                        MessageBox.Show("Đã thêm " + txtTenSP.Text.Trim());
+                        load_Data();
+                    }
+                    
                     connection.Close();
                 }
-
             }    
         }
 
@@ -75,28 +76,77 @@ namespace DXApplication2
         private void btnSua_Click(object sender, EventArgs e)
         {
             sanPhamBindingSource.ResumeBinding();
-            dataGridViewThuoc.AllowUserToAddRows = true;
-            dataGridViewThuoc.AllowUserToDeleteRows = true;
             btnThem.Enabled = false;
-            btnXoa.Enabled = true;
             btnHuy.Enabled = true;
             btnSua.BackColor = System.Drawing.Color.Blue;
             btnHuy.BackColor = System.Drawing.Color.Red;
+            this.edit = true;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            sanPhamBindingSource.ResumeBinding();
-            dataGridViewThuoc.AllowUserToAddRows = false;
-            dataGridViewThuoc.AllowUserToDeleteRows = false;
+            sanPhamBindingSource.SuspendBinding();
             btnThem.Enabled = true;
             btnXoa.Enabled = false;
             btnHuy.Enabled = false;
             btnSua.BackColor = Color.DarkGray;
             btnHuy.BackColor = Color.DarkGray;
+            this.edit = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
+        {
+            String maSP = dataGridViewThuoc.CurrentRow.Cells[0].Value.ToString().Trim();
+            using (SqlConnection connection = new SqlConnection(StringConnect))
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                String query = "select * from ChiTietHoaDon where ChiTietHoaDon.maSP = @maSP";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@maSP", maSP);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if(reader.Read())
+                {
+                    MessageBox.Show("Thuốc có Mã: " + maSP + " đã tồn tại trong hóa đơn\n  không thể xóa");
+                }
+                else
+                {
+                    sanPhamTableAdapter.DeleteQuerySanPhamByMaSP(maSP);
+                    MessageBox.Show("Đã xóa thuốc có Mã: " + maSP);
+                    load_Data();
+                }    
+                connection.Close();
+            }
+        }
+
+        private void SelectionChanged_RowInDataGridViewThuoc(object sender, EventArgs e)
+        {
+            if (dataGridViewThuoc.SelectedRows.Count > 0 && edit == true)
+            {
+                btnXoa.Enabled = true;
+            }
+            else
+                btnXoa.Enabled = false;
+        }
+        private void load_Data()
+        {
+            sanPhamTableAdapter.Fill(quanLyHieuThuocTayDataSet.SanPham);
+            dataGridViewThuoc.DataSource = quanLyHieuThuocTayDataSet.SanPham;
+            dataGridViewThuoc.Refresh();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Đã cập nhật dữ liệu");
+            sanPhamTableAdapter.Update(this.quanLyHieuThuocTayDataSet.SanPham);
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmbDonVi_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

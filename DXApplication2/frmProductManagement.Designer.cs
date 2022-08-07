@@ -159,6 +159,7 @@
             this.dataGridViewThuoc.RowTemplate.Height = 24;
             this.dataGridViewThuoc.Size = new System.Drawing.Size(821, 366);
             this.dataGridViewThuoc.TabIndex = 10;
+            this.dataGridViewThuoc.SelectionChanged += new System.EventHandler(this.SelectionChanged_RowInDataGridViewThuoc);
             // 
             // maSPDataGridViewTextBoxColumn
             // 
@@ -432,7 +433,6 @@
             // 
             // cmbDonVi
             // 
-            this.cmbDonVi.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.sanPhamBindingSource, "donViTinh", true));
             this.cmbDonVi.DataSource = this.sanPhamBindingSource;
             this.cmbDonVi.DisplayMember = "donViTinh";
             this.cmbDonVi.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -442,6 +442,7 @@
             this.cmbDonVi.Size = new System.Drawing.Size(267, 29);
             this.cmbDonVi.TabIndex = 9;
             this.cmbDonVi.ValueMember = "donViTinh";
+            this.cmbDonVi.SelectedIndexChanged += new System.EventHandler(this.cmbDonVi_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -736,6 +737,7 @@
             this.btnLuu.TabIndex = 11;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
@@ -786,6 +788,7 @@
             this.btnThoat.TabIndex = 15;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // danhSachSanPhamTableAdapter
             // 
