@@ -13,6 +13,7 @@ namespace DXApplication2
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
         public static int? maTK;
+        public static bool? vaiTro;
 
         public frmLogin()
         {
@@ -36,6 +37,7 @@ namespace DXApplication2
                 if (sqlDataReader.Read() == true)
                 {
                     maTK = taiKhoanTableAdapter.getMaTaiKhoan(User);
+                    vaiTro =taiKhoanTableAdapter.GetVaiTro(User);
                     frmMain f = new frmMain();
                     this.Hide();
                     f.ShowDialog();//uu tien thang ben tren

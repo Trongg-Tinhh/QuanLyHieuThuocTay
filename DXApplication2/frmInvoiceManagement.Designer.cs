@@ -36,6 +36,12 @@
             this.label23 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.maHDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenKhachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhanVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.danhSachHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyHieuThuocTayDataSet = new DXApplication2.QuanLyHieuThuocTayDataSet();
             this.label22 = new System.Windows.Forms.Label();
@@ -59,12 +65,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.danhSachHoaDonTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.DanhSachHoaDonTableAdapter();
-            this.maHDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenKhachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNhanVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).BeginInit();
             this.tablePanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -192,6 +192,60 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(565, 327);
             this.dataGridView1.TabIndex = 11;
+            // 
+            // maHDDataGridViewTextBoxColumn
+            // 
+            this.maHDDataGridViewTextBoxColumn.DataPropertyName = "maHD";
+            this.maHDDataGridViewTextBoxColumn.HeaderText = "Mã hóa đơn";
+            this.maHDDataGridViewTextBoxColumn.MinimumWidth = 80;
+            this.maHDDataGridViewTextBoxColumn.Name = "maHDDataGridViewTextBoxColumn";
+            this.maHDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maHDDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // tenKhachDataGridViewTextBoxColumn
+            // 
+            this.tenKhachDataGridViewTextBoxColumn.DataPropertyName = "tenKhach";
+            this.tenKhachDataGridViewTextBoxColumn.HeaderText = "Tên khách hàng";
+            this.tenKhachDataGridViewTextBoxColumn.MinimumWidth = 200;
+            this.tenKhachDataGridViewTextBoxColumn.Name = "tenKhachDataGridViewTextBoxColumn";
+            this.tenKhachDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenKhachDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // sDTDataGridViewTextBoxColumn
+            // 
+            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
+            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
+            this.sDTDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sDTDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ngayBanDataGridViewTextBoxColumn
+            // 
+            this.ngayBanDataGridViewTextBoxColumn.DataPropertyName = "ngayBan";
+            this.ngayBanDataGridViewTextBoxColumn.HeaderText = "Ngày bán";
+            this.ngayBanDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.ngayBanDataGridViewTextBoxColumn.Name = "ngayBanDataGridViewTextBoxColumn";
+            this.ngayBanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ngayBanDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // thanhTienDataGridViewTextBoxColumn
+            // 
+            this.thanhTienDataGridViewTextBoxColumn.DataPropertyName = "thanhTien";
+            this.thanhTienDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
+            this.thanhTienDataGridViewTextBoxColumn.MinimumWidth = 150;
+            this.thanhTienDataGridViewTextBoxColumn.Name = "thanhTienDataGridViewTextBoxColumn";
+            this.thanhTienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.thanhTienDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tenNhanVienDataGridViewTextBoxColumn
+            // 
+            this.tenNhanVienDataGridViewTextBoxColumn.DataPropertyName = "tenNhanVien";
+            this.tenNhanVienDataGridViewTextBoxColumn.HeaderText = "Tên nhân viên";
+            this.tenNhanVienDataGridViewTextBoxColumn.MinimumWidth = 200;
+            this.tenNhanVienDataGridViewTextBoxColumn.Name = "tenNhanVienDataGridViewTextBoxColumn";
+            this.tenNhanVienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenNhanVienDataGridViewTextBoxColumn.Width = 200;
             // 
             // danhSachHoaDonBindingSource
             // 
@@ -463,58 +517,6 @@
             // danhSachHoaDonTableAdapter
             // 
             this.danhSachHoaDonTableAdapter.ClearBeforeFill = true;
-            // 
-            // maHDDataGridViewTextBoxColumn
-            // 
-            this.maHDDataGridViewTextBoxColumn.DataPropertyName = "maHD";
-            this.maHDDataGridViewTextBoxColumn.HeaderText = "Mã hóa đơn";
-            this.maHDDataGridViewTextBoxColumn.MinimumWidth = 80;
-            this.maHDDataGridViewTextBoxColumn.Name = "maHDDataGridViewTextBoxColumn";
-            this.maHDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maHDDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // tenKhachDataGridViewTextBoxColumn
-            // 
-            this.tenKhachDataGridViewTextBoxColumn.DataPropertyName = "tenKhach";
-            this.tenKhachDataGridViewTextBoxColumn.HeaderText = "Tên khách hàng";
-            this.tenKhachDataGridViewTextBoxColumn.MinimumWidth = 200;
-            this.tenKhachDataGridViewTextBoxColumn.Name = "tenKhachDataGridViewTextBoxColumn";
-            this.tenKhachDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tenKhachDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // sDTDataGridViewTextBoxColumn
-            // 
-            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
-            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
-            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 100;
-            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
-            this.sDTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ngayBanDataGridViewTextBoxColumn
-            // 
-            this.ngayBanDataGridViewTextBoxColumn.DataPropertyName = "ngayBan";
-            this.ngayBanDataGridViewTextBoxColumn.HeaderText = "Ngày bán";
-            this.ngayBanDataGridViewTextBoxColumn.MinimumWidth = 100;
-            this.ngayBanDataGridViewTextBoxColumn.Name = "ngayBanDataGridViewTextBoxColumn";
-            this.ngayBanDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // thanhTienDataGridViewTextBoxColumn
-            // 
-            this.thanhTienDataGridViewTextBoxColumn.DataPropertyName = "thanhTien";
-            this.thanhTienDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
-            this.thanhTienDataGridViewTextBoxColumn.MinimumWidth = 150;
-            this.thanhTienDataGridViewTextBoxColumn.Name = "thanhTienDataGridViewTextBoxColumn";
-            this.thanhTienDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thanhTienDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tenNhanVienDataGridViewTextBoxColumn
-            // 
-            this.tenNhanVienDataGridViewTextBoxColumn.DataPropertyName = "tenNhanVien";
-            this.tenNhanVienDataGridViewTextBoxColumn.HeaderText = "Tên nhân viên";
-            this.tenNhanVienDataGridViewTextBoxColumn.MinimumWidth = 200;
-            this.tenNhanVienDataGridViewTextBoxColumn.Name = "tenNhanVienDataGridViewTextBoxColumn";
-            this.tenNhanVienDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tenNhanVienDataGridViewTextBoxColumn.Width = 200;
             // 
             // frmInvoiceManagement
             // 

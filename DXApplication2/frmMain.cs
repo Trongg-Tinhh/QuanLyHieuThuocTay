@@ -15,6 +15,11 @@ namespace DXApplication2
         public frmMain()
         {
             InitializeComponent();
+            if (frmLogin.vaiTro == false)
+            {
+                accordionControlElement4.Enabled = false;
+                accordionControlElement4.Visible = false;
+            }
         }
 
         private void addForm(Form f)
