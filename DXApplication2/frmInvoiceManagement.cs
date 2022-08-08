@@ -24,6 +24,17 @@ namespace DXApplication2
             this.danhSachHoaDonTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachHoaDon);
         }
 
+        private void FillEvent(object sender, EventArgs e)
+        {
+            string tenNV = txbTenNV.Text;
+            string tenKH = txbTenKH.Text;
+            string sdt = txbSDT.Text;
+
+            danhSachHoaDonTableAdapter.FillByTenKH_SDT_TenNV(quanLyHieuThuocTayDataSet.DanhSachHoaDon, txbTenKH.Text.Trim(), sdt, tenNV);
+            dataGridView1.DataSource = quanLyHieuThuocTayDataSet.DanhSachHoaDon;
+            dataGridView1.Refresh();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

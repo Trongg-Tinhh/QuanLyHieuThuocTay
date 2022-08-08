@@ -53,17 +53,17 @@
             this.dateTimeOffsetEdit1 = new DevExpress.XtraEditors.DateTimeOffsetEdit();
             this.label17 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txbTenKH = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txbSDT = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txbTenNV = new System.Windows.Forms.TextBox();
             this.danhSachHoaDonTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.DanhSachHoaDonTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).BeginInit();
             this.tablePanel5.SuspendLayout();
@@ -372,7 +372,7 @@
             // panel18
             // 
             this.tablePanel6.SetColumn(this.panel18, 1);
-            this.panel18.Controls.Add(this.textBox3);
+            this.panel18.Controls.Add(this.txbTenKH);
             this.panel18.Controls.Add(this.label18);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel18.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -383,15 +383,16 @@
             this.panel18.Size = new System.Drawing.Size(261, 49);
             this.panel18.TabIndex = 1;
             // 
-            // textBox3
+            // txbTenKH
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(0, 21);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(261, 28);
-            this.textBox3.TabIndex = 1;
+            this.txbTenKH.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbTenKH.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenKH.Location = new System.Drawing.Point(0, 21);
+            this.txbTenKH.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbTenKH.Name = "txbTenKH";
+            this.txbTenKH.Size = new System.Drawing.Size(261, 28);
+            this.txbTenKH.TabIndex = 1;
+            this.txbTenKH.TextChanged += new System.EventHandler(this.FillEvent);
             // 
             // label18
             // 
@@ -440,12 +441,11 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(261, 28);
             this.textBox4.TabIndex = 1;
-            this.textBox4.UseSystemPasswordChar = true;
             // 
             // panel20
             // 
             this.tablePanel6.SetColumn(this.panel20, 2);
-            this.panel20.Controls.Add(this.textBox5);
+            this.panel20.Controls.Add(this.txbSDT);
             this.panel20.Controls.Add(this.label20);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -456,15 +456,16 @@
             this.panel20.Size = new System.Drawing.Size(261, 49);
             this.panel20.TabIndex = 6;
             // 
-            // textBox5
+            // txbSDT
             // 
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(0, 21);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(261, 28);
-            this.textBox5.TabIndex = 1;
+            this.txbSDT.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbSDT.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSDT.Location = new System.Drawing.Point(0, 21);
+            this.txbSDT.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbSDT.Name = "txbSDT";
+            this.txbSDT.Size = new System.Drawing.Size(261, 28);
+            this.txbSDT.TabIndex = 1;
+            this.txbSDT.TextChanged += new System.EventHandler(this.FillEvent);
             // 
             // label20
             // 
@@ -482,7 +483,7 @@
             // 
             this.tablePanel6.SetColumn(this.panel21, 2);
             this.panel21.Controls.Add(this.label21);
-            this.panel21.Controls.Add(this.textBox6);
+            this.panel21.Controls.Add(this.txbTenNV);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel21.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel21.Location = new System.Drawing.Point(543, 55);
@@ -500,19 +501,20 @@
             this.label21.Location = new System.Drawing.Point(0, 0);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(114, 21);
+            this.label21.Size = new System.Drawing.Size(120, 21);
             this.label21.TabIndex = 0;
-            this.label21.Text = "Mã nhân viên:";
+            this.label21.Text = "Tên nhân viên:";
             // 
-            // textBox6
+            // txbTenNV
             // 
-            this.textBox6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(0, 21);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(261, 28);
-            this.textBox6.TabIndex = 1;
+            this.txbTenNV.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbTenNV.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenNV.Location = new System.Drawing.Point(0, 21);
+            this.txbTenNV.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbTenNV.Name = "txbTenNV";
+            this.txbTenNV.Size = new System.Drawing.Size(261, 28);
+            this.txbTenNV.TabIndex = 1;
+            this.txbTenNV.TextChanged += new System.EventHandler(this.FillEvent);
             // 
             // danhSachHoaDonTableAdapter
             // 
@@ -575,17 +577,17 @@
         private DevExpress.XtraEditors.DateTimeOffsetEdit dateTimeOffsetEdit1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txbTenKH;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txbSDT;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txbTenNV;
         private System.Windows.Forms.DataGridView dataGridView1;
         private QuanLyHieuThuocTayDataSet quanLyHieuThuocTayDataSet;
         private System.Windows.Forms.BindingSource danhSachHoaDonBindingSource;
