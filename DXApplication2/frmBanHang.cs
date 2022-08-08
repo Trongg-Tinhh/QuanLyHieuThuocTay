@@ -140,10 +140,7 @@ namespace DXApplication2
             int? maTK = frmLogin.maTK;
             DateTime ngayBan;
             string ngayBanStr = dateTimeEditNgayBan.Text;
-            if (ngayBanStr == null || ngayBanStr == "")
-                ngayBan = DateTime.Now;
-            else
-                ngayBan = DateTime.Parse(ngayBanStr);
+
 
             // kiểm tra các ràng buộc
             if (tenKH == null || tenKH == "")
@@ -151,16 +148,24 @@ namespace DXApplication2
                 MessageBox.Show("Tên khách hàng không được rỗng", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
-            if (sdt == null || sdt == "")
+            if (sdt.Length != 10)
             {
-                MessageBox.Show("Số điện thoại không được rỗng", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Số điện thoại không hợp lệ", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
+            if(ngayBanStr == null || ngayBanStr == "")
+            {
+                MessageBox.Show("Ngày bán không được rỗng", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+
             if (listViewChiTietHoaDon.Items.Count == 0)
             {
                 MessageBox.Show("Danh sách sản phẩm không được rỗng", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
+
+            ngayBan = DateTime.Parse(ngayBanStr);
 
             // lấy hết dữ liệu từ listview để tính tiền và lưu vào db
             decimal total = decimal.Parse(lblThanhTien.Text.ToString());
@@ -181,7 +186,7 @@ namespace DXApplication2
             listViewChiTietHoaDon.Items.Clear();
             txbTenKH.Text = null;
             txbSDT.Text = null;
-            dateTimeEditNgayBan.Text = null;
+            dateTimeEditNgayBan.Text = "";
         }
     }
 }
