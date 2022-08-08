@@ -8661,7 +8661,7 @@ AND sp.doTuoi LIKE '%' + @doTuoi + '%'";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT hd.maHD, hd.tenKhach,hd.SDT, hd.ngayBan,hd.thanhTien,tk.tenNhanVien\r\nFROM " +
@@ -8671,14 +8671,19 @@ AND sp.doTuoi LIKE '%' + @doTuoi + '%'";
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT hd.maHD, hd.tenKhach,hd.SDT, hd.ngayBan,hd.thanhTien,tk.tenNhanVien
 FROM dbo.HoaDon hd, dbo.TaiKhoan tk
-WHERE hd.maTaiKhoan=tk.maTaiKhoan
-AND hd.tenKhach LIKE '%' + @tenKhach + '%'
-AND hd.SDT LIKE '%' + @sdt + '%'
-AND tk.tenNhanVien LIKE '%' + @tenNhanVien + '%'";
+WHERE hd.maTaiKhoan=tk.maTaiKhoan AND tenKhach LIKE '%' + @tenKH + '%' AND hd.SDT LIKE '%' + @sdt + '%' AND tenNhanVien LIKE '%' + @tenNhanVien + '%'";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenKhach", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenKhach", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenKH", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenKhach", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sdt", global::System.Data.SqlDbType.Char, 10, global::System.Data.ParameterDirection.Input, 0, 0, "SDT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenNhanVien", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenNhanVien", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT hd.maHD, hd.tenKhach,hd.SDT, hd.ngayBan,hd.thanhTien,tk.tenNhanVien\r\nFROM " +
+                "dbo.HoaDon hd, dbo.TaiKhoan tk\r\nWHERE hd.maTaiKhoan=tk.maTaiKhoan AND hd.tenKhac" +
+                "h LIKE \'%\' + @tenKhach + \'%\' AND tk.tenNhanVien LIKE \'%\' + @tenNhanVien + \'%\'";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenKhach", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenKhach", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenNhanVien", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenNhanVien", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8709,13 +8714,13 @@ AND tk.tenNhanVien LIKE '%' + @tenNhanVien + '%'";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByTenKH_SDT_TenNV(QuanLyHieuThuocTayDataSet.DanhSachHoaDonDataTable dataTable, string tenKhach, string sdt, string tenNhanVien) {
+        public virtual int FillByTenKH_SDT_TenNV(QuanLyHieuThuocTayDataSet.DanhSachHoaDonDataTable dataTable, string tenKH, string sdt, string tenNhanVien) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((tenKhach == null)) {
+            if ((tenKH == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tenKhach));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tenKH));
             }
             if ((sdt == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -8740,13 +8745,13 @@ AND tk.tenNhanVien LIKE '%' + @tenNhanVien + '%'";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual QuanLyHieuThuocTayDataSet.DanhSachHoaDonDataTable GetDataByTenKH_SDT_TenNV(string tenKhach, string sdt, string tenNhanVien) {
+        public virtual QuanLyHieuThuocTayDataSet.DanhSachHoaDonDataTable GetDataByTenKH_SDT_TenNV(string tenKH, string sdt, string tenNhanVien) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((tenKhach == null)) {
+            if ((tenKH == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tenKhach));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tenKH));
             }
             if ((sdt == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -8759,6 +8764,54 @@ AND tk.tenNhanVien LIKE '%' + @tenNhanVien + '%'";
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(tenNhanVien));
+            }
+            QuanLyHieuThuocTayDataSet.DanhSachHoaDonDataTable dataTable = new QuanLyHieuThuocTayDataSet.DanhSachHoaDonDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByTenKH_TenNV(QuanLyHieuThuocTayDataSet.DanhSachHoaDonDataTable dataTable, string tenKhach, string tenNhanVien) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((tenKhach == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tenKhach));
+            }
+            if ((tenNhanVien == null)) {
+                throw new global::System.ArgumentNullException("tenNhanVien");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(tenNhanVien));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual QuanLyHieuThuocTayDataSet.DanhSachHoaDonDataTable GetDataByTenKH_TenNV(string tenKhach, string tenNhanVien) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((tenKhach == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tenKhach));
+            }
+            if ((tenNhanVien == null)) {
+                throw new global::System.ArgumentNullException("tenNhanVien");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(tenNhanVien));
             }
             QuanLyHieuThuocTayDataSet.DanhSachHoaDonDataTable dataTable = new QuanLyHieuThuocTayDataSet.DanhSachHoaDonDataTable();
             this.Adapter.Fill(dataTable);
