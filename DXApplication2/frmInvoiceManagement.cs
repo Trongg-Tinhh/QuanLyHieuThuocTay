@@ -30,9 +30,15 @@ namespace DXApplication2
             string tenKH = txbTenKH.Text;
             string sdt = txbSDT.Text;
 
-            danhSachHoaDonTableAdapter.FillByTenKH_SDT_TenNV(quanLyHieuThuocTayDataSet.DanhSachHoaDon, txbTenKH.Text.Trim(), sdt, tenNV);
-            dataGridView1.DataSource = quanLyHieuThuocTayDataSet.DanhSachHoaDon;
-            dataGridView1.Refresh();
+            if (tenNV == null)
+                tenNV = "";
+            if (tenKH == null)
+                tenKH = "";
+            if (sdt == null)
+                sdt = "";
+
+
+            danhSachHoaDonTableAdapter.FillByTenKH_TenNV(quanLyHieuThuocTayDataSet.DanhSachHoaDon, tenKH, tenNV);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
