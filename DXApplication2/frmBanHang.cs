@@ -35,6 +35,7 @@ namespace DXApplication2
             txbCongDung.Text = null;
             txbDoTuoi.Text = null;
             numericSoLuong.Value = 0;
+            listViewChiTietHoaDon.Items.Clear();
         }
 
         // chức năng click vào 1 dòng ở dgv dữ liệu sẽ sổ lên trên textbox
