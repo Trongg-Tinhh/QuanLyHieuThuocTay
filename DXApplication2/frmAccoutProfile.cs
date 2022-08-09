@@ -22,6 +22,7 @@ namespace DXApplication2
         {
             string tenDN = frmLogin.tenDangNhap;
             string mk = frmLogin.matKhau;
+            txbUserName.Text = tenDN;
             txbName.Text = taiKhoanTableAdapter.getTenNV(tenDN,mk);
             txbSDT.Text=taiKhoanTableAdapter.getSDT(tenDN,mk);
             txbCCCD.Text = taiKhoanTableAdapter.getCCCD(tenDN, mk);
@@ -31,6 +32,8 @@ namespace DXApplication2
             txbCCCD.ReadOnly = true;
             btnLuu.Enabled = false;
             btnLuu.BackColor = SystemColors.ButtonFace;
+            btnSua.Enabled = true;
+            btnSua.BackColor= SystemColors.ActiveBorder;
             this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.TaiKhoan);
         }
         private void btnSua_Click(object sender, EventArgs e)

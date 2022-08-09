@@ -213,7 +213,7 @@ create table TaiKhoan
 INSERT INTO dbo.TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
 VALUES('trongtinh','trongtinh123',N'Trọng Tính','0839035423','123456789000',0)
 INSERT INTO dbo.TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
-VALUES('admin','admin123',N'A D M I N','0123456789','001234567890',1)
+VALUES('admin','admin123',N'quan tri vien','0123456789','001234567890',1)
 insert into TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
 values ('Admin',	'admin@123',	N'Quản trị viên',	'0253452753',	'077161531651',	1)
 insert into TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
@@ -221,8 +221,8 @@ values ('letrongtinh12',	'trongtinh12',	N'Lê Trọng Tính',	'0772623581',	'077
 insert into TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
 values ('caotruongtoan21',	'truongtoan21',	N'Cao Trường Toàn',	'0355123876',	'659126518610',	'0')
 
-SELECT * FROM dbo.TaiKhoan
 
+SELECT * FROM dbo.TaiKhoan
 -----------------------------------------------------------------------------------------------------------------------
 
 create table HoaDon(
@@ -244,7 +244,7 @@ create table HoaDon(
 insert into HoaDon(tenKhach, ngayBan,SDT,maTaiKhoan,thanhTien)
 values (N'Lê Văn Lâm','2022/07/25','0254121472',103,78000)
 insert into HoaDon(tenKhach,ngayBan,SDT,maTaiKhoan,thanhTien)
-values (N'Lê Thị Thùy Dung','2022/07/29','377812512',104,137500)
+values (N'Lê Thị Thùy Dung','2022/07/29','0377812512',104,137500)
 
 SELECT * FROM HoaDon
 ----------------------------------------------------------------------------------------------------------------------------

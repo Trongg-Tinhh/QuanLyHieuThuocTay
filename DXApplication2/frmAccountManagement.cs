@@ -89,6 +89,7 @@ namespace DXApplication2
         private void btnThem_Click(object sender, EventArgs e)
         {
             defaultstate();
+            txbUserName.Enabled = true;
             txbPassWord.Enabled=true;
             dataGridViewDSTK.Enabled = false;
             btnLuu.Enabled = true;
@@ -114,7 +115,8 @@ namespace DXApplication2
         private void btnLuu_Click(object sender, EventArgs e)
         {
             bool flag = true;
-            if (btnThem.Enabled == false)
+            //them du lieu
+            if (btnThem.Enabled == false&& txbUserName.Enabled==true && txbPassWord.Enabled==true)
             {
                 if (txbUserName.Text == "")
                 {
@@ -155,7 +157,42 @@ namespace DXApplication2
                     MessageBox.Show("Tài khoản đã được tạo");
                     defaultstate();
                 }
-            } 
+            }
+            else
+            {
+                // sua du lieu
+                if (btnSua.Enabled == false && txbUserName.Enabled==false &&txbPassWord.Enabled==false) 
+                {
+                    if (txbNhanVien.Text == "")
+                    {
+                        errorProvider1.SetError(txbNhanVien, "Chưa nhập tên hiển thị.");
+                        flag = false;
+                    }
+                    if (txbCCCD.Text.Length != 12)
+                    {
+                        errorProvider1.SetError(txbCCCD, "Số CCCD không hợp lệ (12 số).");
+                        flag = false;
+                    }
+                    if (txbSDT.Text.Length != 10)
+                    {
+                        errorProvider1.SetError(txbSDT, "SDT không hợp lệ.");
+                        flag = false;
+                    }
+                    if (flag == true)
+                    {
+                        taiKhoanTableAdapter.Update_TaiKhoanFull(
+                                                            txbNhanVien.Text,
+                                                            txbSDT.Text,
+                                                            txbCCCD.Text,
+                                                            ckbVaiTro.Checked,
+                                                            txbUserName.Text,
+                                                            txbPassWord.Text);
+                        MessageBox.Show("Tài khoản đã được sửa thông tin");
+                        defaultstate();
+                    }
+
+                }
+            }
                 
         }
 
@@ -197,7 +234,17 @@ namespace DXApplication2
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            btnSua.Enabled=false;
+            btnSua.BackColor = SystemColors.ButtonFace;
+            btnXoa.Enabled=false;
+            btnXoa.BackColor = SystemColors.ButtonFace;
+            btnLuu.Enabled=true;
+            btnLuu.BackColor = SystemColors.ActiveBorder;
+            btnThem.Enabled=false;
+            btnThem.BackColor = SystemColors.ButtonFace;    
+            dataGridViewDSTK.Enabled=false;
+            txbUserName.Enabled=false;
+            txbPassWord.Enabled=false;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
