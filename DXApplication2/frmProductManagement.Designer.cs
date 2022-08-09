@@ -334,6 +334,11 @@
             // 
             this.cmbDonVi.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.cmbDonVi.FormattingEnabled = true;
+            this.cmbDonVi.Items.AddRange(new object[] {
+            "Viên",
+            "Hộp",
+            "Chai",
+            "Ống"});
             this.cmbDonVi.Location = new System.Drawing.Point(0, 25);
             this.cmbDonVi.Name = "cmbDonVi";
             this.cmbDonVi.Size = new System.Drawing.Size(267, 29);
@@ -367,17 +372,15 @@
             // 
             // cmbLoaiSP
             // 
+            this.cmbLoaiSP.DataSource = this.loaiSanPhamBindingSource;
+            this.cmbLoaiSP.DisplayMember = "tenLoai";
             this.cmbLoaiSP.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.cmbLoaiSP.FormattingEnabled = true;
-            this.cmbLoaiSP.Items.AddRange(new object[] {
-            "thuoc",
-            "1",
-            "4",
-            "4"});
             this.cmbLoaiSP.Location = new System.Drawing.Point(0, 25);
             this.cmbLoaiSP.Name = "cmbLoaiSP";
             this.cmbLoaiSP.Size = new System.Drawing.Size(267, 29);
             this.cmbLoaiSP.TabIndex = 9;
+            this.cmbLoaiSP.ValueMember = "maLoai";
             // 
             // label9
             // 
@@ -426,7 +429,6 @@
             this.txtCongDung.Name = "txtCongDung";
             this.txtCongDung.Size = new System.Drawing.Size(267, 28);
             this.txtCongDung.TabIndex = 1;
-            this.txtCongDung.UseSystemPasswordChar = true;
             // 
             // panel11
             // 
@@ -512,7 +514,7 @@
             this.nudSoLuong.Name = "nudSoLuong";
             this.nudSoLuong.Size = new System.Drawing.Size(267, 28);
             this.nudSoLuong.TabIndex = 1;
-            this.nudSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
@@ -639,11 +641,14 @@
             // 
             // cmbMaNSX
             // 
+            this.cmbMaNSX.DataSource = this.nhaSanXuatBindingSource;
+            this.cmbMaNSX.DisplayMember = "tenNSX";
             this.cmbMaNSX.FormattingEnabled = true;
             this.cmbMaNSX.Location = new System.Drawing.Point(3, 27);
             this.cmbMaNSX.Name = "cmbMaNSX";
             this.cmbMaNSX.Size = new System.Drawing.Size(263, 29);
             this.cmbMaNSX.TabIndex = 1;
+            this.cmbMaNSX.ValueMember = "maNSX";
             // 
             // maSPDataGridViewTextBoxColumn
             // 

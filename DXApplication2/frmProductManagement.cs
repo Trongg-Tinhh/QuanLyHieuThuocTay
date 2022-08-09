@@ -22,12 +22,6 @@ namespace DXApplication2
         String StringConnect = @"Data Source=TRANNGHIEP;Initial Catalog=QuanLyHieuThuocTay;Integrated Security=True";
         private void frmProductManagement_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.NhaSanXuat' table. You can move, or remove it, as needed.
-            this.nhaSanXuatTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.NhaSanXuat);
-            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.LoaiSanPham' table. You can move, or remove it, as needed.
-            this.loaiSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.LoaiSanPham);
-            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.SanPham' table. You can move, or remove it, as needed.
-            this.sanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.SanPham);
             // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.SanPham' table. You can move, or remove it, as needed.
             this.sanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.SanPham);
             // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.LoaiSanPham' table. You can move, or remove it, as needed.
@@ -37,7 +31,7 @@ namespace DXApplication2
             // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.DanhSachSanPham' table. You can move, or remove it, as needed.
             this.danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
 
-
+            sanPhamBindingSource.SuspendBinding();
             dataGridViewThuoc.AllowUserToAddRows = false;
             dataGridViewThuoc.AllowUserToDeleteRows = false;
         }
@@ -63,13 +57,14 @@ namespace DXApplication2
                     {
                         MessageBox.Show("Thuốc " + txtTenSP.Text.Trim() + " đã tồn tại");
                         sanPhamTableAdapter.UpdateQuerySoLuongThuoc(int.Parse(nudSoLuong.Value.ToString()), txtTenSP.Text.Trim());
+                        danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
 
                     }
                     else
                     {
                         sanPhamTableAdapter.InsertQuerySanPham(MaThuoc, txtTenSP.Text.Trim(), cmbLoaiSP.SelectedValue.ToString(), int.Parse(cmbMaNSX.SelectedValue.ToString()), txtThanhPhan.Text, txtDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text, int.Parse(nudSoLuong.Value.ToString()), txtMoTa.Text);
                         MessageBox.Show("Đã thêm " + txtTenSP.Text.Trim());
-                        load_Data();
+                        danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
                     }
 
                     connection.Close();
@@ -122,8 +117,7 @@ namespace DXApplication2
                 {
                     sanPhamTableAdapter.DeleteQuerySanPhamByMaSanPham(maSP);
                     MessageBox.Show("Đã xóa thuốc có Mã: " + maSP);
-                    load_Data();
-                    sanPhamBindingSource.ResumeBinding();
+                    danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
                 }
                 connection.Close();
             }
@@ -138,13 +132,7 @@ namespace DXApplication2
             else
                 btnXoa.Enabled = false;
         }
-        private void load_Data()
-        {
-            sanPhamTableAdapter.Fill(quanLyHieuThuocTayDataSet.SanPham);
-            dataGridViewThuoc.DataSource = quanLyHieuThuocTayDataSet.SanPham;
-            dataGridViewThuoc.Refresh();
 
-        }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -164,10 +152,10 @@ namespace DXApplication2
             this.Close();
         }
 
-        //private void cmbDonVi_SelectedIndexChanged(object sender, EventArgs e)
-        //{
+        private void cmbDonVi_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-        //}
+        }
 
         private void TextChanged_TenSanPham(object sender, EventArgs e)
         {
@@ -176,8 +164,6 @@ namespace DXApplication2
             else
                 btnThem.Enabled = false;
         }
-
-
 
         private void CellClick_dataGridViewSanPham(object sender, DataGridViewCellEventArgs e)
         {
@@ -202,7 +188,5 @@ namespace DXApplication2
                 txtMoTa.Text = MoTa;
             }
         }
-
-
     }
 }
