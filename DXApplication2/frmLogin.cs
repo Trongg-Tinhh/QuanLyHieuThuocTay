@@ -24,6 +24,31 @@ namespace DXApplication2
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
+            string username = txbUserName.Text;
+            string password = txbPassWord.Text;
+
+            if (username == "" && password == "")
+            {
+                errorProvider1.SetError(txbUserName, "Nhập tên đăng nhập");
+                errorProvider1.SetError(txbPassWord, "Nhập mật khẩu");
+                return;
+            }
+            else
+            {
+                if (username == "")
+                {
+                    errorProvider1.SetError(txbUserName, "Nhập tên đăng nhập");
+                    return;
+                }
+                else
+                    if (password == "")
+                {
+                    errorProvider1.SetError(txbPassWord, "Nhập mật khẩu");
+                    return;
+                }
+            }
+
             //Ket no database
             SqlConnection sqlCon = new SqlConnection(DataConnection.DataConnectionString.ConnectionString);
             try

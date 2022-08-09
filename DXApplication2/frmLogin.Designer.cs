@@ -44,12 +44,14 @@
             this.quanLyHieuThuocTayDataSet = new DXApplication2.QuanLyHieuThuocTayDataSet();
             this.taiKhoanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taiKhoanTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.TaiKhoanTableAdapter();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyHieuThuocTayDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,7 +73,7 @@
             this.panel1.Controls.Add(this.txbUserName);
             this.panel1.Location = new System.Drawing.Point(27, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(539, 51);
+            this.panel1.Size = new System.Drawing.Size(564, 51);
             this.panel1.TabIndex = 1;
             // 
             // label2
@@ -90,7 +92,7 @@
             this.txbUserName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbUserName.Location = new System.Drawing.Point(197, 11);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(330, 32);
+            this.txbUserName.Size = new System.Drawing.Size(317, 32);
             this.txbUserName.TabIndex = 0;
             // 
             // panel2
@@ -100,7 +102,7 @@
             this.panel2.Controls.Add(this.txbPassWord);
             this.panel2.Location = new System.Drawing.Point(27, 142);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(539, 51);
+            this.panel2.Size = new System.Drawing.Size(564, 51);
             this.panel2.TabIndex = 2;
             // 
             // label3
@@ -119,7 +121,7 @@
             this.txbPassWord.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPassWord.Location = new System.Drawing.Point(197, 11);
             this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(330, 32);
+            this.txbPassWord.Size = new System.Drawing.Size(317, 32);
             this.txbPassWord.TabIndex = 0;
             this.txbPassWord.UseSystemPasswordChar = true;
             // 
@@ -198,6 +200,10 @@
             // 
             this.taiKhoanTableAdapter.ClearBeforeFill = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnDangNhap;
@@ -227,6 +233,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.quanLyHieuThuocTayDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,6 +255,7 @@
         private QuanLyHieuThuocTayDataSet quanLyHieuThuocTayDataSet;
         private System.Windows.Forms.BindingSource taiKhoanBindingSource;
         private QuanLyHieuThuocTayDataSetTableAdapters.TaiKhoanTableAdapter taiKhoanTableAdapter;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

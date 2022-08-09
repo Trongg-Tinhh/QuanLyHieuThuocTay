@@ -549,6 +549,7 @@
             this.btnSua.TabIndex = 9;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // button6
             // 
