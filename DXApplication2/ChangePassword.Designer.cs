@@ -36,7 +36,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ckbMatKhau = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbPassword = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.txbPasswordNew = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@
             this.taiKhoanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyHieuThuocTayDataSet = new DXApplication2.QuanLyHieuThuocTayDataSet();
             this.taiKhoanTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.TaiKhoanTableAdapter();
+            this.txbPassword = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -106,8 +106,8 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.ckbMatKhau);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txbPassword);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(9, 99);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(484, 84);
@@ -135,16 +135,6 @@
             this.label1.Size = new System.Drawing.Size(125, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mật khẩu cũ:";
-            // 
-            // txbPassword
-            // 
-            this.txbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassword.Location = new System.Drawing.Point(183, 12);
-            this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(259, 32);
-            this.txbPassword.TabIndex = 0;
-            this.txbPassword.UseSystemPasswordChar = true;
             // 
             // panel3
             // 
@@ -275,6 +265,15 @@
             // 
             this.taiKhoanTableAdapter.ClearBeforeFill = true;
             // 
+            // txbPassword
+            // 
+            this.txbPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPassword.Location = new System.Drawing.Point(183, 12);
+            this.txbPassword.Name = "txbPassword";
+            this.txbPassword.Size = new System.Drawing.Size(259, 32);
+            this.txbPassword.TabIndex = 1;
+            this.txbPassword.UseSystemPasswordChar = true;
+            // 
             // frmChangePassword
             // 
             this.AcceptButton = this.btnLuu;
@@ -317,7 +316,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbPasswordNew;
@@ -334,5 +332,6 @@
         private System.Windows.Forms.BindingSource taiKhoanBindingSource;
         private QuanLyHieuThuocTayDataSetTableAdapters.TaiKhoanTableAdapter taiKhoanTableAdapter;
         private System.Windows.Forms.Label txbUserName;
+        private System.Windows.Forms.TextBox txbPassword;
     }
 }

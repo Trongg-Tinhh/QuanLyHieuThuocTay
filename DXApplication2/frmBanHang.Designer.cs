@@ -60,8 +60,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.label10 = new System.Windows.Forms.Label();
-            this.txbSDT = new System.Windows.Forms.TextBox();
             this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
+            this.txbTenKH = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -71,7 +71,6 @@
             this.txbDoTuoi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txbTenKH = new System.Windows.Forms.TextBox();
             this.txbLoaiSP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -87,6 +86,7 @@
             this.chiTietHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietHoaDonTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.ChiTietHoaDonTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txbSDT = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel)).BeginInit();
             this.tablePanel.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -112,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietHoaDonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbSDT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel
@@ -504,18 +505,6 @@
             this.label10.Text = "Số điện thoại:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txbSDT
-            // 
-            this.tablePanel1.SetColumn(this.txbSDT, 1);
-            this.txbSDT.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txbSDT.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSDT.Location = new System.Drawing.Point(215, 3);
-            this.txbSDT.Name = "txbSDT";
-            this.tablePanel1.SetRow(this.txbSDT, 0);
-            this.txbSDT.Size = new System.Drawing.Size(214, 28);
-            this.txbSDT.TabIndex = 8;
-            this.txbSDT.Click += new System.EventHandler(this.btnClearData_Click);
-            // 
             // tablePanel3
             // 
             this.tablePanel3.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
@@ -530,6 +519,18 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel3.Size = new System.Drawing.Size(504, 32);
             this.tablePanel3.TabIndex = 9;
+            // 
+            // txbTenKH
+            // 
+            this.tablePanel3.SetColumn(this.txbTenKH, 1);
+            this.txbTenKH.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txbTenKH.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenKH.Location = new System.Drawing.Point(215, 3);
+            this.txbTenKH.Name = "txbTenKH";
+            this.tablePanel3.SetRow(this.txbTenKH, 0);
+            this.txbTenKH.Size = new System.Drawing.Size(214, 28);
+            this.txbTenKH.TabIndex = 7;
+            this.txbTenKH.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // label9
             // 
@@ -642,18 +643,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(216, 51);
             this.panel3.TabIndex = 2;
-            // 
-            // txbTenKH
-            // 
-            this.tablePanel3.SetColumn(this.txbTenKH, 1);
-            this.txbTenKH.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txbTenKH.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenKH.Location = new System.Drawing.Point(215, 3);
-            this.txbTenKH.Name = "txbTenKH";
-            this.tablePanel3.SetRow(this.txbTenKH, 0);
-            this.txbTenKH.Size = new System.Drawing.Size(214, 28);
-            this.txbTenKH.TabIndex = 7;
-            this.txbTenKH.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // txbLoaiSP
             // 
@@ -779,6 +768,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txbSDT
+            // 
+            this.tablePanel1.SetColumn(this.txbSDT, 1);
+            this.txbSDT.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txbSDT.Location = new System.Drawing.Point(215, 3);
+            this.txbSDT.Name = "txbSDT";
+            this.txbSDT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSDT.Properties.Appearance.Options.UseFont = true;
+            this.txbSDT.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.txbSDT.Properties.MaskSettings.Set("mask", "0\\d\\d\\d\\d\\d\\d\\d\\d\\d");
+            this.txbSDT.Properties.MaskSettings.Set("placeholder", '\0');
+            this.txbSDT.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.tablePanel1.SetRow(this.txbSDT, 0);
+            this.txbSDT.Size = new System.Drawing.Size(214, 28);
+            this.txbSDT.TabIndex = 8;
+            this.txbSDT.Click += new System.EventHandler(this.btnClearData_Click);
+            // 
             // frmBanHang
             // 
             this.AcceptButton = this.btnThem;
@@ -827,6 +833,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietHoaDonBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbSDT.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -838,7 +845,6 @@
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Label lblThanhTien;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox txbSDT;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txbTenKH;
@@ -891,5 +897,6 @@
         private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.DateTimeOffsetEdit dateTimeEditNgayBan;
         private DevExpress.Utils.Layout.TablePanel tablePanel3;
+        private DevExpress.XtraEditors.TextEdit txbSDT;
     }
 }

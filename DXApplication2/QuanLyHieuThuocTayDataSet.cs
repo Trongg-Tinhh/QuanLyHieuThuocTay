@@ -9,3 +9,9 @@
         }
     }
 }
+namespace DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters {
+    
+    
+    public partial class TaiKhoanTableAdapter {
+    }
+}

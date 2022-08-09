@@ -215,6 +215,9 @@ namespace DXApplication2
             ClearData();
         }
 
-        
+        private void txbSDT_EditValueChanged(object sender, EventArgs e)
+        {
+            ClearData();
+        }
     }
 }
