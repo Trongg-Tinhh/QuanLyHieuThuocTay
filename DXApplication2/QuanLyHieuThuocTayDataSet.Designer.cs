@@ -7691,7 +7691,7 @@ SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM Tai
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM dbo." +
@@ -7710,25 +7710,34 @@ SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM Tai
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matKhau", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "matKhau", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT maTaiKhoan FROM TaiKhoan where tenDangNhap=@tenDangNhap";
+            this._commandCollection[3].CommandText = "SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro \r\nFROM db" +
+                "o.TaiKhoan\r\nWHERE tenNhanVien LIKE \'%\' + @tenHienThi + \'%\'\r\nAND tenDangNhap LIKE" +
+                " \'%\' + @tenDangNhap + \'%\'\r\nAND vaiTro = @vaiTro";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenHienThi", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenNhanVien", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenDangNhap", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenDangNhap", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vaiTro", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "vaiTro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT vaiTro\r\nFROM     TaiKhoan\r\nWHERE  (tenDangNhap = @tenDangNhap)";
+            this._commandCollection[4].CommandText = "SELECT maTaiKhoan FROM TaiKhoan where tenDangNhap=@tenDangNhap";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenDangNhap", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenDangNhap", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"INSERT INTO [dbo].[TaiKhoan] ([tenDangNhap], [matKhau], [tenNhanVien], [SDT], [CCCD], [vaiTro]) VALUES (@tenDangNhap, @matKhau, @tenNhanVien, @SDT, @CCCD, @vaiTro);
-SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM TaiKhoan WHERE (maTaiKhoan = SCOPE_IDENTITY())";
+            this._commandCollection[5].CommandText = "SELECT vaiTro\r\nFROM     TaiKhoan\r\nWHERE  (tenDangNhap = @tenDangNhap)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenDangNhap", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenDangNhap", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matKhau", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "matKhau", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenNhanVien", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenNhanVien", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SDT", global::System.Data.SqlDbType.Char, 10, global::System.Data.ParameterDirection.Input, 0, 0, "SDT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CCCD", global::System.Data.SqlDbType.Char, 12, global::System.Data.ParameterDirection.Input, 0, 0, "CCCD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vaiTro", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "vaiTro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"INSERT INTO [dbo].[TaiKhoan] ([tenDangNhap], [matKhau], [tenNhanVien], [SDT], [CCCD], [vaiTro]) VALUES (@tenDangNhap, @matKhau, @tenNhanVien, @SDT, @CCCD, @vaiTro);
+SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM TaiKhoan WHERE (maTaiKhoan = SCOPE_IDENTITY())";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenDangNhap", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenDangNhap", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matKhau", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "matKhau", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenNhanVien", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenNhanVien", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SDT", global::System.Data.SqlDbType.Char, 10, global::System.Data.ParameterDirection.Input, 0, 0, "SDT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CCCD", global::System.Data.SqlDbType.Char, 12, global::System.Data.ParameterDirection.Input, 0, 0, "CCCD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vaiTro", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "vaiTro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7753,6 +7762,37 @@ SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM Tai
             QuanLyHieuThuocTayDataSet.TaiKhoanDataTable dataTable = new QuanLyHieuThuocTayDataSet.TaiKhoanDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByTenHienThi_TenDangNhap_VaiTro(QuanLyHieuThuocTayDataSet.TaiKhoanDataTable dataTable, string tenHienThi, string tenDangNhap, global::System.Nullable<bool> vaiTro) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((tenHienThi == null)) {
+                throw new global::System.ArgumentNullException("tenHienThi");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tenHienThi));
+            }
+            if ((tenDangNhap == null)) {
+                throw new global::System.ArgumentNullException("tenDangNhap");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(tenDangNhap));
+            }
+            if ((vaiTro.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((bool)(vaiTro.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8087,7 +8127,7 @@ SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM Tai
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> getMaTaiKhoan(string tenDangNhap) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((tenDangNhap == null)) {
                 throw new global::System.ArgumentNullException("tenDangNhap");
             }
@@ -8121,7 +8161,7 @@ SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM Tai
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<bool> GetVaiTro(string tenDangNhap) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((tenDangNhap == null)) {
                 throw new global::System.ArgumentNullException("tenDangNhap");
             }
@@ -8156,7 +8196,7 @@ SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM Tai
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string tenDangNhap, string matKhau, string tenNhanVien, string SDT, string CCCD, global::System.Nullable<bool> vaiTro) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((tenDangNhap == null)) {
                 throw new global::System.ArgumentNullException("tenDangNhap");
             }

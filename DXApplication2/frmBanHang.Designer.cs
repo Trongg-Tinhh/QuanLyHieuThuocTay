@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tablePanel = new DevExpress.Utils.Layout.TablePanel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnClearData = new System.Windows.Forms.Button();
             this.btnXoaThuoc = new System.Windows.Forms.Button();
             this.listViewChiTietHoaDon = new System.Windows.Forms.ListView();
             this.columnMaSP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -86,7 +87,6 @@
             this.hoaDonTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.HoaDonTableAdapter();
             this.chiTietHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietHoaDonTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.ChiTietHoaDonTableAdapter();
-            this.btnClearData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel)).BeginInit();
             this.tablePanel.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -146,6 +146,21 @@
             this.tablePanel.SetRow(this.panel6, 2);
             this.panel6.Size = new System.Drawing.Size(666, 61);
             this.panel6.TabIndex = 15;
+            // 
+            // btnClearData
+            // 
+            this.btnClearData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClearData.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnClearData.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClearData.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearData.Location = new System.Drawing.Point(59, 12);
+            this.btnClearData.MinimumSize = new System.Drawing.Size(120, 40);
+            this.btnClearData.Name = "btnClearData";
+            this.btnClearData.Size = new System.Drawing.Size(120, 40);
+            this.btnClearData.TabIndex = 11;
+            this.btnClearData.Text = "Hủy chọn";
+            this.btnClearData.UseVisualStyleBackColor = false;
+            this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // btnXoaThuoc
             // 
@@ -389,8 +404,8 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.02724F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.97276F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.80159F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.19841F));
             this.tableLayoutPanel3.Controls.Add(this.panel9, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel7, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -409,16 +424,17 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(241, 41);
+            this.panel9.Size = new System.Drawing.Size(245, 41);
             this.panel9.TabIndex = 8;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Right;
             this.label10.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(7, 6);
+            this.label10.Location = new System.Drawing.Point(5, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(120, 22);
             this.label10.TabIndex = 7;
@@ -426,10 +442,11 @@
             // 
             // txbSDT
             // 
-            this.txbSDT.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSDT.Location = new System.Drawing.Point(133, 4);
+            this.txbSDT.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txbSDT.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSDT.Location = new System.Drawing.Point(125, 0);
             this.txbSDT.Name = "txbSDT";
-            this.txbSDT.Size = new System.Drawing.Size(112, 26);
+            this.txbSDT.Size = new System.Drawing.Size(120, 28);
             this.txbSDT.TabIndex = 8;
             // 
             // panel7
@@ -437,31 +454,33 @@
             this.panel7.Controls.Add(this.dateTimeEditNgayBan);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(250, 3);
+            this.panel7.Location = new System.Drawing.Point(254, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(251, 41);
+            this.panel7.Size = new System.Drawing.Size(247, 41);
             this.panel7.TabIndex = 6;
             // 
             // dateTimeEditNgayBan
             // 
+            this.dateTimeEditNgayBan.Dock = System.Windows.Forms.DockStyle.Left;
             this.dateTimeEditNgayBan.EditValue = null;
-            this.dateTimeEditNgayBan.Location = new System.Drawing.Point(100, 7);
+            this.dateTimeEditNgayBan.Location = new System.Drawing.Point(91, 0);
             this.dateTimeEditNgayBan.Name = "dateTimeEditNgayBan";
-            this.dateTimeEditNgayBan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeEditNgayBan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeEditNgayBan.Properties.Appearance.Options.UseFont = true;
             this.dateTimeEditNgayBan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateTimeEditNgayBan.Properties.MaskSettings.Set("mask", "d");
-            this.dateTimeEditNgayBan.Size = new System.Drawing.Size(148, 24);
+            this.dateTimeEditNgayBan.Size = new System.Drawing.Size(153, 28);
             this.dateTimeEditNgayBan.TabIndex = 9;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Left;
             this.label8.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(3, 7);
+            this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 22);
             this.label8.TabIndex = 7;
@@ -492,10 +511,10 @@
             // 
             // txbTenKH
             // 
-            this.txbTenKH.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenKH.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTenKH.Location = new System.Drawing.Point(177, 3);
             this.txbTenKH.Name = "txbTenKH";
-            this.txbTenKH.Size = new System.Drawing.Size(208, 26);
+            this.txbTenKH.Size = new System.Drawing.Size(208, 28);
             this.txbTenKH.TabIndex = 7;
             // 
             // label6
@@ -729,24 +748,12 @@
             // 
             this.chiTietHoaDonTableAdapter.ClearBeforeFill = true;
             // 
-            // btnClearData
-            // 
-            this.btnClearData.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnClearData.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnClearData.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearData.Location = new System.Drawing.Point(59, 12);
-            this.btnClearData.MinimumSize = new System.Drawing.Size(120, 40);
-            this.btnClearData.Name = "btnClearData";
-            this.btnClearData.Size = new System.Drawing.Size(120, 40);
-            this.btnClearData.TabIndex = 11;
-            this.btnClearData.Text = "Xóa thuốc";
-            this.btnClearData.UseVisualStyleBackColor = false;
-            this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
-            // 
             // frmBanHang
             // 
+            this.AcceptButton = this.btnThem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClearData;
             this.ClientSize = new System.Drawing.Size(1200, 675);
             this.Controls.Add(this.tablePanel);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;

@@ -31,25 +31,34 @@ namespace DXApplication2
 
         private void dataGridViewDSTK_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int numRow= e.RowIndex;
-            if (numRow < 0) return;
-            txbNhanVien.Text = dataGridViewDSTK.Rows[numRow].Cells[1].Value.ToString();
-            txbUserName.Text = dataGridViewDSTK.Rows[numRow].Cells[2].Value.ToString();
-            txbPassWord.Text = dataGridViewDSTK.Rows[numRow].Cells[3].Value.ToString();
-            txbCCCD.Text = dataGridViewDSTK.Rows[numRow].Cells[4].Value.ToString();
-            txbSDT.Text = dataGridViewDSTK.Rows[numRow].Cells[5].Value.ToString();
-            string chucVu=dataGridViewDSTK.Rows[numRow].Cells[6].Value.ToString();
+            if (e.RowIndex < 0) return;
+            int numRow = e.RowIndex;
+
+            string tenNV = dataGridViewDSTK.Rows[numRow].Cells[1].Value.ToString();
+            string username = dataGridViewDSTK.Rows[numRow].Cells[2].Value.ToString();
+            string password = dataGridViewDSTK.Rows[numRow].Cells[3].Value.ToString();
+            string cccd = dataGridViewDSTK.Rows[numRow].Cells[4].Value.ToString();
+            string sdt = dataGridViewDSTK.Rows[numRow].Cells[5].Value.ToString();
+            string chucVu = dataGridViewDSTK.Rows[numRow].Cells[6].Value.ToString();
+
+            txbNhanVien.Text = tenNV;
+            txbUserName.Text = username;
+            txbPassWord.Text = password;
+            txbCCCD.Text = cccd;
+            txbSDT.Text = sdt;
+
             ckbVaiTro.Enabled = true;
             if (chucVu == "True")
-                ckbVaiTro.Text = "Quản lí";
+                ckbVaiTro.Checked = true;
             else
-                ckbVaiTro.Text = "Nhân viên";
+                ckbVaiTro.Checked = false;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             btnHuy.Enabled = true;
         }
         public void defaultstate()
         {
+            errorProvider1.Clear();
             ckbVaiTro.Enabled=true;
             txbNhanVien.Text = "";
             txbUserName.Text = "";
@@ -83,22 +92,50 @@ namespace DXApplication2
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            if(btnThem.Enabled==false)
+                if(MessageBox.Show("Bạn muốn hủy tiến trình", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+                {
+                    defaultstate();
+                    return;
+                }
             defaultstate();
+            
             
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string mess = "";
+            bool flag = true;
             if (btnThem.Enabled == false)
             {
-                if (txbNhanVien.Text=="") mess += "\nChưa nhập tên hiển thị.";
-                if (taiKhoanTableAdapter.checkTenDangNhap(txbUserName.Text) > 0) mess += "\nTên đăng nhập đã tồn tại.";
-                if (txbPassWord.Text.Length < 8) mess += "\nMật khẩu phải trên 8 kí tự.";
-                if (txbCCCD.Text.Length!=12) mess+="\nSố CCCD không hợp lệ." ;
-                if (txbSDT.Text.Length !=10) mess += "\nSDT không hợp lệ.";
-                if (mess != "")
-                    MessageBox.Show(mess, "Thêm thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
+                if (txbUserName.Text == "")
+                {
+                    errorProvider1.SetError(txbUserName, "Nhập tên đăng nhập.");
+                    flag = false;
+                }
+                if (txbNhanVien.Text == "") {
+                    errorProvider1.SetError(txbNhanVien,"Chưa nhập tên hiển thị.");
+                    flag = false;
+                }
+                if (taiKhoanTableAdapter.checkTenDangNhap(txbUserName.Text) > 0){
+                    errorProvider1.SetError(txbUserName, "Tên đăng nhập đã tồn tại.");
+                    flag = false;
+                } 
+                if (txbPassWord.Text.Length < 8)
+                {
+                    errorProvider1.SetError(txbPassWord, "Mật khẩu yếu (trên 8 kí tự).");
+                    flag = false;
+                }
+                if (txbCCCD.Text.Length!=12)
+                {
+                    errorProvider1.SetError(txbCCCD, "Số CCCD không hợp lệ (12 số).");
+                    flag = false;
+                }
+                if (txbSDT.Text.Length !=10)
+                {
+                    errorProvider1.SetError(txbSDT, "SDT không hợp lệ.");
+                    flag = false;
+                }
+                if (flag==true)
                 {
                     taiKhoanTableAdapter.InsertQuery(txbUserName.Text,
                                                  txbPassWord.Text,
@@ -123,6 +160,15 @@ namespace DXApplication2
             }                 
            
             
+        }
+
+        private void FillEvent(object sender, EventArgs e)
+        {
+            string tenHT = txbNhanVien.Text;
+            string tenDN = txbUserName.Text;
+            bool vaiTro = ckbVaiTro.Checked;
+            btnHuy.Enabled=true;
+            this.taiKhoanTableAdapter.FillByTenHienThi_TenDangNhap_VaiTro(quanLyHieuThuocTayDataSet.TaiKhoan, tenHT, tenDN, vaiTro);
         }
     }
 }

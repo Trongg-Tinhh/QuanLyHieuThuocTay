@@ -68,6 +68,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.taiKhoanTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.TaiKhoanTableAdapter();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDSTK)).BeginInit();
@@ -82,6 +83,7 @@
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -265,13 +267,13 @@
             // 
             // txbNhanVien
             // 
-            this.txbNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbNhanVien.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNhanVien.Location = new System.Drawing.Point(0, 21);
             this.txbNhanVien.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txbNhanVien.Name = "txbNhanVien";
-            this.txbNhanVien.Size = new System.Drawing.Size(261, 28);
+            this.txbNhanVien.Size = new System.Drawing.Size(260, 28);
             this.txbNhanVien.TabIndex = 2;
+            this.txbNhanVien.TextChanged += new System.EventHandler(this.FillEvent);
             // 
             // label1
             // 
@@ -300,12 +302,11 @@
             // 
             // txbCCCD
             // 
-            this.txbCCCD.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbCCCD.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCCCD.Location = new System.Drawing.Point(0, 21);
             this.txbCCCD.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txbCCCD.Name = "txbCCCD";
-            this.txbCCCD.Size = new System.Drawing.Size(261, 28);
+            this.txbCCCD.Size = new System.Drawing.Size(260, 28);
             this.txbCCCD.TabIndex = 1;
             // 
             // label2
@@ -336,13 +337,13 @@
             // 
             // txbUserName
             // 
-            this.txbUserName.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbUserName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbUserName.Location = new System.Drawing.Point(0, 21);
             this.txbUserName.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(261, 28);
+            this.txbUserName.Size = new System.Drawing.Size(260, 28);
             this.txbUserName.TabIndex = 1;
+            this.txbUserName.TextChanged += new System.EventHandler(this.FillEvent);
             // 
             // label3
             // 
@@ -384,12 +385,11 @@
             // 
             // txbPassWord
             // 
-            this.txbPassWord.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbPassWord.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPassWord.Location = new System.Drawing.Point(0, 21);
             this.txbPassWord.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(261, 28);
+            this.txbPassWord.Size = new System.Drawing.Size(260, 28);
             this.txbPassWord.TabIndex = 1;
             this.txbPassWord.UseSystemPasswordChar = true;
             // 
@@ -409,12 +409,11 @@
             // 
             // txbSDT
             // 
-            this.txbSDT.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbSDT.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSDT.Location = new System.Drawing.Point(0, 21);
             this.txbSDT.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txbSDT.Name = "txbSDT";
-            this.txbSDT.Size = new System.Drawing.Size(261, 28);
+            this.txbSDT.Size = new System.Drawing.Size(260, 28);
             this.txbSDT.TabIndex = 1;
             // 
             // label7
@@ -453,6 +452,7 @@
             this.ckbVaiTro.TabIndex = 2;
             this.ckbVaiTro.Text = "Quản lí";
             this.ckbVaiTro.UseVisualStyleBackColor = true;
+            this.ckbVaiTro.CheckedChanged += new System.EventHandler(this.FillEvent);
             // 
             // label5
             // 
@@ -493,7 +493,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnXoa.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
             this.btnXoa.Location = new System.Drawing.Point(4, 57);
@@ -508,7 +508,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnThem.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Black;
             this.btnThem.Location = new System.Drawing.Point(4, 2);
@@ -523,7 +523,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLuu.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.Black;
             this.btnLuu.Location = new System.Drawing.Point(4, 167);
@@ -538,7 +538,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnSua.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Black;
             this.btnSua.Location = new System.Drawing.Point(4, 112);
@@ -552,7 +552,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button6.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button6.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button6.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Black;
@@ -567,7 +567,7 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnHuy.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Black;
@@ -584,6 +584,10 @@
             // taiKhoanTableAdapter
             // 
             this.taiKhoanTableAdapter.ClearBeforeFill = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAccountManagement
             // 
@@ -616,6 +620,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -661,5 +666,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn vaiTroDataGridViewCheckBoxColumn;
         private System.Windows.Forms.CheckBox ckbVaiTro;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

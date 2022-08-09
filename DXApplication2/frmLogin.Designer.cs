@@ -92,7 +92,6 @@
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.Size = new System.Drawing.Size(330, 32);
             this.txbUserName.TabIndex = 0;
-            this.txbUserName.TextChanged += new System.EventHandler(this.txbUserName_TextChanged);
             // 
             // panel2
             // 
@@ -218,7 +217,6 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

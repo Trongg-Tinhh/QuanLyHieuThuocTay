@@ -14,6 +14,8 @@ namespace DXApplication2
     {
         public static int? maTK;
         public static bool? vaiTro;
+        public static string tenDangNhap;
+        public static string matKhau;
 
         public frmLogin()
         {
@@ -38,11 +40,14 @@ namespace DXApplication2
                 {
                     maTK = taiKhoanTableAdapter.getMaTaiKhoan(User);
                     vaiTro =taiKhoanTableAdapter.GetVaiTro(User);
+                    tenDangNhap = txbUserName.Text;
+                    matKhau=txbPassWord.Text;
                     frmMain f = new frmMain();
                     this.Hide();
                     f.ShowDialog();//uu tien thang ben tren
                     txbPassWord.Text = "";
                     txbUserName.Text = "";
+                    chbMatKhau.Checked = false;
                     this.Show();
                 }
                 else
@@ -61,14 +66,6 @@ namespace DXApplication2
             Application.Exit();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn thoát phần mềm? ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
-
         private void chbMatKhau_CheckedChanged(object sender, EventArgs e)
         {
             if(chbMatKhau.Checked==true)
@@ -76,11 +73,6 @@ namespace DXApplication2
                 txbPassWord.UseSystemPasswordChar = false;
             }
             else txbPassWord.UseSystemPasswordChar = true;
-        }
-
-        private void txbUserName_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
