@@ -56,24 +56,14 @@ namespace DXApplication2
 
         private void chbMatKhau_CheckedChanged(object sender, EventArgs e)
         {
-            //if (ckbMatKhau.Checked == true)
-            //{
-            //    txbPassword.UseSystemPasswordChar = false;
-            //}
-            //else txbPassword.UseSystemPasswordChar = true;
             txbPassword.UseSystemPasswordChar = !ckbMatKhau.Checked;
-        }
 
-        private void ckbMatKhauNew_CheckedChanged(object sender, EventArgs e)
-        {
-            txbPasswordNew.UseSystemPasswordChar = !ckbMatKhauNew.Checked;
         }
 
         private void cbkMatKhauNew2_CheckedChanged(object sender, EventArgs e)
         {
-            txbPasswordNew2.UseSystemPasswordChar = !ckbMatKhauNew2.Checked;   
+            txbPasswordNew.UseSystemPasswordChar = !ckbMatKhauNew.Checked;
+            txbPasswordNew2.UseSystemPasswordChar = !ckbMatKhauNew.Checked;   
         }
-
-       
     }
 }

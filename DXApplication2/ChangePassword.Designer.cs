@@ -34,21 +34,20 @@
             this.txbUserName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ckbMatKhau = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ckbMatKhauNew = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txbPasswordNew = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.ckbMatKhauNew2 = new System.Windows.Forms.CheckBox();
+            this.ckbMatKhauNew = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txbPasswordNew2 = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ckbMatKhau = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -108,18 +107,6 @@
             this.panel2.Size = new System.Drawing.Size(484, 84);
             this.panel2.TabIndex = 1;
             // 
-            // ckbMatKhau
-            // 
-            this.ckbMatKhau.AutoSize = true;
-            this.ckbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbMatKhau.Location = new System.Drawing.Point(190, 50);
-            this.ckbMatKhau.Name = "ckbMatKhau";
-            this.ckbMatKhau.Size = new System.Drawing.Size(162, 24);
-            this.ckbMatKhau.TabIndex = 7;
-            this.ckbMatKhau.Text = "Hiện thị mật khẩu";
-            this.ckbMatKhau.UseVisualStyleBackColor = true;
-            this.ckbMatKhau.CheckedChanged += new System.EventHandler(this.chbMatKhau_CheckedChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -143,25 +130,12 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.ckbMatKhauNew);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.txbPasswordNew);
             this.panel3.Location = new System.Drawing.Point(9, 184);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(484, 84);
+            this.panel3.Size = new System.Drawing.Size(484, 47);
             this.panel3.TabIndex = 2;
-            // 
-            // ckbMatKhauNew
-            // 
-            this.ckbMatKhauNew.AutoSize = true;
-            this.ckbMatKhauNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbMatKhauNew.Location = new System.Drawing.Point(190, 45);
-            this.ckbMatKhauNew.Name = "ckbMatKhauNew";
-            this.ckbMatKhauNew.Size = new System.Drawing.Size(162, 24);
-            this.ckbMatKhauNew.TabIndex = 7;
-            this.ckbMatKhauNew.Text = "Hiện thị mật khẩu";
-            this.ckbMatKhauNew.UseVisualStyleBackColor = true;
-            this.ckbMatKhauNew.CheckedChanged += new System.EventHandler(this.ckbMatKhauNew_CheckedChanged);
             // 
             // label3
             // 
@@ -185,25 +159,25 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.ckbMatKhauNew2);
+            this.panel4.Controls.Add(this.ckbMatKhauNew);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.txbPasswordNew2);
-            this.panel4.Location = new System.Drawing.Point(9, 260);
+            this.panel4.Location = new System.Drawing.Point(9, 231);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(484, 84);
             this.panel4.TabIndex = 3;
             // 
-            // ckbMatKhauNew2
+            // ckbMatKhauNew
             // 
-            this.ckbMatKhauNew2.AutoSize = true;
-            this.ckbMatKhauNew2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbMatKhauNew2.Location = new System.Drawing.Point(190, 48);
-            this.ckbMatKhauNew2.Name = "ckbMatKhauNew2";
-            this.ckbMatKhauNew2.Size = new System.Drawing.Size(162, 24);
-            this.ckbMatKhauNew2.TabIndex = 7;
-            this.ckbMatKhauNew2.Text = "Hiện thị mật khẩu";
-            this.ckbMatKhauNew2.UseVisualStyleBackColor = true;
-            this.ckbMatKhauNew2.CheckedChanged += new System.EventHandler(this.cbkMatKhauNew2_CheckedChanged);
+            this.ckbMatKhauNew.AutoSize = true;
+            this.ckbMatKhauNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbMatKhauNew.Location = new System.Drawing.Point(190, 48);
+            this.ckbMatKhauNew.Name = "ckbMatKhauNew";
+            this.ckbMatKhauNew.Size = new System.Drawing.Size(162, 24);
+            this.ckbMatKhauNew.TabIndex = 7;
+            this.ckbMatKhauNew.Text = "Hiện thị mật khẩu";
+            this.ckbMatKhauNew.UseVisualStyleBackColor = true;
+            this.ckbMatKhauNew.CheckedChanged += new System.EventHandler(this.cbkMatKhauNew2_CheckedChanged);
             // 
             // label4
             // 
@@ -231,7 +205,7 @@
             this.panel10.Controls.Add(this.btnLuu);
             this.panel10.Location = new System.Drawing.Point(9, 344);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(484, 62);
+            this.panel10.Size = new System.Drawing.Size(484, 48);
             this.panel10.TabIndex = 20;
             // 
             // btnHuy
@@ -266,6 +240,18 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // ckbMatKhau
+            // 
+            this.ckbMatKhau.AutoSize = true;
+            this.ckbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbMatKhau.Location = new System.Drawing.Point(190, 50);
+            this.ckbMatKhau.Name = "ckbMatKhau";
+            this.ckbMatKhau.Size = new System.Drawing.Size(162, 24);
+            this.ckbMatKhau.TabIndex = 7;
+            this.ckbMatKhau.Text = "Hiện thị mật khẩu";
+            this.ckbMatKhau.UseVisualStyleBackColor = true;
+            this.ckbMatKhau.CheckedChanged += new System.EventHandler(this.chbMatKhau_CheckedChanged);
             // 
             // frmChangePassword
             // 
@@ -318,8 +304,7 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.CheckBox ckbMatKhau;
         private System.Windows.Forms.CheckBox ckbMatKhauNew;
-        private System.Windows.Forms.CheckBox ckbMatKhauNew2;
+        private System.Windows.Forms.CheckBox ckbMatKhau;
     }
 }
