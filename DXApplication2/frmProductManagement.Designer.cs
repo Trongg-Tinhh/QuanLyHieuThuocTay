@@ -556,6 +556,7 @@
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnXoa.Enabled = false;
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Location = new System.Drawing.Point(4, 51);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -584,6 +585,7 @@
             // btnLuu
             // 
             this.btnLuu.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLuu.Enabled = false;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Location = new System.Drawing.Point(4, 149);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -628,6 +630,7 @@
             // 
             this.btnHuy.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuy.Enabled = false;
             this.btnHuy.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Location = new System.Drawing.Point(4, 198);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
