@@ -35,11 +35,15 @@ namespace DXApplication2
             txbCongDung.Text = null;
             txbDoTuoi.Text = null;
             numericSoLuong.Value = 0;
+            btnThem.Enabled = false;
+            btnXoaThuoc.Enabled = false;
         }
 
         // chức năng click vào 1 dòng ở dgv dữ liệu sẽ sổ lên trên textbox
         private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnThem.Enabled = true;
+            btnXoaThuoc.Enabled = false;
             if (e.RowIndex < 0)
                 return;
             int index = e.RowIndex;
@@ -59,7 +63,7 @@ namespace DXApplication2
 
         // thêm sản phẩm vào bảng bên phải
         private void btnThem_Click(object sender, EventArgs e)
-        {
+        {            
             string tenSP = txbTenSP.Text;
             string loaiSP = txbLoaiSP.Text;
             int soLuong = (int)numericSoLuong.Value;
@@ -88,7 +92,11 @@ namespace DXApplication2
                 {
                     DialogResult result = MessageBox.Show("Thêm trùng sản phẩm. Ghi đè lên sản phẩm hiện có?", "Thông báo", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
+                    {
                         item.SubItems[3].Text = soLuong.ToString();
+                        ClearData();
+                    }
+                        
                     return;
                 }
             }
@@ -120,7 +128,7 @@ namespace DXApplication2
         }
 
         private void btnClearData_Click(object sender, EventArgs e)
-        {
+        {            
             ClearData();
         }
 
@@ -129,6 +137,7 @@ namespace DXApplication2
             foreach (ListViewItem item in listViewChiTietHoaDon.Items)
                 if (item.Selected)
                     listViewChiTietHoaDon.Items.Remove(item);
+            ClearData();
         }
 
         // chức năng thanh toán. Khi nhấn thanh toán sẽ lấy hết dữ liệu từ các textbox và listview để tiến hành tính tiền.
@@ -187,6 +196,17 @@ namespace DXApplication2
             txbTenKH.Text = null;
             txbSDT.Text = null;
             dateTimeEditNgayBan.Text = "";
+        }
+
+        private void listViewChiTietHoaDon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClearData();
+            btnXoaThuoc.Enabled = true;
+        }
+
+        private void txbTenKH_TextChanged(object sender, EventArgs e)
+        {
+            ClearData();
         }
     }
 }

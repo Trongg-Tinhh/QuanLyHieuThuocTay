@@ -122,7 +122,7 @@
             this.txbPassWord.Location = new System.Drawing.Point(197, 11);
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.Size = new System.Drawing.Size(317, 32);
-            this.txbPassWord.TabIndex = 0;
+            this.txbPassWord.TabIndex = 1;
             this.txbPassWord.UseSystemPasswordChar = true;
             // 
             // btnDangNhap

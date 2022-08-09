@@ -65,5 +65,12 @@ namespace DXApplication2
             txbPasswordNew.UseSystemPasswordChar = !ckbMatKhauNew.Checked;
             txbPasswordNew2.UseSystemPasswordChar = !ckbMatKhauNew.Checked;   
         }
+
+        private void frmChangePassword_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.TaiKhoan' table. You can move, or remove it, as needed.
+            this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.TaiKhoan);
+
+        }
     }
 }

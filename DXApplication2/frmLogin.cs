@@ -106,5 +106,7 @@ namespace DXApplication2
             this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.TaiKhoan);
 
         }
+
+
     }
 }

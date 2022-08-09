@@ -65,7 +65,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.taiKhoanTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.TaiKhoanTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -125,6 +125,7 @@
             this.vaiTroDataGridViewCheckBoxColumn});
             this.dataGridViewDSTK.DataSource = this.taiKhoanBindingSource;
             this.dataGridViewDSTK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewDSTK.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridViewDSTK.Location = new System.Drawing.Point(3, 140);
             this.dataGridViewDSTK.Name = "dataGridViewDSTK";
             this.dataGridViewDSTK.ReadOnly = true;
@@ -298,7 +299,7 @@
             this.panel2.Name = "panel2";
             this.tablePanel2.SetRow(this.panel2, 1);
             this.panel2.Size = new System.Drawing.Size(261, 49);
-            this.panel2.TabIndex = 4;
+            this.panel2.TabIndex = 3;
             // 
             // txbCCCD
             // 
@@ -369,7 +370,7 @@
             this.panel4.Name = "panel4";
             this.tablePanel2.SetRow(this.panel4, 0);
             this.panel4.Size = new System.Drawing.Size(261, 49);
-            this.panel4.TabIndex = 5;
+            this.panel4.TabIndex = 2;
             // 
             // label4
             // 
@@ -405,7 +406,7 @@
             this.panel7.Name = "panel7";
             this.tablePanel2.SetRow(this.panel7, 1);
             this.panel7.Size = new System.Drawing.Size(261, 49);
-            this.panel7.TabIndex = 6;
+            this.panel7.TabIndex = 4;
             // 
             // txbSDT
             // 
@@ -449,7 +450,7 @@
             this.ckbVaiTro.Location = new System.Drawing.Point(0, 24);
             this.ckbVaiTro.Name = "ckbVaiTro";
             this.ckbVaiTro.Size = new System.Drawing.Size(261, 25);
-            this.ckbVaiTro.TabIndex = 2;
+            this.ckbVaiTro.TabIndex = 5;
             this.ckbVaiTro.Text = "Quản lí";
             this.ckbVaiTro.UseVisualStyleBackColor = true;
             this.ckbVaiTro.CheckedChanged += new System.EventHandler(this.FillEvent);
@@ -475,7 +476,7 @@
             this.tableLayoutPanel3.Controls.Add(this.btnThem, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnLuu, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.btnSua, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.button6, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.btnThoat, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.btnHuy, 0, 4);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(817, 140);
@@ -501,7 +502,7 @@
             this.btnXoa.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(120, 40);
-            this.btnXoa.TabIndex = 10;
+            this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -546,25 +547,26 @@
             this.btnSua.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(120, 40);
-            this.btnSua.TabIndex = 9;
+            this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // button6
+            // btnThoat
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button6.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(4, 277);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.button6.MinimumSize = new System.Drawing.Size(120, 40);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 40);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Thoát";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnThoat.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnThoat.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.Black;
+            this.btnThoat.Location = new System.Drawing.Point(4, 277);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnThoat.MinimumSize = new System.Drawing.Size(120, 40);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(120, 40);
+            this.btnThoat.TabIndex = 13;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnHuy
             // 
@@ -577,7 +579,7 @@
             this.btnHuy.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(120, 40);
-            this.btnHuy.TabIndex = 11;
+            this.btnHuy.TabIndex = 12;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -648,7 +650,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnLuu;

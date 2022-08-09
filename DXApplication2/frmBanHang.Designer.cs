@@ -166,6 +166,7 @@
             // 
             this.btnXoaThuoc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnXoaThuoc.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnXoaThuoc.Enabled = false;
             this.btnXoaThuoc.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaThuoc.Location = new System.Drawing.Point(495, 10);
             this.btnXoaThuoc.MinimumSize = new System.Drawing.Size(120, 40);
@@ -196,6 +197,7 @@
             this.listViewChiTietHoaDon.TabIndex = 14;
             this.listViewChiTietHoaDon.UseCompatibleStateImageBehavior = false;
             this.listViewChiTietHoaDon.View = System.Windows.Forms.View.Details;
+            this.listViewChiTietHoaDon.SelectedIndexChanged += new System.EventHandler(this.listViewChiTietHoaDon_SelectedIndexChanged);
             // 
             // columnMaSP
             // 
@@ -448,6 +450,7 @@
             this.txbSDT.Name = "txbSDT";
             this.txbSDT.Size = new System.Drawing.Size(120, 28);
             this.txbSDT.TabIndex = 8;
+            this.txbSDT.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // panel7
             // 
@@ -472,6 +475,7 @@
             this.dateTimeEditNgayBan.Properties.MaskSettings.Set("mask", "d");
             this.dateTimeEditNgayBan.Size = new System.Drawing.Size(153, 28);
             this.dateTimeEditNgayBan.TabIndex = 9;
+            this.dateTimeEditNgayBan.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // label8
             // 
@@ -516,6 +520,7 @@
             this.txbTenKH.Name = "txbTenKH";
             this.txbTenKH.Size = new System.Drawing.Size(208, 28);
             this.txbTenKH.TabIndex = 7;
+            this.txbTenKH.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // label6
             // 
@@ -716,6 +721,7 @@
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnThem.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnThem.Enabled = false;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(495, 66);
             this.btnThem.MinimumSize = new System.Drawing.Size(120, 40);

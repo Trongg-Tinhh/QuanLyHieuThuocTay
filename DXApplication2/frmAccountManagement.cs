@@ -58,6 +58,7 @@ namespace DXApplication2
         }
         public void defaultstate()
         {
+            //dataGridViewDSTK.BackgroundColor =;
             errorProvider1.Clear();
             ckbVaiTro.Enabled=true;
             txbNhanVien.Text = "";
@@ -152,10 +153,24 @@ namespace DXApplication2
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            string tenDN=txbUserName.Text;
+            string passW=txbPassWord.Text;
+            int matk = int.Parse(taiKhoanTableAdapter.getMaTaiKhoan(tenDN).ToString());
+            int soHoaDonBan=int.Parse(taiKhoanTableAdapter.Count_HD(matk).ToString());
+            if (tenDN == frmLogin.tenDangNhap)
+            {
+                MessageBox.Show("Tài khoản đang được sử dụng ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (soHoaDonBan > 0)
+            {
+                MessageBox.Show("Tài khoản này không được xóa ", "Không thể xóa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (MessageBox.Show("Bạn muốn xóa tài khoản này?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 MessageBox.Show("Xóa thành công");
-                taiKhoanTableAdapter.DeleteQuery(txbUserName.Text, txbPassWord.Text);
+                taiKhoanTableAdapter.DeleteQuery(tenDN, passW);
                 defaultstate();
             }                 
            
@@ -174,6 +189,11 @@ namespace DXApplication2
         private void btnSua_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

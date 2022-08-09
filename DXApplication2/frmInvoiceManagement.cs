@@ -45,5 +45,13 @@ namespace DXApplication2
         {
 
         }
+
+        private void dataGridViewDSHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numRow = e.RowIndex;
+            if (numRow < 0) return;
+            int ma=int.Parse(dataGridViewDSHD.Rows[numRow].Cells[0].Value.ToString());
+            dSChiTietHoaDonTableAdapter.Fill(quanLyHieuThuocTayDataSet.DSChiTietHoaDon,ma);
+        }
     }
 }
