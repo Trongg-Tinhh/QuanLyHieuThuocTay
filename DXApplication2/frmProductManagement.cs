@@ -18,6 +18,7 @@ namespace DXApplication2
         {
             InitializeComponent();
         }
+        private bool add = false;
         private bool edit = false;
         String StringConnect = @"Data Source=TRANNGHIEP;Initial Catalog=QuanLyHieuThuocTay;Integrated Security=True";
         private void frmProductManagement_Load(object sender, EventArgs e)
@@ -34,73 +35,89 @@ namespace DXApplication2
             sanPhamBindingSource.SuspendBinding();
             dataGridViewThuoc.AllowUserToAddRows = false;
             dataGridViewThuoc.AllowUserToDeleteRows = false;
+            ChucNang(false);
+        }
+
+        private void ChucNang(bool chucnang)
+        {
+            txtTenSP.Enabled = chucnang;
+            txtThanhPhan.Enabled = chucnang;
+            nudSoLuong.Enabled = chucnang;
+            cmbLoaiSP.Enabled = chucnang;
+            txtCongDung.Enabled = chucnang;
+            cmbDonVi.Enabled = chucnang;
+            cmbMaNSX.Enabled = chucnang;
+            txtDoTuoi.Enabled = chucnang;
+            txtMoTa.Enabled = chucnang;
+
+        }
+
+        private void setTextNull()
+        {
+            txtTenSP.Text = "";
+            txtThanhPhan.Text = "";
+            nudSoLuong.Value = 1;
+            cmbLoaiSP.Text = "";
+            txtCongDung.Text = "";
+            cmbDonVi.Text = "";
+            cmbMaNSX.Text = "";
+            txtDoTuoi.Text = "";
+            txtMoTa.Text = "";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(txtTenSP.Text.Trim().CompareTo("") != 0 && edit == false)
-            {
-                
-                Random random = new Random();
-                String MaThuoc = random.Next(100,999).ToString() + cmbLoaiSP.SelectedValue.ToString() + cmbMaNSX.SelectedValue.ToString();
-                using( SqlConnection connection = new SqlConnection(StringConnect) )
-                {
-                    if(connection.State != ConnectionState.Open)
-                    {
-                        connection.Open();
-                    }
-                    String query = "SELECT * FROM SanPham WHERE (SanPham.tenSP = @tenSP)";
-                    SqlCommand cmd = new SqlCommand(query, connection);
-                    cmd.Parameters.AddWithValue("@tenSP", txtTenSP.Text.Trim());
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if(dr.Read())
-                    {
-                        MessageBox.Show("Thuốc "+ txtTenSP.Text.Trim()+" đã tồn tại");
-                        sanPhamTableAdapter.UpdateQuerySoLuongThuoc(int.Parse(nudSoLuong.Value.ToString()), txtTenSP.Text.Trim());
-                        danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
-
-                    }   
-                    else
-                    {
-                        sanPhamTableAdapter.InsertQuerySanPham(MaThuoc, txtTenSP.Text.Trim(), cmbLoaiSP.SelectedValue.ToString(),int.Parse(cmbMaNSX.SelectedValue.ToString()), txtThanhPhan.Text, txtDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text, int.Parse(nudSoLuong.Value.ToString()), txtMoTa.Text);
-                        MessageBox.Show("Đã thêm " + txtTenSP.Text.Trim());
-                        danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
-                    }
-                    
-                    connection.Close();
-                }
-
-            }    
+            this.add = true;
+            ChucNang(true);
+            btnThem.Enabled = false;
+            btnSua.Enabled = false;
+            btnHuy.Enabled = true;
+            btnThem.BackColor = System.Drawing.Color.White;
         }
 
         
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            //sanPhamBindingSource.ResumeBinding();
+            dataGridViewThuoc.ClearSelection();
+            ChucNang(true);
             btnThem.Enabled = false;
             btnHuy.Enabled = true;
-            btnLuu.Enabled = true;
-            btnSua.BackColor = System.Drawing.Color.Blue;
-            btnHuy.BackColor = System.Drawing.Color.Red;
+            btnSua.BackColor = System.Drawing.Color.White;
             this.edit = true;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            //sanPhamBindingSource.SuspendBinding();
-            btnThem.Enabled = true;
-            btnXoa.Enabled = false;
-            btnHuy.Enabled = false;
-            btnLuu.Enabled = false;
-            btnSua.BackColor = Color.DarkGray;
-            btnHuy.BackColor = Color.DarkGray;
-            this.edit = false;
+            ChucNang(false);
+            if(this.add == true)
+            {
+                setTextNull();
+                btnThem.Enabled = true;
+                btnSua.Enabled = true;
+                btnHuy.Enabled = false;
+                this.add = false;
+                btnThem.BackColor = System.Drawing.Color.DarkGray;
+            }   
+            if(this.edit == true)
+            {
+                setTextNull();
+                btnThem.Enabled = true;
+                btnSua.Enabled = true;
+                btnHuy.Enabled = false;
+                btnLuu.Enabled = false;
+                this.edit = false;
+                btnSua.BackColor = Color.DarkGray;
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            bool gia = false;
+            
+            
             String maSP = dataGridViewThuoc.CurrentRow.Cells[0].Value.ToString().Trim();
+            //MessageBox.Show("Đã xóa thuốc có Mã: " + maSP);
             using (SqlConnection connection = new SqlConnection(StringConnect))
             {
                 if (connection.State == ConnectionState.Closed)
@@ -109,42 +126,85 @@ namespace DXApplication2
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@maSP", maSP);
                 SqlDataReader reader = cmd.ExecuteReader();
-                if(reader.Read())
+                if (reader.Read())
                 {
                     MessageBox.Show("Thuốc có Mã: " + maSP + " đã tồn tại trong hóa đơn\n  không thể xóa");
                 }
                 else
                 {
+                    //if()
                     sanPhamTableAdapter.DeleteQuerySanPhamByMaSP(maSP);
                     MessageBox.Show("Đã xóa thuốc có Mã: " + maSP);
                     danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
-                }    
+                }
                 connection.Close();
             }
+            setTextNull();
         }
 
         private void SelectionChanged_RowInDataGridViewThuoc(object sender, EventArgs e)
         {
-            if (dataGridViewThuoc.SelectedRows.Count > 0 && edit == true)
-            {
-                btnXoa.Enabled = true;
-            }
-            else
-                btnXoa.Enabled = false;
+            //if( this.edit == true)
+            //{
+            //    if (dataGridViewThuoc.SelectedRows.Count > 0)
+            //        btnXoa.Enabled = true;
+            //    else
+            //        btnXoa.Enabled = false;
+            //}    
+            
         }
 
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Đã cập nhật dữ liệu");
-            String maSP = dataGridViewThuoc.CurrentRow.Cells[0].Value.ToString();
-            //String MaSP = sanPhamTableAdapter.ScalarQueryMaSanPham(txtTenSP.Text.Trim()).ToString();
-            String MaLoai = loaiSanPhamTableAdapter.ScalarQueryMaLoaiSanPham(cmbLoaiSP.Text.Trim());
-            Nullable<int> MaNSX = nhaSanXuatTableAdapter.ScalarQueryMaNSX(cmbMaNSX.Text.Trim());
-            sanPhamTableAdapter.UpdateQuerySanPham(maSP, txtTenSP.Text, MaLoai, MaNSX, txtThanhPhan.Text, txtDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text,int.Parse( nudSoLuong.Value.ToString()), txtMoTa.Text);
-            //frmProductManagement frmProductManagement = new frmProductManagement();
-            //frmProductManagement.InitializeComponent();
+            if(this.add == true)
+            {
+                if (txtTenSP.Text.Trim().CompareTo("") != 0 && edit == false)
+                {
+
+                    Random random = new Random();
+                    String MaThuoc = random.Next(100, 999).ToString() + cmbLoaiSP.SelectedValue.ToString() + cmbMaNSX.SelectedValue.ToString();
+                    using (SqlConnection connection = new SqlConnection(StringConnect))
+                    {
+                        if (connection.State != ConnectionState.Open)
+                        {
+                            connection.Open();
+                        }
+                        String query = "SELECT * FROM SanPham WHERE (SanPham.tenSP = @tenSP)";
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        cmd.Parameters.AddWithValue("@tenSP", txtTenSP.Text.Trim());
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            MessageBox.Show("Thuốc " + txtTenSP.Text.Trim() + " đã tồn tại");
+                            sanPhamTableAdapter.UpdateQuerySoLuongThuoc(int.Parse(nudSoLuong.Value.ToString()), txtTenSP.Text.Trim());
+                            danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
+
+                        }
+                        else
+                        {
+                            sanPhamTableAdapter.InsertQuerySanPham(MaThuoc, txtTenSP.Text.Trim(), cmbLoaiSP.SelectedValue.ToString(), int.Parse(cmbMaNSX.SelectedValue.ToString()), txtThanhPhan.Text, txtDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text, int.Parse(nudSoLuong.Value.ToString()), txtMoTa.Text);
+                            MessageBox.Show("Đã thêm " + txtTenSP.Text.Trim());
+                            danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
+                        }
+
+                        connection.Close();
+                    }
+
+                }
+            }    
+            if(this.edit == true)
+            {
+                dataGridViewThuoc.ClearSelection();
+                MessageBox.Show("Đã cập nhật dữ liệu");
+                String maSP = dataGridViewThuoc.CurrentRow.Cells[0].Value.ToString();
+                String MaLoai = loaiSanPhamTableAdapter.ScalarQueryMaLoaiSanPham(cmbLoaiSP.Text.Trim());
+                Nullable<int> MaNSX = nhaSanXuatTableAdapter.ScalarQueryMaNSX(cmbMaNSX.Text.Trim());
+                sanPhamTableAdapter.UpdateQuerySanPham(maSP, txtTenSP.Text, MaLoai, MaNSX, txtThanhPhan.Text, txtDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text,int.Parse( nudSoLuong.Value.ToString()), txtMoTa.Text);
+
+            }
             danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
+            setTextNull();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -159,16 +219,27 @@ namespace DXApplication2
 
         private void TextChanged_TenSanPham(object sender, EventArgs e)
         {
-            if (txtTenSP.Text.CompareTo("") != 0)
-                btnThem.Enabled = true;
-            else
-                btnThem.Enabled = false;
+            if(this.add == true)
+            {
+                if (txtTenSP.Text.Trim().CompareTo("") != 0)
+                {
+                    btnLuu.Enabled = true;
+                    //btnHuy.Enabled = true;
+                }
+                else
+                {
+                    btnLuu.Enabled = false;
+                    //btnHuy.Enabled = false;
+                }
+            }
+
         }
 
         private void CellClick_dataGridViewSanPham(object sender, DataGridViewCellEventArgs e)
         {  
             if(this.edit == true)
             {
+                btnLuu.Enabled = true;
                 int pos = e.RowIndex;
                 String TenSP = dataGridViewThuoc.Rows[pos].Cells[1].Value.ToString();
                 String LoaiSP = dataGridViewThuoc.Rows[pos].Cells[3].Value.ToString();
@@ -178,6 +249,7 @@ namespace DXApplication2
                 String DonViTinh = dataGridViewThuoc.Rows[pos].Cells[8].Value.ToString();
                 String MoTa = dataGridViewThuoc.Rows[pos].Cells[11].Value.ToString();
                 String DoTuoi = dataGridViewThuoc.Rows[pos].Cells[6].Value.ToString();
+                int SoLuong = int.Parse(dataGridViewThuoc.Rows[pos].Cells[7].Value.ToString());
                 txtTenSP.Text = TenSP;
                 cmbMaNSX.Text = NhaSX;
                 cmbLoaiSP.Text = LoaiSP;
@@ -186,6 +258,7 @@ namespace DXApplication2
                 cmbDonVi.Text = DonViTinh;
                 txtDoTuoi.Text = DoTuoi;
                 txtMoTa.Text = MoTa;
+                nudSoLuong.Value = SoLuong;
             }    
         }
     }

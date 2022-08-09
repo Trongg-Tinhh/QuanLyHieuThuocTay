@@ -78,7 +78,6 @@
             this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -698,17 +697,15 @@
             this.tablePanel3.SetColumn(this.tableLayoutPanel1, 1);
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnXoa, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnThem, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnLuu, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnSua, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnHuy, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnThoat, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnSua, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnLuu, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnHuy, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnThoat, 0, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(830, 197);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tablePanel3.SetRow(this.tableLayoutPanel1, 1);
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
+            this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
@@ -718,29 +715,11 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(125, 353);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnXoa.Enabled = false;
-            this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(4, 60);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnXoa.MinimumSize = new System.Drawing.Size(120, 40);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(120, 40);
-            this.btnXoa.TabIndex = 10;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // btnThem
             // 
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnThem.Enabled = false;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(4, 2);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -759,7 +738,7 @@
             this.btnLuu.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnLuu.Enabled = false;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(4, 176);
+            this.btnLuu.Location = new System.Drawing.Point(4, 142);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnLuu.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnLuu.Name = "btnLuu";
@@ -775,7 +754,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSua.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(4, 118);
+            this.btnSua.Location = new System.Drawing.Point(4, 72);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSua.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnSua.Name = "btnSua";
@@ -793,7 +772,7 @@
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Enabled = false;
             this.btnHuy.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(4, 234);
+            this.btnHuy.Location = new System.Drawing.Point(4, 212);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnHuy.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnHuy.Name = "btnHuy";
@@ -810,7 +789,7 @@
             this.btnThoat.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(4, 292);
+            this.btnThoat.Location = new System.Drawing.Point(4, 282);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnThoat.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnThoat.Name = "btnThoat";
@@ -922,7 +901,6 @@
         private System.Windows.Forms.NumericUpDown nudSoLuong;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnSua;
