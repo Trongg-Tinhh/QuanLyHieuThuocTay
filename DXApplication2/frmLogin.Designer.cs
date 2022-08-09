@@ -131,6 +131,8 @@
             this.btnDangNhap.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.Black;
             this.btnDangNhap.Location = new System.Drawing.Point(3, 3);
+            this.btnDangNhap.MaximumSize = new System.Drawing.Size(120, 40);
+            this.btnDangNhap.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(120, 40);
             this.btnDangNhap.TabIndex = 3;
@@ -145,6 +147,8 @@
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.Black;
             this.btnThoat.Location = new System.Drawing.Point(129, 3);
+            this.btnThoat.MaximumSize = new System.Drawing.Size(120, 40);
+            this.btnThoat.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(120, 40);
             this.btnThoat.TabIndex = 4;

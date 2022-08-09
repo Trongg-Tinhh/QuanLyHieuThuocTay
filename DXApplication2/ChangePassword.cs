@@ -34,7 +34,7 @@ namespace DXApplication2
                 flag = false;
             }
             else
-            if (txbPassword.Text != frmLogin.matKhau)
+            if (txbPassword.Text.Equals( frmLogin.matKhau)== false)
             {
                 errorProvider1.SetError(txbPassword,"Mật khẩu không đúng");
                 flag = false;
@@ -50,7 +50,18 @@ namespace DXApplication2
                 errorProvider1.SetError(txbPasswordNew2, "Mật khẩu nhập lại không khớp");
                 flag = false;
             }
-               
+            if (flag == true)
+            {
+                string passNew=txbPasswordNew.Text;
+                string tenDN = frmLogin.tenDangNhap;
+                string mk = frmLogin.matKhau;
+                taiKhoanTableAdapter.Update_Password(passNew, mk, tenDN);
+                this.taiKhoanTableAdapter.Fill(quanLyHieuThuocTayDataSet.TaiKhoan);
+                frmLogin.matKhau= passNew;           
+                MessageBox.Show("Đổi mật khẩu thành công!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                this.Close();
+            }   
+
 
         }
 

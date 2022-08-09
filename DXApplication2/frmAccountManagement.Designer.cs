@@ -494,11 +494,12 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnXoa.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
             this.btnXoa.Location = new System.Drawing.Point(4, 57);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnXoa.MaximumSize = new System.Drawing.Size(120, 40);
             this.btnXoa.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(120, 40);
@@ -509,11 +510,12 @@
             // 
             // btnThem
             // 
-            this.btnThem.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnThem.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Black;
             this.btnThem.Location = new System.Drawing.Point(4, 2);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnThem.MaximumSize = new System.Drawing.Size(120, 40);
             this.btnThem.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(120, 40);
@@ -524,11 +526,12 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLuu.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.Black;
             this.btnLuu.Location = new System.Drawing.Point(4, 167);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnLuu.MaximumSize = new System.Drawing.Size(120, 40);
             this.btnLuu.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(120, 40);
@@ -539,11 +542,12 @@
             // 
             // btnSua
             // 
-            this.btnSua.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSua.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Black;
             this.btnSua.Location = new System.Drawing.Point(4, 112);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnSua.MaximumSize = new System.Drawing.Size(120, 40);
             this.btnSua.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(120, 40);
@@ -554,12 +558,13 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnThoat.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.Black;
             this.btnThoat.Location = new System.Drawing.Point(4, 277);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnThoat.MaximumSize = new System.Drawing.Size(120, 40);
             this.btnThoat.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(120, 40);
@@ -570,12 +575,13 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnHuy.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Black;
             this.btnHuy.Location = new System.Drawing.Point(4, 222);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnHuy.MaximumSize = new System.Drawing.Size(120, 40);
             this.btnHuy.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(120, 40);

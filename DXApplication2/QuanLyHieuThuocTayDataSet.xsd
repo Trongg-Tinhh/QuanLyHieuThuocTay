@@ -595,7 +595,7 @@ SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM Tai
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Count_HD" Modifier="Public" Name="Count_HD" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="Count_HD">
+              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Count_HD" Modifier="Public" Name="Count_HD" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Count_HD">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) 
@@ -607,7 +607,7 @@ WHERE maTaiKhoan=@maTaikhoan</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[TaiKhoan] WHERE tenDangNhap=@tenDangNhap and matKhau=@matKhau</CommandText>
@@ -618,7 +618,7 @@ WHERE maTaiKhoan=@maTaikhoan</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectName="QuanLyHieuThuocTay.dbo.TaiKhoan" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByTenHienThi_TenDangNhap_VaiTro" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByTenHienThi_TenDangNhap_VaiTro" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByTenHienThi_TenDangNhap_VaiTro">
+              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectName="QuanLyHieuThuocTay.dbo.TaiKhoan" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByTenHienThi_TenDangNhap_VaiTro" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByTenHienThi_TenDangNhap_VaiTro" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByTenHienThi_TenDangNhap_VaiTro">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro 
@@ -634,7 +634,7 @@ AND vaiTro = @vaiTro</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectName="QuanLyHieuThuocTay.dbo.TaiKhoan" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getMaTaiKhoan" Modifier="Public" Name="getMaTaiKhoan" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="getMaTaiKhoan">
+              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectName="QuanLyHieuThuocTay.dbo.TaiKhoan" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getMaTaiKhoan" Modifier="Public" Name="getMaTaiKhoan" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="getMaTaiKhoan">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT maTaiKhoan FROM TaiKhoan where tenDangNhap=@tenDangNhap</CommandText>
@@ -644,7 +644,7 @@ AND vaiTro = @vaiTro</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectName="QuanLyHieuThuocTay.dbo.TaiKhoan" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetVaiTro" Modifier="Public" Name="GetVaiTro" QueryType="Scalar" ScalarCallRetval="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="GetVaiTro">
+              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectName="QuanLyHieuThuocTay.dbo.TaiKhoan" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetVaiTro" Modifier="Public" Name="GetVaiTro" QueryType="Scalar" ScalarCallRetval="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="GetVaiTro">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT vaiTro
@@ -656,7 +656,7 @@ WHERE  (tenDangNhap = @tenDangNhap)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[TaiKhoan] ([tenDangNhap], [matKhau], [tenNhanVien], [SDT], [CCCD], [vaiTro]) VALUES (@tenDangNhap, @matKhau, @tenNhanVien, @SDT, @CCCD, @vaiTro);
@@ -671,6 +671,20 @@ SELECT maTaiKhoan, tenDangNhap, matKhau, tenNhanVien, SDT, CCCD, vaiTro FROM Tai
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="QuanLyHieuThuocTayConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Update_Password" Modifier="Public" Name="Update_Password" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="Update_Password">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE TaiKhoan
+SET          matKhau = @matKhau
+WHERE  (matKhau=@Original_matKhau)AND (tenDangNhap = @Original_tenDangNhap)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="matKhau" ColumnName="matKhau" DataSourceName="QuanLyHieuThuocTay.dbo.TaiKhoan" DataTypeServer="varchar(30)" DbType="AnsiString" Direction="Input" ParameterName="@matKhau" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumn="matKhau" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_matKhau" ColumnName="matKhau" DataSourceName="QuanLyHieuThuocTay.dbo.TaiKhoan" DataTypeServer="varchar(30)" DbType="AnsiString" Direction="Input" ParameterName="@Original_matKhau" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumn="matKhau" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_tenDangNhap" ColumnName="tenDangNhap" DataSourceName="QuanLyHieuThuocTay.dbo.TaiKhoan" DataTypeServer="varchar(30)" DbType="AnsiString" Direction="Input" ParameterName="@Original_tenDangNhap" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumn="tenDangNhap" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -1136,26 +1150,26 @@ AND ct.maHD = @maHD</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DSChiTietHoaDon" msprop:Generator_RowEvHandlerName="DSChiTietHoaDonRowChangeEventHandler" msprop:Generator_RowDeletedName="DSChiTietHoaDonRowDeleted" msprop:Generator_RowDeletingName="DSChiTietHoaDonRowDeleting" msprop:Generator_RowEvArgName="DSChiTietHoaDonRowChangeEvent" msprop:Generator_TablePropName="DSChiTietHoaDon" msprop:Generator_RowChangedName="DSChiTietHoaDonRowChanged" msprop:Generator_RowChangingName="DSChiTietHoaDonRowChanging" msprop:Generator_TableClassName="DSChiTietHoaDonDataTable" msprop:Generator_RowClassName="DSChiTietHoaDonRow" msprop:Generator_TableVarName="tableDSChiTietHoaDon" msprop:Generator_UserTableName="DSChiTietHoaDon">
+        <xs:element name="DSChiTietHoaDon" msprop:Generator_RowClassName="DSChiTietHoaDonRow" msprop:Generator_RowEvHandlerName="DSChiTietHoaDonRowChangeEventHandler" msprop:Generator_RowDeletedName="DSChiTietHoaDonRowDeleted" msprop:Generator_RowDeletingName="DSChiTietHoaDonRowDeleting" msprop:Generator_RowEvArgName="DSChiTietHoaDonRowChangeEvent" msprop:Generator_TablePropName="DSChiTietHoaDon" msprop:Generator_RowChangedName="DSChiTietHoaDonRowChanged" msprop:Generator_UserTableName="DSChiTietHoaDon" msprop:Generator_RowChangingName="DSChiTietHoaDonRowChanging" msprop:Generator_TableClassName="DSChiTietHoaDonDataTable" msprop:Generator_TableVarName="tableDSChiTietHoaDon">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="maSP" msprop:Generator_ColumnPropNameInRow="maSP" msprop:Generator_ColumnPropNameInTable="maSPColumn" msprop:Generator_ColumnVarNameInTable="columnmaSP" msprop:Generator_UserColumnName="maSP">
+              <xs:element name="maSP" msprop:Generator_UserColumnName="maSP" msprop:Generator_ColumnPropNameInTable="maSPColumn" msprop:Generator_ColumnPropNameInRow="maSP" msprop:Generator_ColumnVarNameInTable="columnmaSP">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="tenSP" msprop:Generator_ColumnPropNameInRow="tenSP" msprop:Generator_ColumnPropNameInTable="tenSPColumn" msprop:Generator_ColumnVarNameInTable="columntenSP" msprop:Generator_UserColumnName="tenSP">
+              <xs:element name="tenSP" msprop:Generator_UserColumnName="tenSP" msprop:Generator_ColumnPropNameInTable="tenSPColumn" msprop:Generator_ColumnPropNameInRow="tenSP" msprop:Generator_ColumnVarNameInTable="columntenSP">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="40" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="soLuong" msprop:Generator_ColumnPropNameInRow="soLuong" msprop:Generator_ColumnPropNameInTable="soLuongColumn" msprop:Generator_ColumnVarNameInTable="columnsoLuong" msprop:Generator_UserColumnName="soLuong" type="xs:int" />
-              <xs:element name="donGia" msprop:Generator_ColumnPropNameInRow="donGia" msprop:Generator_ColumnPropNameInTable="donGiaColumn" msprop:Generator_ColumnVarNameInTable="columndonGia" msprop:Generator_UserColumnName="donGia" type="xs:decimal" />
-              <xs:element name="thanhTien" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="thanhTien" msprop:Generator_ColumnPropNameInTable="thanhTienColumn" msprop:Generator_ColumnVarNameInTable="columnthanhTien" msprop:Generator_UserColumnName="thanhTien" type="xs:decimal" minOccurs="0" />
+              <xs:element name="soLuong" msprop:Generator_UserColumnName="soLuong" msprop:Generator_ColumnPropNameInTable="soLuongColumn" msprop:Generator_ColumnPropNameInRow="soLuong" msprop:Generator_ColumnVarNameInTable="columnsoLuong" type="xs:int" />
+              <xs:element name="donGia" msprop:Generator_UserColumnName="donGia" msprop:Generator_ColumnPropNameInTable="donGiaColumn" msprop:Generator_ColumnPropNameInRow="donGia" msprop:Generator_ColumnVarNameInTable="columndonGia" type="xs:decimal" />
+              <xs:element name="thanhTien" msdata:ReadOnly="true" msprop:Generator_UserColumnName="thanhTien" msprop:Generator_ColumnPropNameInTable="thanhTienColumn" msprop:Generator_ColumnPropNameInRow="thanhTien" msprop:Generator_ColumnVarNameInTable="columnthanhTien" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1206,15 +1220,15 @@ AND ct.maHD = @maHD</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__BangGia__maSP__4BAC3F29" msdata:parent="SanPham" msdata:child="BangGia" msdata:parentkey="maSP" msdata:childkey="maSP" msprop:Generator_UserParentTable="SanPham" msprop:Generator_UserChildTable="BangGia" msprop:Generator_RelationVarName="relationFK__BangGia__maSP__4BAC3F29" msprop:Generator_ChildPropName="GetBangGiaRows" msprop:Generator_UserRelationName="FK__BangGia__maSP__4BAC3F29" msprop:Generator_ParentPropName="SanPhamRow" />
-      <msdata:Relationship name="FK__ChiTietHoa__maHD__5DCAEF64" msdata:parent="HoaDon" msdata:child="ChiTietHoaDon" msdata:parentkey="maHD" msdata:childkey="maHD" msprop:Generator_UserParentTable="HoaDon" msprop:Generator_UserChildTable="ChiTietHoaDon" msprop:Generator_RelationVarName="relationFK__ChiTietHoa__maHD__5DCAEF64" msprop:Generator_ChildPropName="GetChiTietHoaDonRows" msprop:Generator_UserRelationName="FK__ChiTietHoa__maHD__5DCAEF64" msprop:Generator_ParentPropName="HoaDonRow" />
-      <msdata:Relationship name="FK__ChiTietHoa__maSP__5EBF139D" msdata:parent="SanPham" msdata:child="ChiTietHoaDon" msdata:parentkey="maSP" msdata:childkey="maSP" msprop:Generator_UserParentTable="SanPham" msprop:Generator_UserChildTable="ChiTietHoaDon" msprop:Generator_RelationVarName="relationFK__ChiTietHoa__maSP__5EBF139D" msprop:Generator_ChildPropName="GetChiTietHoaDonRows" msprop:Generator_UserRelationName="FK__ChiTietHoa__maSP__5EBF139D" msprop:Generator_ParentPropName="SanPhamRow" />
-      <msdata:Relationship name="FK__HoaDon__maTaiKho__59063A47" msdata:parent="TaiKhoan" msdata:child="HoaDon" msdata:parentkey="maTaiKhoan" msdata:childkey="maTaiKhoan" msprop:Generator_UserParentTable="TaiKhoan" msprop:Generator_UserChildTable="HoaDon" msprop:Generator_RelationVarName="relationFK__HoaDon__maTaiKho__59063A47" msprop:Generator_ChildPropName="GetHoaDonRows" msprop:Generator_UserRelationName="FK__HoaDon__maTaiKho__59063A47" msprop:Generator_ParentPropName="TaiKhoanRow" />
-      <msdata:Relationship name="FK__SanPham__maLoai__47DBAE45" msdata:parent="LoaiSanPham" msdata:child="SanPham" msdata:parentkey="maLoai" msdata:childkey="maLoai" msprop:Generator_UserParentTable="LoaiSanPham" msprop:Generator_UserChildTable="SanPham" msprop:Generator_RelationVarName="relationFK__SanPham__maLoai__47DBAE45" msprop:Generator_ChildPropName="GetSanPhamRows" msprop:Generator_ParentPropName="LoaiSanPhamRow" msprop:Generator_UserRelationName="FK__SanPham__maLoai__47DBAE45" />
-      <msdata:Relationship name="FK__SanPham__maNSX__46E78A0C" msdata:parent="NhaSanXuat" msdata:child="SanPham" msdata:parentkey="maNSX" msdata:childkey="maNSX" msprop:Generator_UserParentTable="NhaSanXuat" msprop:Generator_UserChildTable="SanPham" msprop:Generator_RelationVarName="relationFK__SanPham__maNSX__46E78A0C" msprop:Generator_ChildPropName="GetSanPhamRows" msprop:Generator_ParentPropName="NhaSanXuatRow" msprop:Generator_UserRelationName="FK__SanPham__maNSX__46E78A0C" />
-      <msdata:Relationship name="FK__SanPham__maLoai__47DBAE451" msdata:parent="DanhSachSanPham" msdata:child="SanPham" msdata:parentkey="maLoai" msdata:childkey="maLoai" msprop:Generator_UserParentTable="DanhSachSanPham" msprop:Generator_UserChildTable="SanPham" msprop:Generator_RelationVarName="relationFK__SanPham__maLoai__47DBAE451" msprop:Generator_ChildPropName="GetSanPhamRows" msprop:Generator_ParentPropName="DanhSachSanPhamRow" msprop:Generator_UserRelationName="FK__SanPham__maLoai__47DBAE451" />
-      <msdata:Relationship name="FK__ChiTietHoa__maHD__5DCAEF641" msdata:parent="DanhSachHoaDon" msdata:child="ChiTietHoaDon" msdata:parentkey="maHD" msdata:childkey="maHD" msprop:Generator_UserParentTable="DanhSachHoaDon" msprop:Generator_UserChildTable="ChiTietHoaDon" msprop:Generator_RelationVarName="relationFK__ChiTietHoa__maHD__5DCAEF641" msprop:Generator_ChildPropName="GetChiTietHoaDonRows" msprop:Generator_ParentPropName="DanhSachHoaDonRow" msprop:Generator_UserRelationName="FK__ChiTietHoa__maHD__5DCAEF641" />
-      <msdata:Relationship name="FK__ChiTietHoa__maSP__3D5E1FD2" msdata:parent="SanPham" msdata:child="DSChiTietHoaDon" msdata:parentkey="maSP" msdata:childkey="maSP" msprop:Generator_UserParentTable="SanPham" msprop:Generator_UserChildTable="DSChiTietHoaDon" msprop:Generator_RelationVarName="relationFK__ChiTietHoa__maSP__3D5E1FD2" msprop:Generator_ChildPropName="GetDSChiTietHoaDonRows" msprop:Generator_ParentPropName="SanPhamRow" msprop:Generator_UserRelationName="FK__ChiTietHoa__maSP__3D5E1FD2" />
+      <msdata:Relationship name="FK__BangGia__maSP__4BAC3F29" msdata:parent="SanPham" msdata:child="BangGia" msdata:parentkey="maSP" msdata:childkey="maSP" msprop:Generator_UserParentTable="SanPham" msprop:Generator_UserChildTable="BangGia" msprop:Generator_RelationVarName="relationFK__BangGia__maSP__4BAC3F29" msprop:Generator_ChildPropName="GetBangGiaRows" msprop:Generator_ParentPropName="SanPhamRow" msprop:Generator_UserRelationName="FK__BangGia__maSP__4BAC3F29" />
+      <msdata:Relationship name="FK__ChiTietHoa__maHD__5DCAEF64" msdata:parent="HoaDon" msdata:child="ChiTietHoaDon" msdata:parentkey="maHD" msdata:childkey="maHD" msprop:Generator_UserParentTable="HoaDon" msprop:Generator_UserChildTable="ChiTietHoaDon" msprop:Generator_RelationVarName="relationFK__ChiTietHoa__maHD__5DCAEF64" msprop:Generator_ChildPropName="GetChiTietHoaDonRows" msprop:Generator_ParentPropName="HoaDonRow" msprop:Generator_UserRelationName="FK__ChiTietHoa__maHD__5DCAEF64" />
+      <msdata:Relationship name="FK__ChiTietHoa__maSP__5EBF139D" msdata:parent="SanPham" msdata:child="ChiTietHoaDon" msdata:parentkey="maSP" msdata:childkey="maSP" msprop:Generator_UserParentTable="SanPham" msprop:Generator_UserChildTable="ChiTietHoaDon" msprop:Generator_RelationVarName="relationFK__ChiTietHoa__maSP__5EBF139D" msprop:Generator_ChildPropName="GetChiTietHoaDonRows" msprop:Generator_ParentPropName="SanPhamRow" msprop:Generator_UserRelationName="FK__ChiTietHoa__maSP__5EBF139D" />
+      <msdata:Relationship name="FK__HoaDon__maTaiKho__59063A47" msdata:parent="TaiKhoan" msdata:child="HoaDon" msdata:parentkey="maTaiKhoan" msdata:childkey="maTaiKhoan" msprop:Generator_UserParentTable="TaiKhoan" msprop:Generator_UserChildTable="HoaDon" msprop:Generator_RelationVarName="relationFK__HoaDon__maTaiKho__59063A47" msprop:Generator_ChildPropName="GetHoaDonRows" msprop:Generator_ParentPropName="TaiKhoanRow" msprop:Generator_UserRelationName="FK__HoaDon__maTaiKho__59063A47" />
+      <msdata:Relationship name="FK__SanPham__maLoai__47DBAE45" msdata:parent="LoaiSanPham" msdata:child="SanPham" msdata:parentkey="maLoai" msdata:childkey="maLoai" msprop:Generator_UserParentTable="LoaiSanPham" msprop:Generator_UserChildTable="SanPham" msprop:Generator_RelationVarName="relationFK__SanPham__maLoai__47DBAE45" msprop:Generator_ChildPropName="GetSanPhamRows" msprop:Generator_UserRelationName="FK__SanPham__maLoai__47DBAE45" msprop:Generator_ParentPropName="LoaiSanPhamRow" />
+      <msdata:Relationship name="FK__SanPham__maNSX__46E78A0C" msdata:parent="NhaSanXuat" msdata:child="SanPham" msdata:parentkey="maNSX" msdata:childkey="maNSX" msprop:Generator_UserParentTable="NhaSanXuat" msprop:Generator_UserChildTable="SanPham" msprop:Generator_RelationVarName="relationFK__SanPham__maNSX__46E78A0C" msprop:Generator_ChildPropName="GetSanPhamRows" msprop:Generator_UserRelationName="FK__SanPham__maNSX__46E78A0C" msprop:Generator_ParentPropName="NhaSanXuatRow" />
+      <msdata:Relationship name="FK__SanPham__maLoai__47DBAE451" msdata:parent="DanhSachSanPham" msdata:child="SanPham" msdata:parentkey="maLoai" msdata:childkey="maLoai" msprop:Generator_UserParentTable="DanhSachSanPham" msprop:Generator_UserChildTable="SanPham" msprop:Generator_RelationVarName="relationFK__SanPham__maLoai__47DBAE451" msprop:Generator_ChildPropName="GetSanPhamRows" msprop:Generator_UserRelationName="FK__SanPham__maLoai__47DBAE451" msprop:Generator_ParentPropName="DanhSachSanPhamRow" />
+      <msdata:Relationship name="FK__ChiTietHoa__maHD__5DCAEF641" msdata:parent="DanhSachHoaDon" msdata:child="ChiTietHoaDon" msdata:parentkey="maHD" msdata:childkey="maHD" msprop:Generator_UserParentTable="DanhSachHoaDon" msprop:Generator_UserChildTable="ChiTietHoaDon" msprop:Generator_RelationVarName="relationFK__ChiTietHoa__maHD__5DCAEF641" msprop:Generator_ChildPropName="GetChiTietHoaDonRows" msprop:Generator_UserRelationName="FK__ChiTietHoa__maHD__5DCAEF641" msprop:Generator_ParentPropName="DanhSachHoaDonRow" />
+      <msdata:Relationship name="FK__ChiTietHoa__maSP__3D5E1FD2" msdata:parent="SanPham" msdata:child="DSChiTietHoaDon" msdata:parentkey="maSP" msdata:childkey="maSP" msprop:Generator_UserParentTable="SanPham" msprop:Generator_UserChildTable="DSChiTietHoaDon" msprop:Generator_RelationVarName="relationFK__ChiTietHoa__maSP__3D5E1FD2" msprop:Generator_ChildPropName="GetDSChiTietHoaDonRows" msprop:Generator_UserRelationName="FK__ChiTietHoa__maSP__3D5E1FD2" msprop:Generator_ParentPropName="SanPhamRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -41,17 +41,39 @@ namespace DXApplication2
             danhSachHoaDonTableAdapter.FillByTenKH_TenNV(quanLyHieuThuocTayDataSet.DanhSachHoaDon, tenKH, tenNV);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        
 
+                
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            txbMaHD.Text = "";
+            txbTenKH.Text = "";
+            txbSDT.Text = "";
+            dateTimeNgayBan.Text = "";
+            txbThanhTien.Text = "";
+            txbTenNV.Text = "";
+            this.dSChiTietHoaDonTableAdapter.Fill(quanLyHieuThuocTayDataSet.DSChiTietHoaDon,0);
         }
 
         private void dataGridViewDSHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int numRow = e.RowIndex;
-            if (numRow < 0) return;
-            int ma=int.Parse(dataGridViewDSHD.Rows[numRow].Cells[0].Value.ToString());
-            dSChiTietHoaDonTableAdapter.Fill(quanLyHieuThuocTayDataSet.DSChiTietHoaDon,ma);
+            int numrow = e.RowIndex;
+            if (numrow < 0) return;
+            string mahdStr = dataGridViewDSHD.Rows[numrow].Cells[0].Value.ToString();
+            string tenkhach = dataGridViewDSHD.Rows[numrow].Cells[1].Value.ToString();
+            string sdt = dataGridViewDSHD.Rows[numrow].Cells[2].Value.ToString();
+            string ngayban = dataGridViewDSHD.Rows[numrow].Cells[3].Value.ToString();
+            string thanhtien = dataGridViewDSHD.Rows[numrow].Cells[4].Value.ToString();
+            string tennv = dataGridViewDSHD.Rows[numrow].Cells[5].Value.ToString();
+            txbMaHD.Text = mahdStr;
+            txbTenKH.Text = tenkhach;
+            txbSDT.Text = sdt;
+            dateTimeNgayBan.Text = ngayban;
+            txbThanhTien.Text = thanhtien + " VND";
+            txbTenNV.Text = tennv;
+
+            int mahd=int.Parse(mahdStr);
+            dSChiTietHoaDonTableAdapter.Fill(quanLyHieuThuocTayDataSet.DSChiTietHoaDon, mahd);
         }
     }
 }

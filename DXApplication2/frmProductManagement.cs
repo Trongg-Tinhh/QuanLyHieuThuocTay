@@ -20,7 +20,7 @@ namespace DXApplication2
         }
         private bool add = false;
         private bool edit = false;
-        String StringConnect = @"Data Source=TRANNGHIEP;Initial Catalog=QuanLyHieuThuocTay;Integrated Security=True";
+        String StringConnect = DataConnection.DataConnectionString.ConnectionString;
         private void frmProductManagement_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.SanPham' table. You can move, or remove it, as needed.
@@ -70,9 +70,11 @@ namespace DXApplication2
             this.add = true;
             ChucNang(true);
             btnThem.Enabled = false;
+            btnThem.BackColor = SystemColors.ButtonFace;
             btnSua.Enabled = false;
+            btnSua.BackColor = SystemColors.ButtonFace;
             btnHuy.Enabled = true;
-            btnThem.BackColor = System.Drawing.Color.White;
+            btnHuy.BackColor = SystemColors.ActiveBorder;
         }
 
 
@@ -82,8 +84,11 @@ namespace DXApplication2
             dataGridViewThuoc.ClearSelection();
             ChucNang(true);
             btnThem.Enabled = false;
+            btnThem.BackColor = SystemColors.ButtonFace;
             btnHuy.Enabled = true;
-            btnSua.BackColor = System.Drawing.Color.White;
+            btnHuy.BackColor = SystemColors.ActiveBorder;
+            btnSua.Enabled=false;
+            btnSua.BackColor = SystemColors.ButtonFace;
             this.edit = true;
         }
 
@@ -94,20 +99,26 @@ namespace DXApplication2
             {
                 setTextNull();
                 btnThem.Enabled = true;
+                btnThem.BackColor = SystemColors.ActiveBorder;
                 btnSua.Enabled = true;
+                btnSua.BackColor = SystemColors.ActiveBorder;
                 btnHuy.Enabled = false;
+                btnHuy.BackColor = SystemColors.ButtonFace;
                 this.add = false;
-                btnThem.BackColor = System.Drawing.Color.DarkGray;
+                
             }
             if (this.edit == true)
             {
                 setTextNull();
                 btnThem.Enabled = true;
+                btnThem.BackColor = SystemColors.ActiveBorder;
                 btnSua.Enabled = true;
+                btnSua.BackColor = SystemColors.ActiveBorder;
                 btnHuy.Enabled = false;
+                btnHuy.BackColor = SystemColors.ButtonFace;
                 btnLuu.Enabled = false;
+                btnLuu.BackColor = SystemColors.ButtonFace;
                 this.edit = false;
-                btnSua.BackColor = Color.DarkGray;
             }
         }
 
@@ -220,11 +231,14 @@ namespace DXApplication2
                 if (txtTenSP.Text.Trim().CompareTo("") != 0)
                 {
                     btnLuu.Enabled = true;
+                    btnLuu.BackColor = SystemColors.ActiveBorder;
                     //btnHuy.Enabled = true;
                 }
                 else
                 {
                     btnLuu.Enabled = false;
+                    btnLuu.BackColor = SystemColors.ButtonFace;
+
                     //btnHuy.Enabled = false;
                 }
             }
@@ -236,6 +250,7 @@ namespace DXApplication2
             if (this.edit == true)
             {
                 btnLuu.Enabled = true;
+                btnLuu.BackColor = SystemColors.ActiveBorder;
                 int pos = e.RowIndex;
                 String TenSP = dataGridViewThuoc.Rows[pos].Cells[1].Value.ToString();
                 String LoaiSP = dataGridViewThuoc.Rows[pos].Cells[3].Value.ToString();

@@ -36,14 +36,18 @@ namespace DXApplication2
             txbDoTuoi.Text = null;
             numericSoLuong.Value = 0;
             btnThem.Enabled = false;
+            btnThem.BackColor = SystemColors.ButtonFace;
             btnXoaThuoc.Enabled = false;
+            btnXoaThuoc.BackColor = SystemColors.ButtonFace;
         }
 
         // chức năng click vào 1 dòng ở dgv dữ liệu sẽ sổ lên trên textbox
         private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             btnThem.Enabled = true;
+            btnThem.BackColor = SystemColors.ActiveBorder;
             btnXoaThuoc.Enabled = false;
+            btnXoaThuoc.BackColor = SystemColors.ButtonFace;
             if (e.RowIndex < 0)
                 return;
             int index = e.RowIndex;
@@ -64,6 +68,7 @@ namespace DXApplication2
         // thêm sản phẩm vào bảng bên phải
         private void btnThem_Click(object sender, EventArgs e)
         {            
+            errorProvider1.Clear();
             string tenSP = txbTenSP.Text;
             string loaiSP = txbLoaiSP.Text;
             int soLuong = (int)numericSoLuong.Value;
@@ -72,7 +77,7 @@ namespace DXApplication2
 
             if (soLuong == 0)
             {
-                MessageBox.Show("Số lượng phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK);
+                errorProvider1.SetError(numericSoLuong, "Số lượng phải lớn hơn 0");
                 return;
             }
 
@@ -150,21 +155,21 @@ namespace DXApplication2
             DateTime ngayBan;
             string ngayBanStr = dateTimeEditNgayBan.Text;
 
-
+            errorProvider1.Clear();
             // kiểm tra các ràng buộc
             if (tenKH == null || tenKH == "")
             {
-                MessageBox.Show("Tên khách hàng không được rỗng", "Thông báo", MessageBoxButtons.OK);
+                errorProvider1.SetError(txbTenKH,"Tên khách hàng không được rỗng");
                 return;
             }
             if (sdt.Length != 10)
             {
-                MessageBox.Show("Số điện thoại không hợp lệ", "Thông báo", MessageBoxButtons.OK);
+                errorProvider1.SetError(txbSDT,"Số điện thoại không hợp lệ");
                 return;
             }
             if(ngayBanStr == null || ngayBanStr == "")
             {
-                MessageBox.Show("Ngày bán không được rỗng", "Thông báo", MessageBoxButtons.OK);
+                errorProvider1.SetError(dateTimeEditNgayBan, "Ngày bán không được rỗng");
                 return;
             }
 
@@ -202,11 +207,14 @@ namespace DXApplication2
         {
             ClearData();
             btnXoaThuoc.Enabled = true;
+            btnXoaThuoc.BackColor = SystemColors.ActiveBorder;
         }
 
         private void txbTenKH_TextChanged(object sender, EventArgs e)
         {
             ClearData();
         }
+
+        
     }
 }

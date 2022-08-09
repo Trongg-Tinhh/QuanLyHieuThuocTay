@@ -159,6 +159,7 @@
             this.tablePanel3.SetRow(this.dataGridViewThuoc, 2);
             this.dataGridViewThuoc.RowHeadersWidth = 51;
             this.dataGridViewThuoc.RowTemplate.Height = 24;
+            this.dataGridViewThuoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewThuoc.Size = new System.Drawing.Size(825, 346);
             this.dataGridViewThuoc.TabIndex = 10;
             this.dataGridViewThuoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellClick_dataGridViewSanPham);
@@ -167,7 +168,7 @@
             // maSPDataGridViewTextBoxColumn
             // 
             this.maSPDataGridViewTextBoxColumn.DataPropertyName = "maSP";
-            this.maSPDataGridViewTextBoxColumn.HeaderText = "maSP";
+            this.maSPDataGridViewTextBoxColumn.HeaderText = "Mã sản phẩm";
             this.maSPDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
             this.maSPDataGridViewTextBoxColumn.ReadOnly = true;
@@ -176,7 +177,7 @@
             // tenSPDataGridViewTextBoxColumn
             // 
             this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "tenSP";
-            this.tenSPDataGridViewTextBoxColumn.HeaderText = "tenSP";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "Tên sản phẩm";
             this.tenSPDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
             this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
@@ -185,7 +186,7 @@
             // maLoaiDataGridViewTextBoxColumn
             // 
             this.maLoaiDataGridViewTextBoxColumn.DataPropertyName = "maLoai";
-            this.maLoaiDataGridViewTextBoxColumn.HeaderText = "maLoai";
+            this.maLoaiDataGridViewTextBoxColumn.HeaderText = "Mã loại";
             this.maLoaiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maLoaiDataGridViewTextBoxColumn.Name = "maLoaiDataGridViewTextBoxColumn";
             this.maLoaiDataGridViewTextBoxColumn.ReadOnly = true;
@@ -194,7 +195,7 @@
             // tenLoaiDataGridViewTextBoxColumn
             // 
             this.tenLoaiDataGridViewTextBoxColumn.DataPropertyName = "tenLoai";
-            this.tenLoaiDataGridViewTextBoxColumn.HeaderText = "tenLoai";
+            this.tenLoaiDataGridViewTextBoxColumn.HeaderText = "Tên loại";
             this.tenLoaiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tenLoaiDataGridViewTextBoxColumn.Name = "tenLoaiDataGridViewTextBoxColumn";
             this.tenLoaiDataGridViewTextBoxColumn.ReadOnly = true;
@@ -203,7 +204,7 @@
             // congDungDataGridViewTextBoxColumn
             // 
             this.congDungDataGridViewTextBoxColumn.DataPropertyName = "congDung";
-            this.congDungDataGridViewTextBoxColumn.HeaderText = "congDung";
+            this.congDungDataGridViewTextBoxColumn.HeaderText = "Công dụng";
             this.congDungDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.congDungDataGridViewTextBoxColumn.Name = "congDungDataGridViewTextBoxColumn";
             this.congDungDataGridViewTextBoxColumn.ReadOnly = true;
@@ -212,7 +213,7 @@
             // thanhPhanChinhDataGridViewTextBoxColumn
             // 
             this.thanhPhanChinhDataGridViewTextBoxColumn.DataPropertyName = "thanhPhanChinh";
-            this.thanhPhanChinhDataGridViewTextBoxColumn.HeaderText = "thanhPhanChinh";
+            this.thanhPhanChinhDataGridViewTextBoxColumn.HeaderText = "Thành phần chính";
             this.thanhPhanChinhDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.thanhPhanChinhDataGridViewTextBoxColumn.Name = "thanhPhanChinhDataGridViewTextBoxColumn";
             this.thanhPhanChinhDataGridViewTextBoxColumn.ReadOnly = true;
@@ -221,7 +222,7 @@
             // doTuoiDataGridViewTextBoxColumn
             // 
             this.doTuoiDataGridViewTextBoxColumn.DataPropertyName = "doTuoi";
-            this.doTuoiDataGridViewTextBoxColumn.HeaderText = "doTuoi";
+            this.doTuoiDataGridViewTextBoxColumn.HeaderText = "Độ tuổi";
             this.doTuoiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.doTuoiDataGridViewTextBoxColumn.Name = "doTuoiDataGridViewTextBoxColumn";
             this.doTuoiDataGridViewTextBoxColumn.ReadOnly = true;
@@ -230,7 +231,7 @@
             // soLuongDataGridViewTextBoxColumn
             // 
             this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "soLuong";
-            this.soLuongDataGridViewTextBoxColumn.HeaderText = "soLuong";
+            this.soLuongDataGridViewTextBoxColumn.HeaderText = "Số lượng";
             this.soLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
             this.soLuongDataGridViewTextBoxColumn.ReadOnly = true;
@@ -239,7 +240,7 @@
             // donViTinhDataGridViewTextBoxColumn
             // 
             this.donViTinhDataGridViewTextBoxColumn.DataPropertyName = "donViTinh";
-            this.donViTinhDataGridViewTextBoxColumn.HeaderText = "donViTinh";
+            this.donViTinhDataGridViewTextBoxColumn.HeaderText = "Đơn vị tính";
             this.donViTinhDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.donViTinhDataGridViewTextBoxColumn.Name = "donViTinhDataGridViewTextBoxColumn";
             this.donViTinhDataGridViewTextBoxColumn.ReadOnly = true;
@@ -248,7 +249,7 @@
             // maNSXDataGridViewTextBoxColumn
             // 
             this.maNSXDataGridViewTextBoxColumn.DataPropertyName = "maNSX";
-            this.maNSXDataGridViewTextBoxColumn.HeaderText = "maNSX";
+            this.maNSXDataGridViewTextBoxColumn.HeaderText = "Mã nhà sản xuất";
             this.maNSXDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maNSXDataGridViewTextBoxColumn.Name = "maNSXDataGridViewTextBoxColumn";
             this.maNSXDataGridViewTextBoxColumn.ReadOnly = true;
@@ -257,7 +258,7 @@
             // tenNSXDataGridViewTextBoxColumn
             // 
             this.tenNSXDataGridViewTextBoxColumn.DataPropertyName = "tenNSX";
-            this.tenNSXDataGridViewTextBoxColumn.HeaderText = "tenNSX";
+            this.tenNSXDataGridViewTextBoxColumn.HeaderText = "Tên nhà sản xuất";
             this.tenNSXDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tenNSXDataGridViewTextBoxColumn.Name = "tenNSXDataGridViewTextBoxColumn";
             this.tenNSXDataGridViewTextBoxColumn.ReadOnly = true;
@@ -266,7 +267,7 @@
             // moTaDataGridViewTextBoxColumn
             // 
             this.moTaDataGridViewTextBoxColumn.DataPropertyName = "moTa";
-            this.moTaDataGridViewTextBoxColumn.HeaderText = "moTa";
+            this.moTaDataGridViewTextBoxColumn.HeaderText = "Mô tả";
             this.moTaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
             this.moTaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -878,6 +879,7 @@
         private QuanLyHieuThuocTayDataSetTableAdapters.LoaiSanPhamTableAdapter loaiSanPhamTableAdapter;
         private System.Windows.Forms.BindingSource nhaSanXuatBindingSource;
         private QuanLyHieuThuocTayDataSetTableAdapters.NhaSanXuatTableAdapter nhaSanXuatTableAdapter;
+        private System.Windows.Forms.ComboBox cmbMaNSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maLoaiDataGridViewTextBoxColumn;
@@ -890,6 +892,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maNSXDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNSXDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox cmbMaNSX;
     }
 }

@@ -53,8 +53,11 @@ namespace DXApplication2
             else
                 ckbVaiTro.Checked = false;
             btnSua.Enabled = true;
+            btnSua.BackColor = SystemColors.ActiveBorder;
             btnXoa.Enabled = true;
+            btnXoa.BackColor = SystemColors.ActiveBorder;
             btnHuy.Enabled = true;
+            btnHuy.BackColor = SystemColors.ActiveBorder;
         }
         public void defaultstate()
         {
@@ -69,17 +72,19 @@ namespace DXApplication2
             txbSDT.Text = "";
             ckbVaiTro.Text = "Quản lí";
             btnThem.Enabled = true;
+            btnThem.BackColor = SystemColors.ActiveBorder;
             btnXoa.Enabled = false;
+            btnXoa.BackColor = SystemColors.ButtonFace;
             btnSua.Enabled = false;
+            btnSua.BackColor = SystemColors.ButtonFace;
             btnHuy.Enabled = false; 
+            btnHuy.BackColor = SystemColors.ButtonFace;
             btnLuu.Enabled = false;
+            btnLuu.BackColor = SystemColors.ButtonFace;
             dataGridViewDSTK.Enabled=true;
             this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.TaiKhoan);
         }
-        public void checkText()
-        {
-
-        }
+        
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -87,8 +92,11 @@ namespace DXApplication2
             txbPassWord.Enabled=true;
             dataGridViewDSTK.Enabled = false;
             btnLuu.Enabled = true;
+            btnLuu.BackColor = SystemColors.ActiveBorder;
             btnHuy.Enabled = true;
+            btnHuy.BackColor = SystemColors.ActiveBorder;
             btnThem.Enabled=false;
+            btnThem.BackColor = SystemColors.ButtonFace;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -183,6 +191,7 @@ namespace DXApplication2
             string tenDN = txbUserName.Text;
             bool vaiTro = ckbVaiTro.Checked;
             btnHuy.Enabled=true;
+            btnHuy.BackColor = SystemColors.ActiveBorder;
             this.taiKhoanTableAdapter.FillByTenHienThi_TenDangNhap_VaiTro(quanLyHieuThuocTayDataSet.TaiKhoan, tenHT, tenDN, vaiTro);
         }
 
