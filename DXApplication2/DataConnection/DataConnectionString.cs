@@ -8,6 +8,6 @@ namespace DXApplication2.DataConnection
 {
     internal class DataConnectionString
     {
-        public static string ConnectionString = @"Data Source=trong-tinh\sqlexpress;Initial Catalog=QuanLyHieuThuocTay;Integrated Security=True";
+        public static string ConnectionString = @"Data Source=TRANNGHIEP;Initial Catalog=QuanLyHieuThuocTay;Integrated Security=True";
     }
 }
