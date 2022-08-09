@@ -57,13 +57,14 @@ namespace DXApplication2
                     {
                         MessageBox.Show("Thuốc "+ txtTenSP.Text.Trim()+" đã tồn tại");
                         sanPhamTableAdapter.UpdateQuerySoLuongThuoc(int.Parse(nudSoLuong.Value.ToString()), txtTenSP.Text.Trim());
-                        
+                        danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
+
                     }   
                     else
                     {
-                        sanPhamTableAdapter.InsertQuerySanPham(MaThuoc, txtTenSP.Text.Trim(), cmbLoaiSP.SelectedValue.ToString(),int.Parse(cmbMaNSX.SelectedValue.ToString()), txbThanhPhan.Text, txbDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text, int.Parse(nudSoLuong.Value.ToString()), txbMoTa.Text);
+                        sanPhamTableAdapter.InsertQuerySanPham(MaThuoc, txtTenSP.Text.Trim(), cmbLoaiSP.SelectedValue.ToString(),int.Parse(cmbMaNSX.SelectedValue.ToString()), txtThanhPhan.Text, txtDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text, int.Parse(nudSoLuong.Value.ToString()), txtMoTa.Text);
                         MessageBox.Show("Đã thêm " + txtTenSP.Text.Trim());
-                        load_Data();
+                        danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
                     }
                     
                     connection.Close();
@@ -116,8 +117,7 @@ namespace DXApplication2
                 {
                     sanPhamTableAdapter.DeleteQuerySanPhamByMaSP(maSP);
                     MessageBox.Show("Đã xóa thuốc có Mã: " + maSP);
-                    load_Data();
-                    sanPhamBindingSource.ResumeBinding();
+                    danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
                 }    
                 connection.Close();
             }
@@ -132,13 +132,7 @@ namespace DXApplication2
             else
                 btnXoa.Enabled = false;
         }
-        private void load_Data()
-        {
-            sanPhamTableAdapter.Fill(quanLyHieuThuocTayDataSet.SanPham);
-            dataGridViewThuoc.DataSource = quanLyHieuThuocTayDataSet.SanPham;
-            dataGridViewThuoc.Refresh();
-            
-        }
+
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -147,7 +141,7 @@ namespace DXApplication2
             //String MaSP = sanPhamTableAdapter.ScalarQueryMaSanPham(txtTenSP.Text.Trim()).ToString();
             String MaLoai = loaiSanPhamTableAdapter.ScalarQueryMaLoaiSanPham(cmbLoaiSP.Text.Trim());
             Nullable<int> MaNSX = nhaSanXuatTableAdapter.ScalarQueryMaNSX(cmbMaNSX.Text.Trim());
-            sanPhamTableAdapter.UpdateQuerySanPham(maSP, txtTenSP.Text, MaLoai, MaNSX, txbThanhPhan.Text, txbDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text,int.Parse( nudSoLuong.Value.ToString()), txbMoTa.Text);
+            sanPhamTableAdapter.UpdateQuerySanPham(maSP, txtTenSP.Text, MaLoai, MaNSX, txtThanhPhan.Text, txtDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text,int.Parse( nudSoLuong.Value.ToString()), txtMoTa.Text);
             //frmProductManagement frmProductManagement = new frmProductManagement();
             //frmProductManagement.InitializeComponent();
             danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
@@ -187,11 +181,11 @@ namespace DXApplication2
                 txtTenSP.Text = TenSP;
                 cmbMaNSX.Text = NhaSX;
                 cmbLoaiSP.Text = LoaiSP;
-                txbThanhPhan.Text = ThanhPhan;
+                txtThanhPhan.Text = ThanhPhan;
                 txtCongDung.Text = CongDung;
                 cmbDonVi.Text = DonViTinh;
-                txbDoTuoi.Text = DoTuoi;
-                txbMoTa.Text = MoTa;
+                txtDoTuoi.Text = DoTuoi;
+                txtMoTa.Text = MoTa;
             }    
         }
     }

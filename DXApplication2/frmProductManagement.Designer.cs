@@ -52,10 +52,10 @@
             this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.txbThanhPhan = new System.Windows.Forms.TextBox();
+            this.txtThanhPhan = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.txbMoTa = new System.Windows.Forms.TextBox();
+            this.txtMoTa = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.cmbDonVi = new System.Windows.Forms.ComboBox();
@@ -73,7 +73,7 @@
             this.lblNhaSX = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.txbDoTuoi = new System.Windows.Forms.TextBox();
+            this.txtDoTuoi = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
@@ -372,7 +372,7 @@
             // panel8
             // 
             this.tablePanel4.SetColumn(this.panel8, 0);
-            this.panel8.Controls.Add(this.txbThanhPhan);
+            this.panel8.Controls.Add(this.txtThanhPhan);
             this.panel8.Controls.Add(this.label8);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -383,16 +383,16 @@
             this.panel8.Size = new System.Drawing.Size(267, 48);
             this.panel8.TabIndex = 4;
             // 
-            // txbThanhPhan
+            // txtThanhPhan
             // 
-            this.txbThanhPhan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sanPhamBindingSource, "thanhPhanChinh", true));
-            this.txbThanhPhan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txbThanhPhan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbThanhPhan.Location = new System.Drawing.Point(0, 20);
-            this.txbThanhPhan.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.txbThanhPhan.Name = "txbThanhPhan";
-            this.txbThanhPhan.Size = new System.Drawing.Size(267, 28);
-            this.txbThanhPhan.TabIndex = 1;
+            this.txtThanhPhan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sanPhamBindingSource, "thanhPhanChinh", true));
+            this.txtThanhPhan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtThanhPhan.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThanhPhan.Location = new System.Drawing.Point(0, 20);
+            this.txtThanhPhan.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtThanhPhan.Name = "txtThanhPhan";
+            this.txtThanhPhan.Size = new System.Drawing.Size(267, 28);
+            this.txtThanhPhan.TabIndex = 1;
             // 
             // label8
             // 
@@ -409,7 +409,7 @@
             // panel14
             // 
             this.tablePanel4.SetColumn(this.panel14, 2);
-            this.panel14.Controls.Add(this.txbMoTa);
+            this.panel14.Controls.Add(this.txtMoTa);
             this.panel14.Controls.Add(this.label14);
             this.panel14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel14.Location = new System.Drawing.Point(554, 106);
@@ -419,16 +419,16 @@
             this.panel14.Size = new System.Drawing.Size(267, 47);
             this.panel14.TabIndex = 6;
             // 
-            // txbMoTa
+            // txtMoTa
             // 
-            this.txbMoTa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.danhSachSanPhamBindingSource, "moTa", true));
-            this.txbMoTa.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txbMoTa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMoTa.Location = new System.Drawing.Point(0, 19);
-            this.txbMoTa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.txbMoTa.Name = "txbMoTa";
-            this.txbMoTa.Size = new System.Drawing.Size(267, 28);
-            this.txbMoTa.TabIndex = 1;
+            this.txtMoTa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.danhSachSanPhamBindingSource, "moTa", true));
+            this.txtMoTa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtMoTa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMoTa.Location = new System.Drawing.Point(0, 19);
+            this.txtMoTa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtMoTa.Name = "txtMoTa";
+            this.txtMoTa.Size = new System.Drawing.Size(267, 28);
+            this.txtMoTa.TabIndex = 1;
             // 
             // label14
             // 
@@ -458,15 +458,18 @@
             // 
             // cmbDonVi
             // 
-            this.cmbDonVi.DataSource = this.sanPhamBindingSource;
-            this.cmbDonVi.DisplayMember = "donViTinh";
             this.cmbDonVi.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.cmbDonVi.FormattingEnabled = true;
+            this.cmbDonVi.Items.AddRange(new object[] {
+            "Viên",
+            "Chai",
+            "Lọ",
+            "Hộp",
+            "Ống"});
             this.cmbDonVi.Location = new System.Drawing.Point(0, 18);
             this.cmbDonVi.Name = "cmbDonVi";
             this.cmbDonVi.Size = new System.Drawing.Size(267, 29);
             this.cmbDonVi.TabIndex = 9;
-            this.cmbDonVi.ValueMember = "donViTinh";
             this.cmbDonVi.SelectedIndexChanged += new System.EventHandler(this.cmbDonVi_SelectedIndexChanged);
             // 
             // label13
@@ -609,7 +612,7 @@
             // 
             this.tablePanel4.SetColumn(this.panel12, 2);
             this.panel12.Controls.Add(this.label12);
-            this.panel12.Controls.Add(this.txbDoTuoi);
+            this.panel12.Controls.Add(this.txtDoTuoi);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel12.Location = new System.Drawing.Point(554, 54);
@@ -631,16 +634,16 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Độ tuổi:";
             // 
-            // txbDoTuoi
+            // txtDoTuoi
             // 
-            this.txbDoTuoi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sanPhamBindingSource, "doTuoi", true));
-            this.txbDoTuoi.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txbDoTuoi.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbDoTuoi.Location = new System.Drawing.Point(0, 20);
-            this.txbDoTuoi.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.txbDoTuoi.Name = "txbDoTuoi";
-            this.txbDoTuoi.Size = new System.Drawing.Size(267, 28);
-            this.txbDoTuoi.TabIndex = 1;
+            this.txtDoTuoi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sanPhamBindingSource, "doTuoi", true));
+            this.txtDoTuoi.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtDoTuoi.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDoTuoi.Location = new System.Drawing.Point(0, 20);
+            this.txtDoTuoi.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtDoTuoi.Name = "txtDoTuoi";
+            this.txtDoTuoi.Size = new System.Drawing.Size(267, 28);
+            this.txtDoTuoi.TabIndex = 1;
             // 
             // panel15
             // 
@@ -897,10 +900,10 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox txbThanhPhan;
+        private System.Windows.Forms.TextBox txtThanhPhan;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.TextBox txbMoTa;
+        private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.ComboBox cmbDonVi;
@@ -914,7 +917,7 @@
         private System.Windows.Forms.Label lblNhaSX;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txbDoTuoi;
+        private System.Windows.Forms.TextBox txtDoTuoi;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.NumericUpDown nudSoLuong;
         private System.Windows.Forms.Label label15;
