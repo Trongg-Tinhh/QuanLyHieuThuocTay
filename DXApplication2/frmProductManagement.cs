@@ -38,7 +38,7 @@ namespace DXApplication2
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(txtTenSP.Text.Trim().CompareTo("") != 0)
+            if(txtTenSP.Text.Trim().CompareTo("") != 0 && edit == false)
             {
                 
                 Random random = new Random();
@@ -55,7 +55,7 @@ namespace DXApplication2
                     SqlDataReader dr = cmd.ExecuteReader();
                     if(dr.Read())
                     {
-                        MessageBox.Show("Sách "+ txtTenSP.Text.Trim()+" đã tồn tại");
+                        MessageBox.Show("Thuốc "+ txtTenSP.Text.Trim()+" đã tồn tại");
                         sanPhamTableAdapter.UpdateQuerySoLuongThuoc(int.Parse(nudSoLuong.Value.ToString()), txtTenSP.Text.Trim());
                         
                     }   
@@ -68,6 +68,7 @@ namespace DXApplication2
                     
                     connection.Close();
                 }
+
             }    
         }
 
@@ -75,9 +76,10 @@ namespace DXApplication2
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            sanPhamBindingSource.ResumeBinding();
+            //sanPhamBindingSource.ResumeBinding();
             btnThem.Enabled = false;
             btnHuy.Enabled = true;
+            btnLuu.Enabled = true;
             btnSua.BackColor = System.Drawing.Color.Blue;
             btnHuy.BackColor = System.Drawing.Color.Red;
             this.edit = true;
@@ -85,10 +87,11 @@ namespace DXApplication2
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            sanPhamBindingSource.SuspendBinding();
+            //sanPhamBindingSource.SuspendBinding();
             btnThem.Enabled = true;
             btnXoa.Enabled = false;
             btnHuy.Enabled = false;
+            btnLuu.Enabled = false;
             btnSua.BackColor = Color.DarkGray;
             btnHuy.BackColor = Color.DarkGray;
             this.edit = false;
@@ -114,6 +117,7 @@ namespace DXApplication2
                     sanPhamTableAdapter.DeleteQuerySanPhamByMaSP(maSP);
                     MessageBox.Show("Đã xóa thuốc có Mã: " + maSP);
                     load_Data();
+                    sanPhamBindingSource.ResumeBinding();
                 }    
                 connection.Close();
             }
@@ -133,12 +137,20 @@ namespace DXApplication2
             sanPhamTableAdapter.Fill(quanLyHieuThuocTayDataSet.SanPham);
             dataGridViewThuoc.DataSource = quanLyHieuThuocTayDataSet.SanPham;
             dataGridViewThuoc.Refresh();
+            
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Đã cập nhật dữ liệu");
-            sanPhamTableAdapter.Update(this.quanLyHieuThuocTayDataSet.SanPham);
+            String maSP = dataGridViewThuoc.CurrentRow.Cells[0].Value.ToString();
+            //String MaSP = sanPhamTableAdapter.ScalarQueryMaSanPham(txtTenSP.Text.Trim()).ToString();
+            String MaLoai = loaiSanPhamTableAdapter.ScalarQueryMaLoaiSanPham(cmbLoaiSP.Text.Trim());
+            Nullable<int> MaNSX = nhaSanXuatTableAdapter.ScalarQueryMaNSX(cmbMaNSX.Text.Trim());
+            sanPhamTableAdapter.UpdateQuerySanPham(maSP, txtTenSP.Text, MaLoai, MaNSX, txbThanhPhan.Text, txbDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text,int.Parse( nudSoLuong.Value.ToString()), txbMoTa.Text);
+            //frmProductManagement frmProductManagement = new frmProductManagement();
+            //frmProductManagement.InitializeComponent();
+            danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -149,6 +161,38 @@ namespace DXApplication2
         private void cmbDonVi_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TextChanged_TenSanPham(object sender, EventArgs e)
+        {
+            if (txtTenSP.Text.CompareTo("") != 0)
+                btnThem.Enabled = true;
+            else
+                btnThem.Enabled = false;
+        }
+
+        private void CellClick_dataGridViewSanPham(object sender, DataGridViewCellEventArgs e)
+        {  
+            if(this.edit == true)
+            {
+                int pos = e.RowIndex;
+                String TenSP = dataGridViewThuoc.Rows[pos].Cells[1].Value.ToString();
+                String LoaiSP = dataGridViewThuoc.Rows[pos].Cells[3].Value.ToString();
+                String NhaSX = dataGridViewThuoc.Rows[pos].Cells[10].Value.ToString();
+                String ThanhPhan = dataGridViewThuoc.Rows[pos].Cells[5].Value.ToString();
+                String CongDung = dataGridViewThuoc.Rows[pos].Cells[4].Value.ToString();
+                String DonViTinh = dataGridViewThuoc.Rows[pos].Cells[8].Value.ToString();
+                String MoTa = dataGridViewThuoc.Rows[pos].Cells[11].Value.ToString();
+                String DoTuoi = dataGridViewThuoc.Rows[pos].Cells[6].Value.ToString();
+                txtTenSP.Text = TenSP;
+                cmbMaNSX.Text = NhaSX;
+                cmbLoaiSP.Text = LoaiSP;
+                txbThanhPhan.Text = ThanhPhan;
+                txtCongDung.Text = CongDung;
+                cmbDonVi.Text = DonViTinh;
+                txbDoTuoi.Text = DoTuoi;
+                txbMoTa.Text = MoTa;
+            }    
         }
     }
 }
