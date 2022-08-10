@@ -53,7 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.txbPassWord = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txbSDT = new DevExpress.XtraEditors.TextEdit();
             this.label7 = new System.Windows.Forms.Label();
@@ -69,6 +68,7 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.taiKhoanTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.TaiKhoanTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txbPassWord = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDSTK)).BeginInit();
@@ -87,6 +87,7 @@
             this.panel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbPassWord.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -373,8 +374,8 @@
             // panel4
             // 
             this.tablePanel2.SetColumn(this.panel4, 2);
-            this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.txbPassWord);
+            this.panel4.Controls.Add(this.label4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(543, 2);
@@ -395,16 +396,6 @@
             this.label4.Size = new System.Drawing.Size(84, 21);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mật khẩu:";
-            // 
-            // txbPassWord
-            // 
-            this.txbPassWord.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassWord.Location = new System.Drawing.Point(0, 21);
-            this.txbPassWord.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(260, 28);
-            this.txbPassWord.TabIndex = 1;
-            this.txbPassWord.UseSystemPasswordChar = true;
             // 
             // panel7
             // 
@@ -614,6 +605,20 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txbPassWord
+            // 
+            this.txbPassWord.Location = new System.Drawing.Point(0, 20);
+            this.txbPassWord.Name = "txbPassWord";
+            this.txbPassWord.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPassWord.Properties.Appearance.Options.UseFont = true;
+            this.txbPassWord.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.txbPassWord.Properties.MaskSettings.Set("MaskManagerSignature", "isOptimistic=False");
+            this.txbPassWord.Properties.MaskSettings.Set("mask", "[a-zA-Z0-9#?!@$%^&*-]{0,}");
+            this.txbPassWord.Properties.MaskSettings.Set("placeholder", '\0');
+            this.txbPassWord.Properties.UseSystemPasswordChar = true;
+            this.txbPassWord.Size = new System.Drawing.Size(260, 28);
+            this.txbPassWord.TabIndex = 22;
+            // 
             // frmAccountManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -649,6 +654,7 @@
             this.panel5.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbPassWord.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -666,7 +672,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txbPassWord;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel5;
@@ -695,5 +700,6 @@
         private DevExpress.XtraEditors.TextEdit txbCCCD;
         private DevExpress.XtraEditors.TextEdit txbSDT;
         private DevExpress.XtraEditors.TextEdit txbNhanVien;
+        private DevExpress.XtraEditors.TextEdit txbPassWord;
     }
 }

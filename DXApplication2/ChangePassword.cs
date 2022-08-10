@@ -73,7 +73,7 @@ namespace DXApplication2
 
         private void cbkMatKhauNew2_CheckedChanged(object sender, EventArgs e)
         {
-            txbPasswordNew.UseSystemPasswordChar = !ckbMatKhauNew.Checked;
+            txbPasswordNew.Properties.UseSystemPasswordChar = !ckbMatKhauNew.Checked;
             txbPasswordNew2.UseSystemPasswordChar = !ckbMatKhauNew.Checked;   
         }
 
@@ -83,5 +83,7 @@ namespace DXApplication2
             this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.TaiKhoan);
 
         }
+
+        
     }
 }

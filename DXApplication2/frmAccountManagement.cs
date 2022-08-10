@@ -63,6 +63,7 @@ namespace DXApplication2
         {
             //dataGridViewDSTK.BackgroundColor =;
             errorProvider1.Clear();
+            txbPassWord.Properties.UseSystemPasswordChar = true;
             ckbVaiTro.Enabled=true;
             txbNhanVien.Text = "";
             txbUserName.Text = "";
@@ -91,6 +92,7 @@ namespace DXApplication2
             defaultstate();
             txbUserName.Enabled = true;
             txbPassWord.Enabled=true;
+            txbPassWord.Properties.UseSystemPasswordChar = false;
             dataGridViewDSTK.Enabled = false;
             btnLuu.Enabled = true;
             btnLuu.BackColor = SystemColors.ActiveBorder;
