@@ -17,8 +17,8 @@ namespace DXApplication2
             InitializeComponent();
             if (frmLogin.vaiTro == false)
             {
-                accordionControlElement4.Enabled = false;
-                accordionControlElement4.Visible = false;
+                tabTaiKhoan.Visible = false;
+                tabSanPham.Visible = false;
             }
         }
 

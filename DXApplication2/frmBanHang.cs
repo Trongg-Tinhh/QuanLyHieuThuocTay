@@ -162,7 +162,7 @@ namespace DXApplication2
                 errorProvider1.SetError(txbTenKH,"Tên khách hàng không được rỗng");
                 return;
             }
-            if (sdt.Length != 10)
+            if (sdt.Length != 10 && sdt!="")
             {
                 errorProvider1.SetError(txbSDT,"Số điện thoại không hợp lệ");
                 return;
