@@ -57,10 +57,8 @@ namespace DXApplication2
             txtTenSP.Text = "";
             txtThanhPhan.Text = "";
             nudSoLuong.Value = 1;
-            cmbLoaiSP.Text = "";
             txtCongDung.Text = "";
             cmbDonVi.Text = "";
-            cmbMaNSX.Text = "";
             txtDoTuoi.Text = "";
             txtMoTa.Text = "";
         }

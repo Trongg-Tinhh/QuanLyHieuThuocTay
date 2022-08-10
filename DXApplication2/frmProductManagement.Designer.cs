@@ -493,6 +493,7 @@
             this.cmbLoaiSP.DataSource = this.loaiSanPhamBindingSource;
             this.cmbLoaiSP.DisplayMember = "tenLoai";
             this.cmbLoaiSP.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cmbLoaiSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLoaiSP.FormattingEnabled = true;
             this.cmbLoaiSP.Location = new System.Drawing.Point(0, 25);
             this.cmbLoaiSP.Name = "cmbLoaiSP";
@@ -572,6 +573,7 @@
             this.cmbMaNSX.DataSource = this.nhaSanXuatBindingSource;
             this.cmbMaNSX.DisplayMember = "tenNSX";
             this.cmbMaNSX.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cmbMaNSX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMaNSX.FormattingEnabled = true;
             this.cmbMaNSX.Location = new System.Drawing.Point(0, 25);
             this.cmbMaNSX.Name = "cmbMaNSX";
