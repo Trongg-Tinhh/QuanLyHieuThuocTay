@@ -73,6 +73,7 @@ namespace DXApplication2
             btnSua.BackColor = SystemColors.ButtonFace;
             btnHuy.Enabled = true;
             btnHuy.BackColor = SystemColors.ActiveBorder;
+            btnLuu.BackColor = SystemColors.ButtonFace;
         }
 
 
@@ -88,6 +89,7 @@ namespace DXApplication2
             btnSua.Enabled=false;
             btnSua.BackColor = SystemColors.ButtonFace;
             this.edit = true;
+            btnLuu.BackColor = SystemColors.ButtonFace;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
