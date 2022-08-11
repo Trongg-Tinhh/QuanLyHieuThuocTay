@@ -90,6 +90,10 @@ namespace DXApplication2
             btnSua.BackColor = SystemColors.ButtonFace;
             this.edit = true;
             btnLuu.BackColor = SystemColors.ButtonFace;
+
+            txtTenSP.Enabled = false;
+            cmbLoaiSP.Enabled = false;
+            cmbMaNSX.Enabled = false;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -122,46 +126,6 @@ namespace DXApplication2
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-            String maSP = dataGridViewThuoc.CurrentRow.Cells[0].Value.ToString().Trim();
-            using (SqlConnection connection = new SqlConnection(StringConnect))
-            {
-                if (connection.State == ConnectionState.Closed)
-                    connection.Open();
-                String query = "select * from ChiTietHoaDon where ChiTietHoaDon.maSP = @maSP";
-                SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@maSP", maSP);
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    MessageBox.Show("Thuốc có Mã: " + maSP + " đã tồn tại trong hóa đơn\n  không thể xóa");
-                }
-                else
-                {
-                    sanPhamTableAdapter.DeleteQuerySanPhamByMaSanPham(maSP);
-                    MessageBox.Show("Đã xóa thuốc có Mã: " + maSP);
-                    danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
-                }
-                connection.Close();
-            }
-            setTextNull();
-        }
-
-        private void SelectionChanged_RowInDataGridViewThuoc(object sender, EventArgs e)
-        {
-            //if( this.edit == true)
-            //{
-            //    if (dataGridViewThuoc.SelectedRows.Count > 0)
-            //        btnXoa.Enabled = true;
-            //    else
-            //        btnXoa.Enabled = false;
-            //}    
-
-        }
-
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (this.add == true)
@@ -171,44 +135,31 @@ namespace DXApplication2
 
                     Random random = new Random();
                     String MaThuoc = random.Next(100, 999).ToString() + cmbLoaiSP.SelectedValue.ToString() + cmbMaNSX.SelectedValue.ToString();
-                    using (SqlConnection connection = new SqlConnection(StringConnect))
+                    String CheckMaSP = sanPhamTableAdapter.ScalarQuerySanPhamBy_TenSP_MaLoai_MaNSX(txtTenSP.Text.ToString().Trim(), cmbLoaiSP.SelectedValue.ToString(), int.Parse(cmbMaNSX.SelectedValue.ToString()));
+                    if (CheckMaSP != null)
                     {
-                        if (connection.State != ConnectionState.Open)
-                        {
-                            connection.Open();
-                        }
-                        String query = "SELECT * FROM SanPham WHERE (SanPham.tenSP = @tenSP)";
-                        SqlCommand cmd = new SqlCommand(query, connection);
-                        cmd.Parameters.AddWithValue("@tenSP", txtTenSP.Text.Trim());
-                        SqlDataReader dr = cmd.ExecuteReader();
-                        if (dr.Read())
-                        {
-                            MessageBox.Show("Thuốc " + txtTenSP.Text.Trim() + " đã tồn tại");
-                            sanPhamTableAdapter.UpdateQuerySoLuongThuoc(int.Parse(nudSoLuong.Value.ToString()), txtTenSP.Text.Trim());
-                            danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
+                        MessageBox.Show("Thuốc " + txtTenSP.Text.Trim() + " đã tồn tại");
+                        sanPhamTableAdapter.UpdateQuerySoLuongThuoc(int.Parse(nudSoLuong.Value.ToString()), txtTenSP.Text.Trim());
+                        danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
 
-                        }
-                        else
-                        {
-                            sanPhamTableAdapter.InsertQuerySanPham(MaThuoc.Replace(" ", ""), txtTenSP.Text.Trim(), cmbLoaiSP.SelectedValue.ToString(), int.Parse(cmbMaNSX.SelectedValue.ToString()), txtThanhPhan.Text, txtDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text, int.Parse(nudSoLuong.Value.ToString()), txtMoTa.Text);
-                            MessageBox.Show("Đã thêm " + txtTenSP.Text.Trim());
-                            danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
-                        }
-
-                        connection.Close();
+                    }
+                    else
+                    {
+                        sanPhamTableAdapter.InsertQuerySanPham(MaThuoc.Replace(" ", ""), txtTenSP.Text.Trim(), cmbLoaiSP.SelectedValue.ToString(), int.Parse(cmbMaNSX.SelectedValue.ToString()), txtThanhPhan.Text, txtDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text, int.Parse(nudSoLuong.Value.ToString()), txtMoTa.Text);
+                        MessageBox.Show("Đã thêm " + txtTenSP.Text.Trim());
+                        danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
                     }
 
                 }
             }
             if (this.edit == true)
-            {
+            {  
                 dataGridViewThuoc.ClearSelection();
                 MessageBox.Show("Đã cập nhật dữ liệu");
                 String maSP = dataGridViewThuoc.CurrentRow.Cells[0].Value.ToString();
                 String MaLoai = loaiSanPhamTableAdapter.ScalarQueryMaLoaiSanPham(cmbLoaiSP.Text.Trim());
                 Nullable<int> MaNSX = nhaSanXuatTableAdapter.ScalarQueryMaNSX(cmbMaNSX.Text.Trim());
                 sanPhamTableAdapter.UpdateQuerySanPham(maSP, txtTenSP.Text, MaLoai, MaNSX, txtThanhPhan.Text, txtDoTuoi.Text, txtCongDung.Text, cmbDonVi.Text, int.Parse(nudSoLuong.Value.ToString()), txtMoTa.Text);
-
             }
             danhSachSanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.DanhSachSanPham);
             setTextNull();
@@ -217,11 +168,6 @@ namespace DXApplication2
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void cmbDonVi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void TextChanged_TenSanPham(object sender, EventArgs e)

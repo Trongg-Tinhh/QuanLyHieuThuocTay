@@ -163,7 +163,6 @@
             this.dataGridViewThuoc.Size = new System.Drawing.Size(825, 346);
             this.dataGridViewThuoc.TabIndex = 10;
             this.dataGridViewThuoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellClick_dataGridViewSanPham);
-            this.dataGridViewThuoc.SelectionChanged += new System.EventHandler(this.SelectionChanged_RowInDataGridViewThuoc);
             // 
             // maSPDataGridViewTextBoxColumn
             // 

@@ -61,19 +61,19 @@
             this.label17 = new System.Windows.Forms.Label();
             this.dateTimeNgayBan = new DevExpress.XtraEditors.DateEdit();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.txbTenKH = new DevExpress.XtraEditors.TextEdit();
             this.label18 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.txbThanhTien = new System.Windows.Forms.TextBox();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.txbSDT = new DevExpress.XtraEditors.TextEdit();
             this.label20 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
+            this.txbTenNV = new DevExpress.XtraEditors.TextEdit();
             this.label21 = new System.Windows.Forms.Label();
             this.danhSachHoaDonTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.DanhSachHoaDonTableAdapter();
             this.dSChiTietHoaDonTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.DSChiTietHoaDonTableAdapter();
-            this.txbSDT = new DevExpress.XtraEditors.TextEdit();
-            this.txbTenKH = new DevExpress.XtraEditors.TextEdit();
-            this.txbTenNV = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).BeginInit();
             this.tablePanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -91,11 +91,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeNgayBan.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeNgayBan.Properties)).BeginInit();
             this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txbTenKH.Properties)).BeginInit();
             this.panel19.SuspendLayout();
             this.panel20.SuspendLayout();
-            this.panel21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txbSDT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txbTenKH.Properties)).BeginInit();
+            this.panel21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txbTenNV.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -501,6 +501,23 @@
             this.panel18.Size = new System.Drawing.Size(261, 49);
             this.panel18.TabIndex = 1;
             // 
+            // txbTenKH
+            // 
+            this.txbTenKH.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbTenKH.Location = new System.Drawing.Point(0, 21);
+            this.txbTenKH.Name = "txbTenKH";
+            this.txbTenKH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenKH.Properties.Appearance.Options.UseFont = true;
+            this.txbTenKH.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.txbTenKH.Properties.MaskSettings.Set("mask", "([a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA-Z]+)(" +
+        "(\\s{1}[a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA" +
+        "-Z]+){1,})");
+            this.txbTenKH.Properties.MaskSettings.Set("showPlaceholders", false);
+            this.txbTenKH.Properties.MaskSettings.Set("placeholder", '\0');
+            this.txbTenKH.Size = new System.Drawing.Size(261, 28);
+            this.txbTenKH.TabIndex = 9;
+            this.txbTenKH.TextChanged += new System.EventHandler(this.FillEvent);
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -563,6 +580,20 @@
             this.panel20.Size = new System.Drawing.Size(261, 49);
             this.panel20.TabIndex = 6;
             // 
+            // txbSDT
+            // 
+            this.txbSDT.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbSDT.Location = new System.Drawing.Point(0, 21);
+            this.txbSDT.Name = "txbSDT";
+            this.txbSDT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSDT.Properties.Appearance.Options.UseFont = true;
+            this.txbSDT.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.txbSDT.Properties.MaskSettings.Set("mask", "0\\d\\d\\d\\d\\d\\d\\d\\d\\d");
+            this.txbSDT.Properties.MaskSettings.Set("placeholder", '\0');
+            this.txbSDT.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.txbSDT.Size = new System.Drawing.Size(261, 28);
+            this.txbSDT.TabIndex = 9;
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -589,6 +620,23 @@
             this.panel21.Size = new System.Drawing.Size(261, 49);
             this.panel21.TabIndex = 3;
             // 
+            // txbTenNV
+            // 
+            this.txbTenNV.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txbTenNV.Location = new System.Drawing.Point(0, 21);
+            this.txbTenNV.Name = "txbTenNV";
+            this.txbTenNV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenNV.Properties.Appearance.Options.UseFont = true;
+            this.txbTenNV.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.txbTenNV.Properties.MaskSettings.Set("mask", "([a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA-Z]+)(" +
+        "(\\s{1}[a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA" +
+        "-Z]+){1,})");
+            this.txbTenNV.Properties.MaskSettings.Set("showPlaceholders", false);
+            this.txbTenNV.Properties.MaskSettings.Set("placeholder", '\0');
+            this.txbTenNV.Size = new System.Drawing.Size(261, 28);
+            this.txbTenNV.TabIndex = 9;
+            this.txbTenNV.TextChanged += new System.EventHandler(this.FillEvent);
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -608,54 +656,6 @@
             // dSChiTietHoaDonTableAdapter
             // 
             this.dSChiTietHoaDonTableAdapter.ClearBeforeFill = true;
-            // 
-            // txbSDT
-            // 
-            this.txbSDT.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txbSDT.Location = new System.Drawing.Point(0, 21);
-            this.txbSDT.Name = "txbSDT";
-            this.txbSDT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSDT.Properties.Appearance.Options.UseFont = true;
-            this.txbSDT.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
-            this.txbSDT.Properties.MaskSettings.Set("mask", "0\\d\\d\\d\\d\\d\\d\\d\\d\\d");
-            this.txbSDT.Properties.MaskSettings.Set("placeholder", '\0');
-            this.txbSDT.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
-            this.txbSDT.Size = new System.Drawing.Size(261, 28);
-            this.txbSDT.TabIndex = 9;
-            // 
-            // txbTenKH
-            // 
-            this.txbTenKH.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txbTenKH.Location = new System.Drawing.Point(0, 21);
-            this.txbTenKH.Name = "txbTenKH";
-            this.txbTenKH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenKH.Properties.Appearance.Options.UseFont = true;
-            this.txbTenKH.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
-            this.txbTenKH.Properties.MaskSettings.Set("mask", "([a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA-Z]+)(" +
-        "(\\s{1}[a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA" +
-        "-Z]+){1,})");
-            this.txbTenKH.Properties.MaskSettings.Set("showPlaceholders", false);
-            this.txbTenKH.Properties.MaskSettings.Set("placeholder", '\0');
-            this.txbTenKH.Size = new System.Drawing.Size(261, 28);
-            this.txbTenKH.TabIndex = 9;
-            this.txbTenKH.TextChanged += new System.EventHandler(this.FillEvent);
-            // 
-            // txbTenNV
-            // 
-            this.txbTenNV.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txbTenNV.Location = new System.Drawing.Point(0, 21);
-            this.txbTenNV.Name = "txbTenNV";
-            this.txbTenNV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenNV.Properties.Appearance.Options.UseFont = true;
-            this.txbTenNV.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
-            this.txbTenNV.Properties.MaskSettings.Set("mask", "([a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA-Z]+)(" +
-        "(\\s{1}[a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA" +
-        "-Z]+){1,})");
-            this.txbTenNV.Properties.MaskSettings.Set("showPlaceholders", false);
-            this.txbTenNV.Properties.MaskSettings.Set("placeholder", '\0');
-            this.txbTenNV.Size = new System.Drawing.Size(261, 28);
-            this.txbTenNV.TabIndex = 9;
-            this.txbTenNV.TextChanged += new System.EventHandler(this.FillEvent);
             // 
             // frmInvoiceManagement
             // 
@@ -691,14 +691,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeNgayBan.Properties)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txbTenKH.Properties)).EndInit();
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txbSDT.Properties)).EndInit();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txbSDT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txbTenKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbTenNV.Properties)).EndInit();
             this.ResumeLayout(false);
 
