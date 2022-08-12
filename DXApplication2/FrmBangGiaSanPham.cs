@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace DXApplication2
 {
@@ -79,18 +81,41 @@ namespace DXApplication2
         private void btnLuu_Click(object sender, EventArgs e)
         {
             //btnLuu.Enabled = false;
-            String ma = txtMaSP.Text;
-            try
+            DateTime Ngay = DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            using (SqlConnection connection = new SqlConnection(DataConnection.DataConnectionString.ConnectionString))
             {
-                
-                String MaSP = bangGiaTableAdapter.ScalarQueryGiaSanPham("aaa3", DateTime.Parse( txtNgay.Text)).ToString();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                if(connection.State != ConnectionState.Open)
+                    connection.Open();
+                String query = @"select * from BangGia where BangGia.maSP = @maSP and BangGia.ngay = @ngay";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@maSP", txtMaSP.Text);
+                //cmd.Parameters.AddWithValue("@ngay", DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)).ToString();
+                cmd.Parameters.AddWithValue("@ngay",Ngay).ToString();
+                SqlDataReader reader= cmd.ExecuteReader();
+                if(reader.Read())
+                {
+                    MessageBox.Show("Không thể thêm giá SP do trùng khóa");
+                }   
+                else
+                {
+                    bangGiaTableAdapter.InsertQueryGiaSanPham( txtMaSP.Text, Ngay, Decimal.Parse( nudGiaBan.Value.ToString()));
+                    MessageBox.Show("Đã thêm giá cho sản phẩm có mã: " + txtMaSP.Text.Trim());
+                }    
+
+            }    
+            //try
+            //{
+
+            //    if (bangGiaTableAdapter.ScalarQueryGiaSanPham(txtMaSP.Text, DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)).ToString() != null)
+            //        MaSP = bangGiaTableAdapter.ScalarQueryGiaSanPham(txtMaSP.Text, DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)).ToString();
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
             
-            MessageBox.Show(txtNgay.Text);
+            //MessageBox.Show(txtNgay.Text);
+
             //if (this.add == true && nudGiaBan.Value > 0)
             //{
             //    if (MaSP.Trim() == null)
