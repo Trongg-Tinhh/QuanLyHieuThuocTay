@@ -60,7 +60,20 @@ namespace DXApplication2
                 txtTenSP.Text = dataGridViewSanPham.CurrentRow.Cells[1].Value.ToString().Trim();
                 cmbMaLoai.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[2].Value.ToString().Trim();
                 cmbNhaSX.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[3].Value.ToString().Trim();
-                dataGridViewBangGia.ClearSelection();
+                //dataGridViewBangGia.CurrentRow.Cells.
+                //dataGridViewBangGia.ClearSelection();
+                String checkBangGia = bangGiaTableAdapter.ScalarQueryBangGiaByMaSP(MaSP);
+                if (checkBangGia != null)
+                {
+                    txtNgay.DateTime = DateTime.Parse(dataGridViewBangGia.Rows[0].Cells[1].Value.ToString().Trim());
+                    nudGiaBan.Value = int.Parse(dataGridViewBangGia.Rows[0].Cells[2].Value.ToString().Trim().Replace(".000", ""));
+                }
+                else
+                {
+                    MessageBox.Show("Sản phẩm bạn vừa chọn chưa có giá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dataGridViewSanPham.ClearSelection();
+                }
+
             }
         }
         private void CellClick_BangGia(object sender, DataGridViewCellEventArgs e)
@@ -115,8 +128,12 @@ namespace DXApplication2
                 nudGiaBan.Enabled = false;
                 btnSua.BackColor = Color.DarkGray;
             }
+            bangGiaTableAdapter.Fill(quanLyHieuThuocTayDataSet.BangGia);
             dataGridViewBangGia.ClearSelection();
             dataGridViewSanPham.ClearSelection();
+            nudGiaBan.Value = 0;
+            txtNgay.DateTime = DateTime.Now;
+            
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -159,10 +176,15 @@ namespace DXApplication2
                 }
                 dataGridViewBangGia.ClearSelection();
                 dataGridViewSanPham.ClearSelection();
+                nudGiaBan.Value = 0;
+                txtNgay.DateTime = DateTime.Now;
             } 
             else
-                MessageBox.Show("Giá bán phải lớn hơn 0","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            
+            {
+                MessageBox.Show("Giá bán phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                nudGiaBan.Value = 0;
+                txtNgay.DateTime = DateTime.Now;
+            }    
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

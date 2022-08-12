@@ -379,6 +379,7 @@
             // 
             this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnThoat.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.Location = new System.Drawing.Point(14, 283);
@@ -395,6 +396,7 @@
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnThem.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(14, 13);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -410,6 +412,7 @@
             // 
             this.btnHuy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnHuy.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnHuy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Enabled = false;
             this.btnHuy.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -427,6 +430,7 @@
             // 
             this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSua.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Location = new System.Drawing.Point(14, 80);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -442,6 +446,7 @@
             // 
             this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLuu.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.Enabled = false;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Location = new System.Drawing.Point(14, 214);
@@ -456,6 +461,8 @@
             // 
             // dataGridViewBangGia
             // 
+            this.dataGridViewBangGia.AllowUserToAddRows = false;
+            this.dataGridViewBangGia.AllowUserToDeleteRows = false;
             this.dataGridViewBangGia.AutoGenerateColumns = false;
             this.dataGridViewBangGia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablePanelControl.SetColumn(this.dataGridViewBangGia, 2);
@@ -473,6 +480,7 @@
             this.tablePanelControl.SetRow(this.dataGridViewBangGia, 0);
             this.dataGridViewBangGia.RowHeadersWidth = 51;
             this.dataGridViewBangGia.RowTemplate.Height = 24;
+            this.dataGridViewBangGia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBangGia.Size = new System.Drawing.Size(331, 528);
             this.dataGridViewBangGia.TabIndex = 1;
             this.dataGridViewBangGia.TabStop = false;
@@ -509,6 +517,8 @@
             // 
             // dataGridViewSanPham
             // 
+            this.dataGridViewSanPham.AllowUserToAddRows = false;
+            this.dataGridViewSanPham.AllowUserToDeleteRows = false;
             this.dataGridViewSanPham.AutoGenerateColumns = false;
             this.dataGridViewSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablePanelControl.SetColumn(this.dataGridViewSanPham, 0);

@@ -5766,7 +5766,7 @@ SELECT maSP, ngay, donGia FROM BangGia WHERE (maSP = @maSP) AND (ngay = @ngay)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT maSP, ngay, donGia FROM dbo.BangGia";
@@ -5787,19 +5787,25 @@ SELECT maSP, ngay, donGia FROM BangGia WHERE (maSP = @maSP) AND (ngay = @ngay)";
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@donGia", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 3, "donGia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT maSP\r\nFROM     BangGia\r\nWHERE  (maSP = @maSP) AND (ngay = @ngay)";
+            this._commandCollection[3].CommandText = "SELECT maSP\r\nFROM     BangGia\r\nWHERE  (maSP = @maSP)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maSP", global::System.Data.SqlDbType.Char, 10, global::System.Data.ParameterDirection.Input, 0, 0, "maSP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ngay", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ngay", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE BangGia\r\nSET          donGia = @donGia\r\nWHERE  (maSP = @maSP) AND (ngay = " +
+            this._commandCollection[4].CommandText = "SELECT maSP\r\nFROM     BangGia\r\nWHERE  (maSP = @maSP) AND (ngay = CONVERT(varchar(" +
+                "10), CONVERT(date, @ngay, 103), 120))";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maSP", global::System.Data.SqlDbType.Char, 10, global::System.Data.ParameterDirection.Input, 0, 0, "maSP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ngay", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ngay", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "UPDATE BangGia\r\nSET          donGia = @donGia\r\nWHERE  (maSP = @maSP) AND (ngay = " +
                 "CONVERT(varchar(10), CONVERT(date, @ngay, 103), 120));    \r\nSELECT maSP, ngay, d" +
                 "onGia FROM BangGia WHERE (maSP = @maSP) AND (ngay = @ngay)";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@donGia", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 3, "donGia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maSP", global::System.Data.SqlDbType.Char, 10, global::System.Data.ParameterDirection.Input, 0, 0, "maSP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ngay", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ngay", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@donGia", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 3, "donGia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maSP", global::System.Data.SqlDbType.Char, 10, global::System.Data.ParameterDirection.Input, 0, 0, "maSP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ngay", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ngay", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6028,7 +6034,7 @@ SELECT maSP, ngay, donGia FROM BangGia WHERE (maSP = @maSP) AND (ngay = @ngay)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object ScalarQueryGiaSanPham(string maSP, System.DateTime ngay) {
+        public virtual string ScalarQueryBangGiaByMaSP(string maSP) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((maSP == null)) {
                 throw new global::System.ArgumentNullException("maSP");
@@ -6036,7 +6042,46 @@ SELECT maSP, ngay, donGia FROM BangGia WHERE (maSP = @maSP) AND (ngay = @ngay)";
             else {
                 command.Parameters[0].Value = ((string)(maSP));
             }
-            command.Parameters[1].Value = ((System.DateTime)(ngay));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object ScalarQueryGiaSanPham(string maSP, string ngay) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            if ((maSP == null)) {
+                throw new global::System.ArgumentNullException("maSP");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(maSP));
+            }
+            if ((ngay == null)) {
+                throw new global::System.ArgumentNullException("ngay");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(ngay));
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6064,7 +6109,7 @@ SELECT maSP, ngay, donGia FROM BangGia WHERE (maSP = @maSP) AND (ngay = @ngay)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int UpdateQueryBangGia(decimal donGia, string maSP, string ngay) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             command.Parameters[0].Value = ((decimal)(donGia));
             if ((maSP == null)) {
                 throw new global::System.ArgumentNullException("maSP");
