@@ -84,6 +84,12 @@
     <Compile Include="frmAccoutProfile.Designer.cs">
       <DependentUpon>frmAccoutProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBangGiaSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBangGiaSanPham.Designer.cs">
+      <DependentUpon>FrmBangGiaSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAccoutProfile.resx">
       <DependentUpon>frmAccoutProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBangGiaSanPham.resx">
+      <DependentUpon>FrmBangGiaSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBanHang.resx">
       <DependentUpon>frmBanHang.cs</DependentUpon>
