@@ -80,7 +80,7 @@ namespace DXApplication2
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            //btnLuu.Enabled = false;
+            btnLuu.Enabled = false;
             DateTime Ngay = DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             using (SqlConnection connection = new SqlConnection(DataConnection.DataConnectionString.ConnectionString))
             {
@@ -103,31 +103,6 @@ namespace DXApplication2
                 }    
 
             }    
-            //try
-            //{
-
-            //    if (bangGiaTableAdapter.ScalarQueryGiaSanPham(txtMaSP.Text, DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)).ToString() != null)
-            //        MaSP = bangGiaTableAdapter.ScalarQueryGiaSanPham(txtMaSP.Text, DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)).ToString();
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            
-            //MessageBox.Show(txtNgay.Text);
-
-            //if (this.add == true && nudGiaBan.Value > 0)
-            //{
-            //    if (MaSP.Trim() == null)
-            //    {
-            //        //bangGiaTableAdapter.InsertQueryGiaSanPham(txtMaSP.Text, txtNgay.DateTime, nudGiaBan.Value);
-            //        MessageBox.Show("Đã thêm giá cho sản phẩm có mã: " + txtMaSP.Text.Trim());
-            //    }
-            //    else
-            //        MessageBox.Show("Không thể thêm giá SP do trùng khóa");
-            //}
-
-
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
