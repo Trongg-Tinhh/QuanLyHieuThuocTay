@@ -40,15 +40,16 @@ namespace DXApplication2
         {
             String MaSP = dataGridViewSanPham.CurrentRow.Cells[0].Value.ToString().Trim() ;
             bangGiaTableAdapter.FillByMaSP(this.quanLyHieuThuocTayDataSet.BangGia,MaSP);
-            if(this.add)  // khi thực hiện chức năng thêm
+            txtMaSP.Text = MaSP;
+            txtTenSP.Text = dataGridViewSanPham.CurrentRow.Cells[1].Value.ToString().Trim();
+            cmbMaLoai.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[2].Value.ToString().Trim();
+            cmbNhaSX.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[3].Value.ToString().Trim();
+            if (this.add)  // khi thực hiện chức năng thêm
             {
                 nudGiaBan.Enabled = true;
                 txtNgay.Enabled = true;
                 btnLuu.Enabled = true;
                 txtMaSP.Text = MaSP;
-                txtTenSP.Text = dataGridViewSanPham.CurrentRow.Cells[1].Value.ToString().Trim();
-                cmbMaLoai.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[2].Value.ToString().Trim();
-                cmbNhaSX.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[3].Value.ToString().Trim();
                 dataGridViewBangGia.ClearSelection();
             }
             if(this.edit)  // khi thực hiện chức năng sửa
@@ -57,11 +58,6 @@ namespace DXApplication2
                 btnLuu.Enabled = true;
                 txtNgay.Enabled = false;
                 txtMaSP.Text = MaSP;
-                txtTenSP.Text = dataGridViewSanPham.CurrentRow.Cells[1].Value.ToString().Trim();
-                cmbMaLoai.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[2].Value.ToString().Trim();
-                cmbNhaSX.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[3].Value.ToString().Trim();
-                //dataGridViewBangGia.CurrentRow.Cells.
-                //dataGridViewBangGia.ClearSelection();
                 String checkBangGia = bangGiaTableAdapter.ScalarQueryBangGiaByMaSP(MaSP);
                 if (checkBangGia != null)
                 {
@@ -133,7 +129,8 @@ namespace DXApplication2
             dataGridViewSanPham.ClearSelection();
             nudGiaBan.Value = 0;
             txtNgay.DateTime = DateTime.Now;
-            
+            txtMaSP.Text = "";
+            txtTenSP.Text = "";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
