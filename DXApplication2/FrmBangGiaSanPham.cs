@@ -49,6 +49,7 @@ namespace DXApplication2
                 txtTenSP.Text = dataGridViewSanPham.CurrentRow.Cells[1].Value.ToString().Trim();
                 cmbMaLoai.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[2].Value.ToString().Trim();
                 cmbNhaSX.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[3].Value.ToString().Trim();
+                dataGridViewBangGia.ClearSelection();
             }
             if(this.edit)  // khi thực hiện chức năng sửa
             {
@@ -59,6 +60,7 @@ namespace DXApplication2
                 txtTenSP.Text = dataGridViewSanPham.CurrentRow.Cells[1].Value.ToString().Trim();
                 cmbMaLoai.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[2].Value.ToString().Trim();
                 cmbNhaSX.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[3].Value.ToString().Trim();
+                dataGridViewBangGia.ClearSelection();
             }
         }
         private void CellClick_BangGia(object sender, DataGridViewCellEventArgs e)
@@ -77,6 +79,8 @@ namespace DXApplication2
             btnSua.Enabled = false;
             btnHuy.Enabled = true;
             btnThem.BackColor = SystemColors.ButtonFace;
+            dataGridViewBangGia.ClearSelection();
+            dataGridViewSanPham.ClearSelection();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -86,6 +90,8 @@ namespace DXApplication2
             btnThem.Enabled = false;
             btnHuy.Enabled = true;
             btnSua.BackColor = SystemColors.ButtonFace;
+            dataGridViewBangGia.ClearSelection();
+            dataGridViewSanPham.ClearSelection();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -98,6 +104,7 @@ namespace DXApplication2
                 btnThem.Enabled = true;
                 btnSua.Enabled = true;
                 nudGiaBan.Enabled = false;
+                txtNgay.Enabled = false;
                 btnThem.BackColor = Color.DarkGray;
             }   
             if(this.edit)
@@ -107,8 +114,9 @@ namespace DXApplication2
                 btnThem.Enabled = true;
                 nudGiaBan.Enabled = false;
                 btnSua.BackColor = Color.DarkGray;
-            }  
+            }
             dataGridViewBangGia.ClearSelection();
+            dataGridViewSanPham.ClearSelection();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -149,6 +157,8 @@ namespace DXApplication2
                         bangGiaTableAdapter.FillByMaSP(quanLyHieuThuocTayDataSet.BangGia, txtMaSP.Text);
                     }    
                 }
+                dataGridViewBangGia.ClearSelection();
+                dataGridViewSanPham.ClearSelection();
             } 
             else
                 MessageBox.Show("Giá bán phải lớn hơn 0","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
