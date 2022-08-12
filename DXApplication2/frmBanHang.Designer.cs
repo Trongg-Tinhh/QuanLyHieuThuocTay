@@ -552,6 +552,7 @@
         "-Z]+){1,})");
             this.txbTenKH.Properties.MaskSettings.Set("showPlaceholders", false);
             this.txbTenKH.Properties.MaskSettings.Set("placeholder", '\0');
+            this.txbTenKH.Properties.MaxLength = 30;
             this.tablePanel3.SetRow(this.txbTenKH, 0);
             this.txbTenKH.Size = new System.Drawing.Size(214, 28);
             this.txbTenKH.TabIndex = 8;

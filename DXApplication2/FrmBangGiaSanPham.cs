@@ -19,8 +19,8 @@ namespace DXApplication2
         {
             InitializeComponent();
         }
-        private bool add = false;
-        private bool edit = false;
+        private bool add = false;     // true: đang ở chức năng thêm  
+        private bool edit = false;  //false: đang ở chức năng sửa
         private void FrmBangGiaSanPham_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.NhaSanXuat' table. You can move, or remove it, as needed.
@@ -40,16 +40,34 @@ namespace DXApplication2
         {
             String MaSP = dataGridViewSanPham.CurrentRow.Cells[0].Value.ToString().Trim() ;
             bangGiaTableAdapter.FillByMaSP(this.quanLyHieuThuocTayDataSet.BangGia,MaSP);
-            if(this.add)
+            if(this.add)  // khi thực hiện chức năng thêm
             {
                 nudGiaBan.Enabled = true;
+                txtNgay.Enabled = true;
                 btnLuu.Enabled = true;
                 txtMaSP.Text = MaSP;
                 txtTenSP.Text = dataGridViewSanPham.CurrentRow.Cells[1].Value.ToString().Trim();
                 cmbMaLoai.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[2].Value.ToString().Trim();
                 cmbNhaSX.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[3].Value.ToString().Trim();
+            }
+            if(this.edit)  // khi thực hiện chức năng sửa
+            {
+                nudGiaBan.Enabled = true;
+                btnLuu.Enabled = true;
+                txtNgay.Enabled = false;
+                txtMaSP.Text = MaSP;
+                txtTenSP.Text = dataGridViewSanPham.CurrentRow.Cells[1].Value.ToString().Trim();
+                cmbMaLoai.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[2].Value.ToString().Trim();
+                cmbNhaSX.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[3].Value.ToString().Trim();
+            }
+        }
+        private void CellClick_BangGia(object sender, DataGridViewCellEventArgs e)
+        {
+            if(this.edit)
+            {
+                txtNgay.DateTime = DateTime.Parse( dataGridViewBangGia.CurrentRow.Cells[1].Value.ToString().Trim());
+                nudGiaBan.Value = int.Parse( dataGridViewBangGia.CurrentRow.Cells[2].Value.ToString().Trim().Replace(".000",""));
             }    
-            
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -61,6 +79,15 @@ namespace DXApplication2
             btnThem.BackColor = SystemColors.ButtonFace;
         }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            this.edit = true;
+            btnSua.Enabled = false;
+            btnThem.Enabled = false;
+            btnHuy.Enabled = true;
+            btnSua.BackColor = SystemColors.ButtonFace;
+        }
+
         private void btnHuy_Click(object sender, EventArgs e)
         {
             btnHuy.Enabled = false;
@@ -69,45 +96,70 @@ namespace DXApplication2
             {
                 this.add = false;
                 btnThem.Enabled = true;
+                btnSua.Enabled = true;
                 nudGiaBan.Enabled = false;
                 btnThem.BackColor = Color.DarkGray;
             }   
             if(this.edit)
             {
                 this.edit = false;
-            }    
+                btnSua.Enabled = true;
+                btnThem.Enabled = true;
+                nudGiaBan.Enabled = false;
+                btnSua.BackColor = Color.DarkGray;
+            }  
+            dataGridViewBangGia.ClearSelection();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            btnLuu.Enabled = false;
-            DateTime Ngay = DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            using (SqlConnection connection = new SqlConnection(DataConnection.DataConnectionString.ConnectionString))
+            if (nudGiaBan.Value > 0)
             {
-                if(connection.State != ConnectionState.Open)
-                    connection.Open();
-                String query = @"select * from BangGia where BangGia.maSP = @maSP and BangGia.ngay = @ngay";
-                SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@maSP", txtMaSP.Text);
-                //cmd.Parameters.AddWithValue("@ngay", DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)).ToString();
-                cmd.Parameters.AddWithValue("@ngay",Ngay).ToString();
-                SqlDataReader reader= cmd.ExecuteReader();
-                if(reader.Read())
+                btnLuu.Enabled = false;
+                DateTime Ngay = DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                using (SqlConnection connection = new SqlConnection(DataConnection.DataConnectionString.ConnectionString))
                 {
-                    MessageBox.Show("Không thể thêm giá SP do trùng khóa");
-                }   
-                else
-                {
-                    bangGiaTableAdapter.InsertQueryGiaSanPham( txtMaSP.Text, Ngay, Decimal.Parse( nudGiaBan.Value.ToString()));
-                    MessageBox.Show("Đã thêm giá cho sản phẩm có mã: " + txtMaSP.Text.Trim());
-                }    
+                    if (connection.State != ConnectionState.Open)
+                        connection.Open();
+                    
+                    if (this.add == true && nudGiaBan.Value > 0)    // Lưu khi đang thực hiện chức năng thêm
+                    {
+                        String query = @"select * from BangGia where BangGia.maSP = @maSP and BangGia.ngay = @ngay";
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        cmd.Parameters.AddWithValue("@maSP", txtMaSP.Text);
+                        //cmd.Parameters.AddWithValue("@ngay", DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)).ToString();
+                        cmd.Parameters.AddWithValue("@ngay", Ngay).ToString();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())      // kiểm tra dữ liệu nhập có bị trùng khóa không
+                        {
+                            MessageBox.Show("Không thể thêm giá SP do trùng khóa");
+                        }
+                        else    // thêm sp nếu không trùng khóa
+                        {
+                            bangGiaTableAdapter.InsertQueryGiaSanPham(txtMaSP.Text, Ngay, Decimal.Parse(nudGiaBan.Value.ToString()));
+                            MessageBox.Show("Đã thêm giá cho sản phẩm có mã: " + txtMaSP.Text.Trim());
+                            bangGiaTableAdapter.FillByMaSP(quanLyHieuThuocTayDataSet.BangGia, txtMaSP.Text);
+                        }
+                    }
 
-            }    
+                    if(this.edit == true && nudGiaBan.Value > 0)
+                    {
+                        bangGiaTableAdapter.UpdateQueryBangGia(Decimal.Parse(nudGiaBan.Value.ToString()), txtMaSP.Text, txtNgay.Text.Trim());
+                        MessageBox.Show("Đã sửa giá cho sản phẩm có mã: " + txtMaSP.Text.Trim());
+                        bangGiaTableAdapter.FillByMaSP(quanLyHieuThuocTayDataSet.BangGia, txtMaSP.Text);
+                    }    
+                }
+            } 
+            else
+                MessageBox.Show("Giá bán phải lớn hơn 0","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }

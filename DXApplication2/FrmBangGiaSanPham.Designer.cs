@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelTop = new System.Windows.Forms.Panel();
             this.groupBoxTop = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelThemSP = new System.Windows.Forms.TableLayoutPanel();
@@ -224,7 +224,7 @@
             this.cmbMaLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMaLoai.Enabled = false;
             this.cmbMaLoai.FormattingEnabled = true;
-            this.cmbMaLoai.Location = new System.Drawing.Point(401, 45);
+            this.cmbMaLoai.Location = new System.Drawing.Point(401, 42);
             this.cmbMaLoai.Name = "cmbMaLoai";
             this.cmbMaLoai.Size = new System.Drawing.Size(193, 29);
             this.cmbMaLoai.TabIndex = 2;
@@ -248,7 +248,7 @@
             this.cmbNhaSX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNhaSX.Enabled = false;
             this.cmbNhaSX.FormattingEnabled = true;
-            this.cmbNhaSX.Location = new System.Drawing.Point(600, 45);
+            this.cmbNhaSX.Location = new System.Drawing.Point(600, 42);
             this.cmbNhaSX.Name = "cmbNhaSX";
             this.cmbNhaSX.Size = new System.Drawing.Size(193, 29);
             this.cmbNhaSX.TabIndex = 2;
@@ -302,21 +302,21 @@
             // 
             this.txtNgay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNgay.EditValue = new System.DateTime(2022, 8, 11, 23, 6, 55, 0);
+            this.txtNgay.Enabled = false;
             this.txtNgay.Location = new System.Drawing.Point(998, 43);
             this.txtNgay.Name = "txtNgay";
             this.txtNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNgay.Properties.Appearance.Options.UseFont = true;
-            serializableAppearanceObject3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            serializableAppearanceObject3.Options.UseFont = true;
+            serializableAppearanceObject7.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            serializableAppearanceObject7.Options.UseFont = true;
             this.txtNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtNgay.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.txtNgay.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.txtNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
-            this.txtNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtNgay.Properties.EditFormat.FormatString = "";
             this.txtNgay.Properties.MaskSettings.Set("mask", "d");
             this.txtNgay.Properties.MaxValue = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.txtNgay.Properties.MinValue = new System.DateTime(2021, 2, 1, 0, 0, 0, 0);
@@ -436,6 +436,7 @@
             this.btnSua.TabIndex = 9;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnLuu
             // 
@@ -475,6 +476,7 @@
             this.dataGridViewBangGia.Size = new System.Drawing.Size(331, 528);
             this.dataGridViewBangGia.TabIndex = 1;
             this.dataGridViewBangGia.TabStop = false;
+            this.dataGridViewBangGia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellClick_BangGia);
             // 
             // maSPDataGridViewTextBoxColumn1
             // 
