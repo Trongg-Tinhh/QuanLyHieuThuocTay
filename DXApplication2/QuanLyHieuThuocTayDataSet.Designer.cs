@@ -9967,13 +9967,11 @@ FROM dbo.SanPham sp, dbo.LoaiSanPham l, dbo.NhaSanXuat nsx
 WHERE sp.maLoai=l.maLoai AND sp.maNSX=nsx.maNSX
 AND sp.tenSP LIKE '%' + @tenSP + '%'
 AND l.tenLoai LIKE '%' + @tenLoai + '%'
-AND sp.congDung LIKE '%' + @congDung + '%'
-AND sp.doTuoi LIKE '%' + @doTuoi + '%'";
+AND nsx.tenNSX LIKE '%' + @tenNSX + '%'";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenSP", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "tenSP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenLoai", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tenLoai", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@congDung", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "congDung", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@doTuoi", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "doTuoi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tenNSX", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "tenNSX", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT TOP(1) donGia\r\nFROM BangGia\r\nWHERE maSP = @maSP\r\nORDER BY Ngay DESC";
@@ -10014,7 +10012,7 @@ AND sp.doTuoi LIKE '%' + @doTuoi + '%'";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByTen_Loai_CongDung_DoTuoi(QuanLyHieuThuocTayDataSet.DanhSachSanPhamDataTable dataTable, string tenSP, string tenLoai, string congDung, string doTuoi) {
+        public virtual int FillByTenSPAndCongDungAndNSX(QuanLyHieuThuocTayDataSet.DanhSachSanPhamDataTable dataTable, string tenSP, string tenLoai, string tenNSX) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((tenSP == null)) {
                 throw new global::System.ArgumentNullException("tenSP");
@@ -10028,23 +10026,46 @@ AND sp.doTuoi LIKE '%' + @doTuoi + '%'";
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(tenLoai));
             }
-            if ((congDung == null)) {
-                throw new global::System.ArgumentNullException("congDung");
+            if ((tenNSX == null)) {
+                throw new global::System.ArgumentNullException("tenNSX");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(congDung));
-            }
-            if ((doTuoi == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(doTuoi));
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(tenNSX));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual QuanLyHieuThuocTayDataSet.DanhSachSanPhamDataTable GetDataBy(string tenSP, string tenLoai, string tenNSX) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((tenSP == null)) {
+                throw new global::System.ArgumentNullException("tenSP");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tenSP));
+            }
+            if ((tenLoai == null)) {
+                throw new global::System.ArgumentNullException("tenLoai");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(tenLoai));
+            }
+            if ((tenNSX == null)) {
+                throw new global::System.ArgumentNullException("tenNSX");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(tenNSX));
+            }
+            QuanLyHieuThuocTayDataSet.DanhSachSanPhamDataTable dataTable = new QuanLyHieuThuocTayDataSet.DanhSachSanPhamDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -42,11 +42,11 @@
             this.tabTaiKhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabSanPham = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabHoaDon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.tabBangGia = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -161,7 +161,7 @@
             this.tabTaiKhoan,
             this.tabSanPham,
             this.tabHoaDon,
-            this.accordionControlElement2,
+            this.tabBangGia,
             this.accordionControlSeparator3});
             this.accordionControlElement4.Expanded = true;
             this.accordionControlElement4.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
@@ -196,6 +196,14 @@
             this.tabHoaDon.Text = "Hóa đơn";
             this.tabHoaDon.Click += new System.EventHandler(this.tabHoaDon_Click);
             // 
+            // tabBangGia
+            // 
+            this.tabBangGia.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("tabBangGia.ImageOptions.SvgImage")));
+            this.tabBangGia.Name = "tabBangGia";
+            this.tabBangGia.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.tabBangGia.Text = "Bảng Giá";
+            this.tabBangGia.Click += new System.EventHandler(this.tabBangGia_Click);
+            // 
             // accordionControlSeparator3
             // 
             this.accordionControlSeparator3.Name = "accordionControlSeparator3";
@@ -219,14 +227,6 @@
             // 
             this.popupMenu1.Manager = this.fluentFormDefaultManager1;
             this.popupMenu1.Name = "popupMenu1";
-            // 
-            // accordionControlElement2
-            // 
-            this.accordionControlElement2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement2.ImageOptions.SvgImage")));
-            this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement2.Text = "Bảng Giá";
-            this.accordionControlElement2.Click += new System.EventHandler(this.accordionControlElement2_Click);
             // 
             // frmMain
             // 
@@ -269,6 +269,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement tabBanHang;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement tabBangGia;
     }
 }

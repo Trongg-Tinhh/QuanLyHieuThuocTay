@@ -32,8 +32,8 @@ namespace DXApplication2
         {
             txbTenSP.Text = null;
             txbLoaiSP.Text = null;
-            txbCongDung.Text = null;
-            txbDoTuoi.Text = null;
+            txbMaSP.Text = null;
+            txbTenNSX.Text = null;
             numericSoLuong.Value = 0;
             btnThem.Enabled = false;
             btnThem.BackColor = SystemColors.ButtonFace;
@@ -51,16 +51,16 @@ namespace DXApplication2
             if (e.RowIndex < 0)
                 return;
             int index = e.RowIndex;
+            string maSP = dgvDanhSachSanPham.Rows[index].Cells[0].Value.ToString();
             string tenSP = dgvDanhSachSanPham.Rows[index].Cells[1].Value.ToString();
             string loaiSP = dgvDanhSachSanPham.Rows[index].Cells[2].Value.ToString();
-            string congDung = dgvDanhSachSanPham.Rows[index].Cells[3].Value.ToString();
-            string doTuoi = dgvDanhSachSanPham.Rows[index].Cells[5].Value.ToString();
+            string tenNSX = dgvDanhSachSanPham.Rows[index].Cells[9].Value.ToString();
             int soLuongToiDa = (int)dgvDanhSachSanPham.Rows[index].Cells[6].Value;
 
+            txbMaSP.Text = maSP;
             txbTenSP.Text = tenSP;
             txbLoaiSP.Text = loaiSP;
-            txbCongDung.Text = congDung;
-            txbDoTuoi.Text = doTuoi;
+            txbTenNSX.Text = tenNSX;
             numericSoLuong.Value = 0;
             numericSoLuong.Maximum = soLuongToiDa; // quy định số lượng không được vượt quá số lượng tồn trong kho
         }
@@ -72,7 +72,7 @@ namespace DXApplication2
             string tenSP = txbTenSP.Text;
             string loaiSP = txbLoaiSP.Text;
             int soLuong = (int)numericSoLuong.Value;
-            string maSP = danhSachSanPhamTableAdapter.GetMaByTen(tenSP);
+            string maSP = txbMaSP.Text;
             decimal? donGia = danhSachSanPhamTableAdapter.GetGiaByMa(maSP);
 
             if (soLuong == 0)
@@ -122,14 +122,14 @@ namespace DXApplication2
         }
 
         // chức năng lọc sản phẩm
+        
         private void FillEvent(object sender, EventArgs e)
         {
             string tenSP = txbTenSP.Text;
             string loaiSP = txbLoaiSP.Text;
-            string congDung = txbCongDung.Text;
-            string doTuoi = txbDoTuoi.Text;
+            string nhaSanXuat = txbTenNSX.Text;
 
-            danhSachSanPhamTableAdapter.FillByTen_Loai_CongDung_DoTuoi(quanLyHieuThuocTayDataSet.DanhSachSanPham, tenSP, loaiSP, congDung, doTuoi);
+            danhSachSanPhamTableAdapter.FillByTenSPAndCongDungAndNSX(quanLyHieuThuocTayDataSet.DanhSachSanPham, tenSP, loaiSP, nhaSanXuat);
         }
 
         private void btnClearData_Click(object sender, EventArgs e)
@@ -200,7 +200,7 @@ namespace DXApplication2
             listViewChiTietHoaDon.Items.Clear();
             txbTenKH.Text = null;
             txbSDT.Text = null;
-            dateTimeEditNgayBan.Text = "";
+            dateTimeEditNgayBan.Text = null;
         }
 
         private void listViewChiTietHoaDon_SelectedIndexChanged(object sender, EventArgs e)
