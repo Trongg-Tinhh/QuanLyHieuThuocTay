@@ -17,6 +17,7 @@ namespace DXApplication2
         {
             InitializeComponent();
         }
+        
 
         private void frmInvoiceManagement_Load(object sender, EventArgs e)
         {

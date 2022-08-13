@@ -67,8 +67,8 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.taiKhoanTableAdapter = new DXApplication2.QuanLyHieuThuocTayDataSetTableAdapters.TaiKhoanTableAdapter();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDSTK)).BeginInit();
@@ -87,7 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txbSDT.Properties)).BeginInit();
             this.panel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -140,7 +140,6 @@
             this.dataGridViewDSTK.Size = new System.Drawing.Size(808, 357);
             this.dataGridViewDSTK.TabIndex = 10;
             this.dataGridViewDSTK.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDSTK_CellClick);
-            this.dataGridViewDSTK.SelectionChanged += new System.EventHandler(this.dataGridViewDSTK_SelectionChanged);
             // 
             // maTaiKhoanDataGridViewTextBoxColumn
             // 
@@ -275,12 +274,6 @@
             this.txbNhanVien.Name = "txbNhanVien";
             this.txbNhanVien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNhanVien.Properties.Appearance.Options.UseFont = true;
-            this.txbNhanVien.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
-            this.txbNhanVien.Properties.MaskSettings.Set("mask", "([a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA-Z]+)(" +
-        "(\\s{1}[a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA" +
-        "-Z]+){1,})");
-            this.txbNhanVien.Properties.MaskSettings.Set("showPlaceholders", false);
-            this.txbNhanVien.Properties.MaskSettings.Set("placeholder", '\0');
             this.txbNhanVien.Size = new System.Drawing.Size(260, 28);
             this.txbNhanVien.TabIndex = 9;
             this.txbNhanVien.TextChanged += new System.EventHandler(this.FillEvent);
@@ -358,6 +351,7 @@
             this.txbUserName.Size = new System.Drawing.Size(260, 28);
             this.txbUserName.TabIndex = 1;
             this.txbUserName.TextChanged += new System.EventHandler(this.FillEvent);
+            this.txbUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.preventChar);
             // 
             // label3
             // 
@@ -395,9 +389,11 @@
             this.txbPassWord.Properties.MaskSettings.Set("MaskManagerSignature", "isOptimistic=False");
             this.txbPassWord.Properties.MaskSettings.Set("mask", "[a-zA-Z0-9#?!@$%^&*-]{0,}");
             this.txbPassWord.Properties.MaskSettings.Set("placeholder", '\0');
+            this.txbPassWord.Properties.MaxLength = 30;
             this.txbPassWord.Properties.UseSystemPasswordChar = true;
             this.txbPassWord.Size = new System.Drawing.Size(260, 28);
             this.txbPassWord.TabIndex = 22;
+            this.txbPassWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPassWord_KeyPress);
             // 
             // label4
             // 
@@ -611,13 +607,13 @@
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // taiKhoanTableAdapter
             // 
             this.taiKhoanTableAdapter.ClearBeforeFill = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // frmAccountManagement
             // 
@@ -654,7 +650,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -689,7 +685,7 @@
         private System.Windows.Forms.BindingSource taiKhoanBindingSource;
         private QuanLyHieuThuocTayDataSetTableAdapters.TaiKhoanTableAdapter taiKhoanTableAdapter;
         private System.Windows.Forms.CheckBox ckbVaiTro;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.DataGridViewTextBoxColumn maTaiKhoanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVienDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenDangNhapDataGridViewTextBoxColumn;

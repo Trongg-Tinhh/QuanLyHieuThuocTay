@@ -264,7 +264,7 @@
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // errorProvider1
+            // errorProvider
             // 
             this.errorProvider1.ContainerControl = this;
             // 

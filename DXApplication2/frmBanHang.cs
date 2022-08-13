@@ -13,7 +13,6 @@ namespace DXApplication2
 {
     public partial class frmBanHang : DevExpress.XtraEditors.XtraForm
     {
-        private frmLogin loginInfo = new frmLogin();
         public frmBanHang()
         {
             InitializeComponent();
@@ -73,7 +72,7 @@ namespace DXApplication2
             string loaiSP = txbLoaiSP.Text;
             int soLuong = (int)numericSoLuong.Value;
             string maSP = txbMaSP.Text;
-            decimal? donGia = danhSachSanPhamTableAdapter.GetGiaByMa(maSP);
+            decimal? donGia = decimal.Parse(danhSachSanPhamTableAdapter.GetGiaByMa(maSP).ToString());
 
             if (soLuong == 0)
             {
@@ -194,10 +193,12 @@ namespace DXApplication2
                 decimal? donGia = decimal.Parse(item.SubItems[4].Text);
 
                 chiTietHoaDonTableAdapter.Insert(maHD, maSP, soLuong, (decimal)donGia);
+                danhSachSanPhamTableAdapter.UpdateSoLuong(soLuong, maSP);
             }
 
             ClearData();
             listViewChiTietHoaDon.Items.Clear();
+            danhSachSanPhamTableAdapter.Fill(quanLyHieuThuocTayDataSet.DanhSachSanPham);
             txbTenKH.Text = null;
             txbSDT.Text = null;
             dateTimeEditNgayBan.Text = null;

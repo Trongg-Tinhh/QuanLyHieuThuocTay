@@ -212,12 +212,6 @@
             this.txbName.Name = "txbName";
             this.txbName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbName.Properties.Appearance.Options.UseFont = true;
-            this.txbName.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
-            this.txbName.Properties.MaskSettings.Set("mask", "([a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA-Z]+)(" +
-        "(\\s{1}[a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđA" +
-        "-Z]+){1,})");
-            this.txbName.Properties.MaskSettings.Set("showPlaceholders", false);
-            this.txbName.Properties.MaskSettings.Set("placeholder", '\0');
             this.txbName.Size = new System.Drawing.Size(275, 30);
             this.txbName.TabIndex = 2;
             // 

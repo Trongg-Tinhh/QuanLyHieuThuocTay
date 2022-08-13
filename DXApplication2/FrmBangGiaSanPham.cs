@@ -21,6 +21,16 @@ namespace DXApplication2
         }
         private bool add = false;     // true: đang ở chức năng thêm  
         private bool edit = false;  //false: đang ở chức năng sửa
+        private void ToggleButton(Button b, bool enable)
+        {
+            b.Enabled = enable;
+
+            if (enable)
+                b.BackColor = SystemColors.ActiveBorder;
+            else
+                b.BackColor = SystemColors.ButtonFace;
+        }
+
         private void FrmBangGiaSanPham_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.NhaSanXuat' table. You can move, or remove it, as needed.
@@ -43,7 +53,7 @@ namespace DXApplication2
 
         private void CellClick_SanPham(object sender, DataGridViewCellEventArgs e)
         {
-            btnHuy.Enabled = true;
+            ToggleButton(btnHuy, true);
             String MaSP = dataGridViewSanPham.CurrentRow.Cells[0].Value.ToString().Trim() ;
             bangGiaTableAdapter.FillByMaSP(this.quanLyHieuThuocTayDataSet.BangGia,MaSP);
             txtMaSP.Text = MaSP;
@@ -64,7 +74,7 @@ namespace DXApplication2
             if(this.edit)  // khi thực hiện chức năng sửa
             {
                 nudGiaBan.Enabled = true;
-                btnLuu.Enabled = true;
+                ToggleButton(btnLuu, true);
                 txtNgay.Enabled = false;
                 txtMaSP.Text = MaSP;
                 String checkBangGia = bangGiaTableAdapter.ScalarQueryBangGiaByMaSP(MaSP);
@@ -78,7 +88,6 @@ namespace DXApplication2
                     MessageBox.Show("Sản phẩm bạn vừa chọn chưa có giá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     dataGridViewSanPham.ClearSelection();
                 }
-
             }
         }
         private void CellClick_BangGia(object sender, DataGridViewCellEventArgs e)
@@ -93,47 +102,54 @@ namespace DXApplication2
         private void btnThem_Click(object sender, EventArgs e)
         {
             this.add = true;
-            btnThem.Enabled = false;
-            btnSua.Enabled = false;
-            btnHuy.Enabled = true;
-            btnThem.BackColor = SystemColors.ButtonFace;
+
+            ToggleButton(btnThem, false);
+            ToggleButton(btnSua, false);
+            ToggleButton(btnHuy, true);
+
             dataGridViewBangGia.ClearSelection();
-            //dataGridViewSanPham.ClearSelection();
+            dataGridViewSanPham.ClearSelection();
+
+            dataGridViewBangGia.Enabled = true;
+            dataGridViewSanPham.Enabled = true;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             this.edit = true;
-            btnSua.Enabled = false;
-            btnThem.Enabled = false;
-            btnHuy.Enabled = true;
-            btnSua.BackColor = SystemColors.ButtonFace;
+
+            ToggleButton(btnSua, false);
+            ToggleButton(btnThem, false);
+            ToggleButton(btnHuy, true);
+
             dataGridViewBangGia.ClearSelection();
             dataGridViewSanPham.ClearSelection();
+
+            dataGridViewBangGia.Enabled = true;
+            dataGridViewSanPham.Enabled = true;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            btnHuy.Enabled = false;
-            btnLuu.Enabled = false;
+            ToggleButton(btnHuy, false);
+            ToggleButton(btnLuu, false);
+            ToggleButton(btnThem, true);
+            ToggleButton(btnSua, true);
+
             dataGridViewSanPham.Enabled = true;
             txtTenSP.Enabled = true;
+
             if (this.add)
             {
                 this.add = false;
-                btnThem.Enabled = true;
-                btnSua.Enabled = true;
+
                 nudGiaBan.Enabled = false;
                 txtNgay.Enabled = false;
-                btnThem.BackColor = Color.DarkGray;
             }   
             if(this.edit)
             {
                 this.edit = false;
-                btnSua.Enabled = true;
-                btnThem.Enabled = true;
                 nudGiaBan.Enabled = false;
-                btnSua.BackColor = Color.DarkGray;
             }
 
             
@@ -171,7 +187,7 @@ namespace DXApplication2
                         SqlDataReader reader = cmd.ExecuteReader();
                         if (reader.Read())      // kiểm tra dữ liệu nhập có bị trùng khóa không
                         {
-                            MessageBox.Show("Không thể thêm giá SP do trùng khóa");
+                            MessageBox.Show("Giá đã có, hãy sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else    // thêm sp nếu không trùng khóa
                         {

@@ -204,7 +204,7 @@
             // 
             this.taiKhoanTableAdapter.ClearBeforeFill = true;
             // 
-            // errorProvider1
+            // errorProvider
             // 
             this.errorProvider1.ContainerControl = this;
             // 

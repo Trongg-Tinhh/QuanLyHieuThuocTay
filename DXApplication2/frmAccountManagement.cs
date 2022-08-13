@@ -8,30 +8,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace DXApplication2
 {
     public partial class frmAccountManagement : DevExpress.XtraEditors.XtraForm
     {
+        private bool isAdd = true; // true: add | false: edit
         public frmAccountManagement()
         {
             InitializeComponent();
-            defaultstate();
+            DefaultState();
+        }
+        
+        private void ToggleButton(Button b, bool enable)
+        {
+            b.Enabled = enable;
+            if (enable)
+                b.BackColor = SystemColors.ActiveBorder;
+            else
+                b.BackColor = SystemColors.ButtonFace;
         }
 
         private void frmAccountManagement_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.TaiKhoan' table. You can move, or remove it, as needed.
             this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.TaiKhoan);
-        }
-
-        private void dataGridViewDSTK_SelectionChanged(object sender, EventArgs e)
-        {
+            txbPassWord.Enabled = false;
         }
 
         private void dataGridViewDSTK_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            if (e.RowIndex < 0) 
+                return;
+
             int numRow = e.RowIndex;
 
             string tenNV = dataGridViewDSTK.Rows[numRow].Cells[1].Value.ToString();
@@ -48,21 +58,27 @@ namespace DXApplication2
             txbSDT.Text = sdt;
 
             ckbVaiTro.Enabled = true;
+
             if (chucVu == "True")
                 ckbVaiTro.Checked = true;
             else
                 ckbVaiTro.Checked = false;
-            btnSua.Enabled = true;
-            btnSua.BackColor = SystemColors.ActiveBorder;
+
+            /*
             btnXoa.Enabled = true;
             btnXoa.BackColor = SystemColors.ActiveBorder;
             btnHuy.Enabled = true;
             btnHuy.BackColor = SystemColors.ActiveBorder;
+            */
+
+            ToggleButton(btnSua, true);
+            ToggleButton(btnXoa, true);
+            ToggleButton(btnHuy, true);
         }
-        public void defaultstate()
+        
+        private void ClearData()
         {
-            //dataGridViewDSTK.BackgroundColor =;
-            errorProvider1.Clear();
+            errorProvider.Clear();
             txbPassWord.Properties.UseSystemPasswordChar = true;
             ckbVaiTro.Enabled=true;
             txbNhanVien.Text = "";
@@ -71,25 +87,43 @@ namespace DXApplication2
             txbPassWord.Enabled = false;
             txbCCCD.Text = "";
             txbSDT.Text = "";
-            ckbVaiTro.Text = "Quản lí";
-            btnThem.Enabled = true;
-            btnThem.BackColor = SystemColors.ActiveBorder;
-            btnXoa.Enabled = false;
-            btnXoa.BackColor = SystemColors.ButtonFace;
-            btnSua.Enabled = false;
-            btnSua.BackColor = SystemColors.ButtonFace;
-            btnHuy.Enabled = false; 
-            btnHuy.BackColor = SystemColors.ButtonFace;
-            btnLuu.Enabled = false;
-            btnLuu.BackColor = SystemColors.ButtonFace;
-            dataGridViewDSTK.Enabled=true;
+            // ckbVaiTro.Text = "Quản lý";
+        }
+
+        public void DefaultState()
+        {
+            //dataGridViewDSTK.BackgroundColor =;
+            /*
+            errorProvider.Clear();
+            txbPassWord.Properties.UseSystemPasswordChar = true;
+            ckbVaiTro.Enabled=true;
+            txbNhanVien.Text = "";
+            txbUserName.Text = "";
+            txbPassWord.Text = "";
+            txbPassWord.Enabled = false;
+            txbCCCD.Text = "";
+            txbSDT.Text = "";
+            ckbVaiTro.Text = "Quản lý";
+            */
+            // -----------------------------
+
+            ToggleButton(btnThem, true);
+            ToggleButton(btnXoa, false);
+            ToggleButton(btnHuy, false);
+            ToggleButton(btnSua, false);
+            ToggleButton(btnLuu, false);
+
+            dataGridViewDSTK.Enabled = true;
+
             this.taiKhoanTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.TaiKhoan);
         }
         
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            defaultstate();
+            isAdd = true;
+            ClearData();
+            DefaultState();
             txbUserName.Enabled = true;
             txbPassWord.Enabled=true;
             txbPassWord.Properties.UseSystemPasswordChar = false;
@@ -104,51 +138,58 @@ namespace DXApplication2
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            ClearData();
             if(btnThem.Enabled==false)
                 if(MessageBox.Show("Bạn muốn hủy tiến trình", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
                 {
-                    defaultstate();
+                    DefaultState();
                     return;
                 }
-            defaultstate();
-            
-            
+            DefaultState();
         }
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            bool flag = true;
+            Regex usernameRegex = new Regex("^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$");
+            bool hasError = false;
+
             //them du lieu
-            if (btnThem.Enabled == false&& txbUserName.Enabled==true && txbPassWord.Enabled==true)
+            if (isAdd == true)
             {
                 if (txbUserName.Text == "")
                 {
-                    errorProvider1.SetError(txbUserName, "Nhập tên đăng nhập.");
-                    flag = false;
+                    errorProvider.SetError(txbUserName, "Nhập tên đăng nhập.");
+                    hasError = true;
+                }
+                if (!usernameRegex.IsMatch(txbUserName.Text))
+                {
+                    errorProvider.SetError(txbUserName, "Tên đăng nhập không hơp lệ.");
+                    hasError = true;
                 }
                 if (txbNhanVien.Text == "") {
-                    errorProvider1.SetError(txbNhanVien,"Chưa nhập tên hiển thị.");
-                    flag = false;
+                    errorProvider.SetError(txbNhanVien,"Chưa nhập tên hiển thị.");
+                    hasError = true;
                 }
                 if (taiKhoanTableAdapter.checkTenDangNhap(txbUserName.Text) > 0){
-                    errorProvider1.SetError(txbUserName, "Tên đăng nhập đã tồn tại.");
-                    flag = false;
+                    errorProvider.SetError(txbUserName, "Tên đăng nhập đã tồn tại.");
+                    hasError = true;
                 } 
                 if (txbPassWord.Text.Length < 8)
                 {
-                    errorProvider1.SetError(txbPassWord, "Mật khẩu yếu (trên 8 kí tự).");
-                    flag = false;
+                    errorProvider.SetError(txbPassWord, "Mật khẩu yếu (trên 8 kí tự).");
+                    hasError = true;
                 }
                 if (txbCCCD.Text.Length!=12)
                 {
-                    errorProvider1.SetError(txbCCCD, "Số CCCD không hợp lệ (12 số).");
-                    flag = false;
+                    errorProvider.SetError(txbCCCD, "Số CCCD không hợp lệ (12 số).");
+                    hasError = true;
                 }
                 if (txbSDT.Text.Length !=10)
                 {
-                    errorProvider1.SetError(txbSDT, "SDT không hợp lệ.");
-                    flag = false;
+                    errorProvider.SetError(txbSDT, "SDT không hợp lệ.");
+                    hasError = true;
                 }
-                if (flag==true)
+                if (!hasError)
                 {
                     taiKhoanTableAdapter.InsertQuery(txbUserName.Text,
                                                  txbPassWord.Text,
@@ -157,30 +198,31 @@ namespace DXApplication2
                                                  txbCCCD.Text,
                                                  ckbVaiTro.Checked);
                     MessageBox.Show("Tài khoản đã được tạo");
-                    defaultstate();
+                    DefaultState();
+                    ClearData();
                 }
             }
             else
             {
                 // sua du lieu
-                if (btnSua.Enabled == false && txbUserName.Enabled==false &&txbPassWord.Enabled==false) 
+                if (isAdd == false)
                 {
                     if (txbNhanVien.Text == "")
                     {
-                        errorProvider1.SetError(txbNhanVien, "Chưa nhập tên hiển thị.");
-                        flag = false;
+                        errorProvider.SetError(txbNhanVien, "Chưa nhập tên hiển thị.");
+                        hasError = true;
                     }
                     if (txbCCCD.Text.Length != 12)
                     {
-                        errorProvider1.SetError(txbCCCD, "Số CCCD không hợp lệ (12 số).");
-                        flag = false;
+                        errorProvider.SetError(txbCCCD, "Số CCCD không hợp lệ (12 số).");
+                        hasError = true;
                     }
                     if (txbSDT.Text.Length != 10)
                     {
-                        errorProvider1.SetError(txbSDT, "SDT không hợp lệ.");
-                        flag = false;
+                        errorProvider.SetError(txbSDT, "SDT không hợp lệ.");
+                        hasError = true;
                     }
-                    if (flag == true)
+                    if (!hasError)
                     {
                         taiKhoanTableAdapter.Update_TaiKhoanFull(
                                                             txbNhanVien.Text,
@@ -190,7 +232,8 @@ namespace DXApplication2
                                                             txbUserName.Text,
                                                             txbPassWord.Text);
                         MessageBox.Show("Tài khoản đã được sửa thông tin");
-                        defaultstate();
+                        DefaultState();
+                        ClearData();
                     }
 
                 }
@@ -200,8 +243,8 @@ namespace DXApplication2
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string tenDN=txbUserName.Text;
-            string passW=txbPassWord.Text;
+            string tenDN = txbUserName.Text;
+            string passW = txbPassWord.Text;
             int matk = int.Parse(taiKhoanTableAdapter.getMaTaiKhoan(tenDN).ToString());
             int soHoaDonBan=int.Parse(taiKhoanTableAdapter.Count_HD(matk).ToString());
             if (tenDN == frmLogin.tenDangNhap)
@@ -218,7 +261,8 @@ namespace DXApplication2
             {
                 MessageBox.Show("Xóa thành công");
                 taiKhoanTableAdapter.DeleteQuery(tenDN, passW);
-                defaultstate();
+                ClearData();
+                DefaultState();
             }                 
            
             
@@ -236,14 +280,13 @@ namespace DXApplication2
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            btnSua.Enabled=false;
-            btnSua.BackColor = SystemColors.ButtonFace;
-            btnXoa.Enabled=false;
-            btnXoa.BackColor = SystemColors.ButtonFace;
-            btnLuu.Enabled=true;
-            btnLuu.BackColor = SystemColors.ActiveBorder;
-            btnThem.Enabled=false;
-            btnThem.BackColor = SystemColors.ButtonFace;    
+            isAdd = false;
+
+            ToggleButton(btnSua, false);
+            ToggleButton(btnXoa, false);
+            ToggleButton(btnThem, false);
+            ToggleButton(btnLuu, true);
+
             dataGridViewDSTK.Enabled=false;
             txbUserName.Enabled=false;
             txbPassWord.Enabled=false;
@@ -252,6 +295,19 @@ namespace DXApplication2
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txbPassWord_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+                e.Handled = true;
+        }
+
+        private void preventChar(object sender, KeyPressEventArgs e)
+        {
+            string notAllowedChars = "\" / - \\ [ ] : ; | = , + * ? < >";
+            if (notAllowedChars.Contains(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

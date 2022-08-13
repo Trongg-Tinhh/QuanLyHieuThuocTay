@@ -224,7 +224,7 @@
             this.cmbMaLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMaLoai.Enabled = false;
             this.cmbMaLoai.FormattingEnabled = true;
-            this.cmbMaLoai.Location = new System.Drawing.Point(401, 42);
+            this.cmbMaLoai.Location = new System.Drawing.Point(401, 39);
             this.cmbMaLoai.Name = "cmbMaLoai";
             this.cmbMaLoai.Size = new System.Drawing.Size(193, 32);
             this.cmbMaLoai.TabIndex = 2;
@@ -248,7 +248,7 @@
             this.cmbNhaSX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNhaSX.Enabled = false;
             this.cmbNhaSX.FormattingEnabled = true;
-            this.cmbNhaSX.Location = new System.Drawing.Point(600, 42);
+            this.cmbNhaSX.Location = new System.Drawing.Point(600, 39);
             this.cmbNhaSX.Name = "cmbNhaSX";
             this.cmbNhaSX.Size = new System.Drawing.Size(193, 32);
             this.cmbNhaSX.TabIndex = 2;
