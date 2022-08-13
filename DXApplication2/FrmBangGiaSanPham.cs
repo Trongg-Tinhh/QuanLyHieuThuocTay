@@ -137,7 +137,7 @@ namespace DXApplication2
         {
             if (nudGiaBan.Value > 0)
             {
-                btnLuu.Enabled = false;
+                //btnLuu.Enabled = false;
                 DateTime Ngay = DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 using (SqlConnection connection = new SqlConnection(DataConnection.DataConnectionString.ConnectionString))
                 {
@@ -172,9 +172,9 @@ namespace DXApplication2
                     }    
                 }
                 dataGridViewBangGia.ClearSelection();
-                dataGridViewSanPham.ClearSelection();
-                nudGiaBan.Value = 0;
-                txtNgay.DateTime = DateTime.Now;
+                //dataGridViewSanPham.ClearSelection();
+                //nudGiaBan.Value = 0;
+                //txtNgay.DateTime = DateTime.Now;
             } 
             else
             {
