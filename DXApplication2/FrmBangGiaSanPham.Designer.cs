@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelTop = new System.Windows.Forms.Panel();
             this.groupBoxTop = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelThemSP = new System.Windows.Forms.TableLayoutPanel();
@@ -115,13 +115,13 @@
             // 
             this.groupBoxTop.Controls.Add(this.tableLayoutPanelThemSP);
             this.groupBoxTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxTop.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxTop.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxTop.Location = new System.Drawing.Point(0, 0);
             this.groupBoxTop.Name = "groupBoxTop";
             this.groupBoxTop.Size = new System.Drawing.Size(1200, 141);
             this.groupBoxTop.TabIndex = 0;
             this.groupBoxTop.TabStop = false;
-            this.groupBoxTop.Text = "Thêm Giá Sản Phẩm";
+            this.groupBoxTop.Text = "Danh Mục Bảng Giá Sản Phẩm";
             // 
             // tableLayoutPanelThemSP
             // 
@@ -145,22 +145,22 @@
             this.tableLayoutPanelThemSP.Controls.Add(this.lblNgay, 5, 0);
             this.tableLayoutPanelThemSP.Controls.Add(this.txtNgay, 5, 1);
             this.tableLayoutPanelThemSP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelThemSP.Location = new System.Drawing.Point(3, 24);
+            this.tableLayoutPanelThemSP.Location = new System.Drawing.Point(3, 28);
             this.tableLayoutPanelThemSP.Name = "tableLayoutPanelThemSP";
             this.tableLayoutPanelThemSP.RowCount = 3;
             this.tableLayoutPanelThemSP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelThemSP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelThemSP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelThemSP.Size = new System.Drawing.Size(1194, 114);
+            this.tableLayoutPanelThemSP.Size = new System.Drawing.Size(1194, 110);
             this.tableLayoutPanelThemSP.TabIndex = 0;
             // 
             // lblMaSP
             // 
             this.lblMaSP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaSP.AutoSize = true;
-            this.lblMaSP.Location = new System.Drawing.Point(3, 8);
+            this.lblMaSP.Location = new System.Drawing.Point(3, 6);
             this.lblMaSP.Name = "lblMaSP";
-            this.lblMaSP.Size = new System.Drawing.Size(193, 21);
+            this.lblMaSP.Size = new System.Drawing.Size(193, 24);
             this.lblMaSP.TabIndex = 0;
             this.lblMaSP.Text = "Mã Sản Phẩm:";
             // 
@@ -168,9 +168,9 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(202, 8);
+            this.label1.Location = new System.Drawing.Point(202, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 21);
+            this.label1.Size = new System.Drawing.Size(193, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Sản Phẩm:";
             // 
@@ -178,7 +178,7 @@
             // 
             this.txtMaSP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaSP.Enabled = false;
-            this.txtMaSP.Location = new System.Drawing.Point(3, 43);
+            this.txtMaSP.Location = new System.Drawing.Point(3, 40);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSP.Properties.Appearance.Options.UseFont = true;
@@ -188,21 +188,21 @@
             // txtTenSP
             // 
             this.txtTenSP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTenSP.Enabled = false;
-            this.txtTenSP.Location = new System.Drawing.Point(202, 43);
+            this.txtTenSP.Location = new System.Drawing.Point(202, 40);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenSP.Properties.Appearance.Options.UseFont = true;
             this.txtTenSP.Size = new System.Drawing.Size(193, 28);
             this.txtTenSP.TabIndex = 1;
+            this.txtTenSP.TextChanged += new System.EventHandler(this.FillEvent_TenSP);
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(401, 8);
+            this.label2.Location = new System.Drawing.Point(401, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 21);
+            this.label2.Size = new System.Drawing.Size(193, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Loại Sản Phẩm:";
             // 
@@ -210,9 +210,9 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(600, 8);
+            this.label3.Location = new System.Drawing.Point(600, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 21);
+            this.label3.Size = new System.Drawing.Size(193, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "Nhà Sản Xuất:";
             // 
@@ -226,7 +226,7 @@
             this.cmbMaLoai.FormattingEnabled = true;
             this.cmbMaLoai.Location = new System.Drawing.Point(401, 42);
             this.cmbMaLoai.Name = "cmbMaLoai";
-            this.cmbMaLoai.Size = new System.Drawing.Size(193, 29);
+            this.cmbMaLoai.Size = new System.Drawing.Size(193, 32);
             this.cmbMaLoai.TabIndex = 2;
             this.cmbMaLoai.ValueMember = "maLoai";
             // 
@@ -250,7 +250,7 @@
             this.cmbNhaSX.FormattingEnabled = true;
             this.cmbNhaSX.Location = new System.Drawing.Point(600, 42);
             this.cmbNhaSX.Name = "cmbNhaSX";
-            this.cmbNhaSX.Size = new System.Drawing.Size(193, 29);
+            this.cmbNhaSX.Size = new System.Drawing.Size(193, 32);
             this.cmbNhaSX.TabIndex = 2;
             this.cmbNhaSX.ValueMember = "maNSX";
             // 
@@ -263,9 +263,9 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(799, 8);
+            this.label4.Location = new System.Drawing.Point(799, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(193, 21);
+            this.label4.Size = new System.Drawing.Size(193, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "Giá Bán:";
             // 
@@ -277,14 +277,14 @@
             0,
             0,
             0});
-            this.nudGiaBan.Location = new System.Drawing.Point(799, 41);
+            this.nudGiaBan.Location = new System.Drawing.Point(799, 39);
             this.nudGiaBan.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.nudGiaBan.Name = "nudGiaBan";
-            this.nudGiaBan.Size = new System.Drawing.Size(182, 28);
+            this.nudGiaBan.Size = new System.Drawing.Size(182, 32);
             this.nudGiaBan.TabIndex = 1;
             this.nudGiaBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -292,9 +292,9 @@
             // 
             this.lblNgay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNgay.AutoSize = true;
-            this.lblNgay.Location = new System.Drawing.Point(998, 8);
+            this.lblNgay.Location = new System.Drawing.Point(998, 6);
             this.lblNgay.Name = "lblNgay";
-            this.lblNgay.Size = new System.Drawing.Size(193, 21);
+            this.lblNgay.Size = new System.Drawing.Size(193, 24);
             this.lblNgay.TabIndex = 0;
             this.lblNgay.Text = "Ngày:";
             // 
@@ -303,20 +303,21 @@
             this.txtNgay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNgay.EditValue = new System.DateTime(2022, 8, 11, 23, 6, 55, 0);
             this.txtNgay.Enabled = false;
-            this.txtNgay.Location = new System.Drawing.Point(998, 43);
+            this.txtNgay.Location = new System.Drawing.Point(998, 40);
             this.txtNgay.Name = "txtNgay";
             this.txtNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNgay.Properties.Appearance.Options.UseFont = true;
-            serializableAppearanceObject7.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            serializableAppearanceObject7.Options.UseFont = true;
+            serializableAppearanceObject3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            serializableAppearanceObject3.Options.UseFont = true;
             this.txtNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtNgay.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.txtNgay.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.txtNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.txtNgay.Properties.EditFormat.FormatString = "";
+            this.txtNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.txtNgay.Properties.MaskSettings.Set("mask", "d");
             this.txtNgay.Properties.MaxValue = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.txtNgay.Properties.MinValue = new System.DateTime(2021, 2, 1, 0, 0, 0, 0);

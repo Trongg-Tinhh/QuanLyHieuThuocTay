@@ -33,17 +33,26 @@ namespace DXApplication2
             this.sanPhamTableAdapter.Fill(this.quanLyHieuThuocTayDataSet.SanPham);
             dataGridViewSanPham.ClearSelection();
             dataGridViewBangGia.ClearSelection();
-            //txtNgay.DateTime = DateTime.Now;
+
+            cmbMaLoai.SelectedItem = null;
+            cmbMaLoai.Text = "";
+
+            cmbNhaSX.SelectedItem = null;
+            cmbNhaSX.Text = "";
         }
 
         private void CellClick_SanPham(object sender, DataGridViewCellEventArgs e)
         {
+            btnHuy.Enabled = true;
             String MaSP = dataGridViewSanPham.CurrentRow.Cells[0].Value.ToString().Trim() ;
             bangGiaTableAdapter.FillByMaSP(this.quanLyHieuThuocTayDataSet.BangGia,MaSP);
             txtMaSP.Text = MaSP;
             txtTenSP.Text = dataGridViewSanPham.CurrentRow.Cells[1].Value.ToString().Trim();
             cmbMaLoai.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[2].Value.ToString().Trim();
             cmbNhaSX.SelectedValue = dataGridViewSanPham.CurrentRow.Cells[3].Value.ToString().Trim();
+
+            dataGridViewSanPham.Enabled = false;
+            txtTenSP.Enabled = false;
             if (this.add)  // khi thực hiện chức năng thêm
             {
                 nudGiaBan.Enabled = true;
@@ -89,7 +98,7 @@ namespace DXApplication2
             btnHuy.Enabled = true;
             btnThem.BackColor = SystemColors.ButtonFace;
             dataGridViewBangGia.ClearSelection();
-            dataGridViewSanPham.ClearSelection();
+            //dataGridViewSanPham.ClearSelection();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -107,7 +116,9 @@ namespace DXApplication2
         {
             btnHuy.Enabled = false;
             btnLuu.Enabled = false;
-            if(this.add)
+            dataGridViewSanPham.Enabled = true;
+            txtTenSP.Enabled = true;
+            if (this.add)
             {
                 this.add = false;
                 btnThem.Enabled = true;
@@ -124,20 +135,26 @@ namespace DXApplication2
                 nudGiaBan.Enabled = false;
                 btnSua.BackColor = Color.DarkGray;
             }
+
+            
             bangGiaTableAdapter.Fill(quanLyHieuThuocTayDataSet.BangGia);
-            dataGridViewBangGia.ClearSelection();
-            dataGridViewSanPham.ClearSelection();
             nudGiaBan.Value = 0;
             txtNgay.DateTime = DateTime.Now;
             txtMaSP.Text = "";
             txtTenSP.Text = "";
+            cmbMaLoai.SelectedItem = null;
+            cmbMaLoai.Text = "";
+            cmbNhaSX.SelectedItem = null;
+            cmbNhaSX.Text = "";
+
+            dataGridViewBangGia.ClearSelection();
+            dataGridViewSanPham.ClearSelection();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (nudGiaBan.Value > 0)
             {
-                //btnLuu.Enabled = false;
                 DateTime Ngay = DateTime.ParseExact(txtNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 using (SqlConnection connection = new SqlConnection(DataConnection.DataConnectionString.ConnectionString))
                 {
@@ -172,9 +189,6 @@ namespace DXApplication2
                     }    
                 }
                 dataGridViewBangGia.ClearSelection();
-                //dataGridViewSanPham.ClearSelection();
-                //nudGiaBan.Value = 0;
-                //txtNgay.DateTime = DateTime.Now;
             } 
             else
             {
@@ -189,6 +203,9 @@ namespace DXApplication2
             this.Close();
         }
 
-        
+        private void FillEvent_TenSP(object sender, EventArgs e)
+        {
+            sanPhamTableAdapter.FillByTenSP(this.quanLyHieuThuocTayDataSet.SanPham, txtTenSP.Text);
+        }
     }
 }

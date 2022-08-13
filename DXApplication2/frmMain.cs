@@ -82,5 +82,11 @@ namespace DXApplication2
             frmInvoiceManagement frmInvoiceManagement = new frmInvoiceManagement();
             addForm(frmInvoiceManagement);
         }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+            FrmBangGiaSanPham frmBangGia = new FrmBangGiaSanPham();
+            addForm(frmBangGia);
+        }
     }
 }
