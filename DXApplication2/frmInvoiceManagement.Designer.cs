@@ -124,6 +124,7 @@
             // 
             this.btnHuy.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.tablePanel5.SetColumn(this.btnHuy, 1);
+            this.btnHuy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Black;
