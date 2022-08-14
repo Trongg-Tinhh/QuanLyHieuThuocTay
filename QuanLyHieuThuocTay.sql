@@ -1,10 +1,7 @@
 ﻿create database QuanLyHieuThuocTay
+go
 use QuanLyHieuThuocTay
-
-use master
-drop database QuanLyHieuThuocTay
 ----------------------------------------------------------------
-drop table NhaSanXuat
 create table NhaSanXuat(
 	maNSX	INT IDENTITY(100,1) PRIMARY KEY,
 	tenNSX	nvarchar(200) not null
@@ -36,6 +33,8 @@ insert into NhaSanXuat (tenNSX)
 values (N'Young Chemical Co.,Ltd')
 insert into NhaSanXuat (tenNSX)
 values (N'Công Ty Tnhh Công Nghệ Cao Su Việt Nam')
+
+
 
 SELECT * FROM NhaSanXuat
 ----------------------------------------------------------------------------------------------------------------
@@ -107,42 +106,46 @@ create table SanPham(
 			on delete no action
 )
 --insert SanPham
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('001TGD001',N'Thuốc Efferhasan 250Mg Hasan','TGD',100,N'Paracetamol',N'Trên 6 tuổi',N'Đau nửa đầu, Nhức đầu',N'Viên',24,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('002TKS001',N'Thuốc Kháng Sinh Vizicin 125Mg Hasan','TKS',100,N'Azithromycin',N'Trên 6 tháng tuổi ',N'Viêm phổi, Viêm amidan',N'Viên',16,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('003CDM002',N'Thuốc Clopidogrel 75Mg Mv','CDM',101,N'Clopidogrel',N'Trên 18 tuổi',N'Nhồi máu cơ tim, Đột quy',N'Viên',32,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('004CTC003',N'Thuốc Diouf 10Mg Davi','CTC',102,N'Escitalopram',N'Trên 12 tuổi',N'Trầm cảm, Lo âu',N'Viên',09,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('005CUT004',N'Thuốc Nolvadex-D Astrazeneca','CUT',103,N'Tamoxifen',N'Trên 18 tuổi',N'Ung thư vú',N'Viên',26,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('006DTD005',N'Thuốc Diaprid 2 Pymepharco','DTD',104,N'Glimepiride',N'Trên 18 tuổi',N'Tiểu đường type 2',N'Viên',30,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('007CDK006',N'Thuốc Dalekine 500Mg Danapha','CDK',105,N'Valproat natri',N'Trên 18 tuổi',N'Động kinh, Tiền sử co giật, Co giật',N'Viên',12,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('008TAT007',N'Viên An Thần Mimosa','TAT',106,N'Bình vôi, Vông nem lá',N'Trên 18 tuổi',N'Rối loạn giấc ngủ, Suy nhược thần kinh',N'Viên',04,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('009CGT008',N'Thuốc Meteospasmyl','CCT',107,N'Trimebutin',N'Trên 2 tuổi',N'Rối loạn tiêu hóa, Táo bón, Đầy hơiu',N'Viên',06,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('010TKV009',N'Thuốc Acyclovir Meyer 800Mg','TKV',108,N'Tenofovir disoproxil',N'Trên 18 tuổi',N'Viêm gan B, HIV/AIDS',N'Viên',20,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('011TTM010',N'Thuốc Tim Mạch Nisten Ivabradin 5Mg','TTM',109,N'Ivabradine',N'Trên 18 tuổi',N'Cơn đau thắt ngực, Bệnh mạch vành',N'Viên',10,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('012TTC011',N'Trinopast','TTC',110,N'Pregabalin',N'Trên 18 tuổi',N'Bệnh TK ngoại biên, Zona thần kinh',N'Viên',27,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('013TTT012',N'Thuốc Tránh Thai Pro Avalo Babiophar','TTT',111,'Levonorgestrel',N'Trên 18 tuổi','Tránh thai','Viên','26','')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('014BTY013',N'Băng Gạc Vô Trùng 9 Cm X 25 Cm','BYT',112,N'',N'',N'Bảo vệ vết thương, đẩy nhanh tiến trình hồi phục',N'Viên',30,N'')
-insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa)
-values ('015KTR013',N'Khẩu Trang Y Tế 3 Lớp Naturecare 50 Cái','KTR',112,N'',N'',N'Kháng khuẩn, lọc không khí, chống giọt bắn',N'Viên',30,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('001TGD100',N'Thuốc Efferhasan 250Mg Hasan','TGD',100,N'Paracetamol',N'Trên 6 tuổi',N'Đau nửa đầu, Nhức đầu',N'Viên',24,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('002TKS100',N'Thuốc Kháng Sinh Vizicin 125Mg Hasan','TKS',100,N'	Azithromycin',N'Trên 6 tháng tuổi',N'Viêm phổi, Viêm amidan',N'Viên',16,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('003CDM101',N'Thuốc Clopidogrel 75Mg Mv','CDM',101,N'Clopidogrel',N'Trên 18 tuổi	',N'Nhồi máu cơ tim, Đột quy',N'Viên',32,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('004CTC102',N'Thuốc Diouf 10Mg Davi','CTC',102,N'Escitalopram',N'Trên 12 tuổi',N'Trầm cảm, Lo âu',N'Viên',9,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('005CUT103',N'Thuốc Nolvadex-D Astrazeneca','CUT',103,N'Tamoxifen',N'Trên 18 tuổi',N'Ung thư vú',N'Viên',26,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('006DTD104',N'Thuốc Diaprid 2 Pymepharco','DTD',104,N'Glimepiride',N'Trên 18 tuổi',N'Tiểu đường type 2',N'Viên',30,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('007CDK105',N'Thuốc Dalekine 500Mg Danapha','CDK',105,N'Valproat natri',N'Trên 18 tuổi',N'Động kinh, Tiền sử co giật, Co giật',N'Viên',12,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('008TAT106',N'Viên An Thần Mimosa','TAT',106,N'Bình vôi, Vông nem lá',N'Trên 18 tuổi',N'Rối loạn giấc ngủ, Suy nhược thần kinh',N'Viên',4,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('009CGT107',N'Thuốc Meteospasmyl','CCT',107,N'Trimebutin',N'Trên 2 tuổi',N'Rối loạn tiêu hóa, Táo bón, Đầy hơiu',N'Viên',6,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('010TKV108',N'Thuốc Acyclovir Meyer 800Mg','TKV',108,N'Tenofovir disoproxil',N'Trên 18 tuổi',N'Viêm gan B, HIV/AIDS',N'Viên',20,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('011TTM109',N'Thuốc Tim Mạch Nisten Ivabradin 5Mg','TTM',109,N'Ivabradine',N'Trên 18 tuổi',N'Cơn đau thắt ngực, Bệnh mạch vành',N'Viên',10,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('012TTC110',N'Trinopast','TTC',110,N'Pregabalin',N'Trên 18 tuổi',N'Bệnh TK ngoại biên, Zona thần kinh',N'Viên',27,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('013TTT111',N'Thuốc Tránh Thai Pro Avalo Babiophar','TTT',111,N'Levonorgestrel',N'Trên 18 tuổi',N'Tránh thai',N'Viên',26,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('014BTY112',N'Băng Gạc Vô Trùng 9 Cm X 25 Cm','BYT',112,N'',N'',N'Bảo vệ vết thương, đẩy nhanh tiến trình hồi phục',N'Viên',30,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('015KTR112',N'Khẩu Trang Y Tế 3 Lớp Naturecare 50 Cái','KTR',112,N'',N'',N'Kháng khuẩn, lọc không khí, chống giọt bắn',N'Viên',30,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('016KTR111',N'Khẩu Trang Y Tế 3 Lớp Naturecare 50 Cái','KTR',111	,N'',N'',N'Kháng khuẩn, lọc không khí, chống giọt bắn',N'Viên',35,N'')
+insert into SanPham (maSP, tenSP, maLoai, maNSX, thanhPhanChinh, doTuoi, congDung, donViTinh, soLuong, moTa) 
+values('017TTT110',N'Thuốc Tránh Thai Pro Avalo Babiophar','TTT',110,N'Levonorgestrel',N'Trên 18 tuổi',N'Tránh thai',N'Viên',20,N'')
+
 
 SELECT * FROM SanPham
 
 ---------------------------------------------------------------------------------------------------------------------
 
-DROP TABLE BangGia
 create table BangGia(
 	maSP		char(10),
 	ngay		date not null,
@@ -160,42 +163,50 @@ create table BangGia(
 
 --insert BangGia
 insert into BangGia(maSP, ngay, donGia)
-values ('001TGD001','2022/07/21',3000)
+values ('001TGD100','2022/07/21',3000)
 insert into BangGia(maSP, ngay, donGia)
-values ('002TKS001','2022/07/20',2500)
+values ('002TKS100','2022/07/20',2500)
 insert into BangGia(maSP, ngay, donGia)
-values ('003CDM002','2022/07/20',2000)
+values ('003CDM101','2022/07/20',2000)
 insert into BangGia(maSP, ngay, donGia)
-values ('004CTC003','2022/07/20',4000)
+values ('004CTC102','2022/07/20',4000)
 insert into BangGia(maSP, ngay, donGia)
-values ('005CUT004','2022/07/20',1200)
+values ('005CUT103','2022/07/20',1200)
 insert into BangGia(maSP, ngay, donGia)
-values ('006DTD005','2022/07/20',3500)
+values ('006DTD104','2022/07/20',3500)
 insert into BangGia(maSP, ngay, donGia)
-values ('007CDK006','2022/07/20',2000)
+values ('007CDK105','2022/07/20',2000)
 insert into BangGia(maSP, ngay, donGia)
-values ('008TAT007','2022/07/20',2000)
+values ('008TAT106','2022/07/20',2000)
 insert into BangGia(maSP, ngay, donGia)
-values ('009CGT008','2022/07/20',5000)
+values ('009CGT107','2022/07/20',5000)
 insert into BangGia(maSP, ngay, donGia)
-values ('010TKV009','2022/07/20',1000)
+values ('010TKV108','2022/07/20',1000)
 insert into BangGia(maSP, ngay, donGia)
-values ('011TTM010','2022/07/20',1500)
+values ('011TTM109','2022/07/20',1500)
 insert into BangGia(maSP, ngay, donGia)
-values ('012TTC011','2022/07/20',2000)
+values ('012TTC110','2022/07/20',2000)
 insert into BangGia(maSP, ngay, donGia)
-values ('013TTT012','2022/07/20',2200)
+values ('013TTT111','2022/07/20',2200)
 insert into BangGia(maSP, ngay, donGia)
-values ('014BTY013','2022/07/20',11000)
+values ('014BTY112','2022/07/20',11000)
 insert into BangGia(maSP, ngay, donGia)
-values ('015KTR013','2022/07/20',50000)
+values ('015KTR112','2022/07/20',50000)
+insert into BangGia(maSP, ngay, donGia)
+values ('016KTR111','2022/08/12',60000)
+insert into BangGia(maSP, ngay, donGia)
+values ('017TTT110','2022/08/12',3000)
+insert into BangGia(maSP, ngay, donGia)
+values ('016KTR111','2022/08/13',45000)
+insert into BangGia(maSP, ngay, donGia)
+values ('017TTT110','2022/08/13',6000)
 
-SELECT * FROM SanPham
 SELECT * FROM BangGia
 --------------------------------------------------------------------------------------------
 DROP TABLE ChiTietHoaDon
 DROP TABLE HoaDon
 DROP TABLE TaiKhoan
+
 create table TaiKhoan
 (
 	maTaiKhoan		INT IDENTITY(100,1) PRIMARY KEY,
@@ -211,17 +222,19 @@ create table TaiKhoan
 )
 --insert TaiKhoan
 INSERT INTO dbo.TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
-VALUES('trongtinh','trongtinh123',N'Trọng Tính','0839035423','123456789000',0)
+VALUES('trongtinh','trongtinh123',N'Trọng Tính','0123456789','123456789123',0)
 INSERT INTO dbo.TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
-VALUES('admin','admin123',N'quan tri vien','0123456789','001234567890',1)
+VALUES('admin','admin123',N'quan tri vien','0123456788','123456789124',1)
 insert into TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
-values ('Admin',	'admin@123',	N'Quản trị viên',	'0253452753',	'077161531651',	1)
+values ('Admin','admin@123',N'Quản trị viên','0123456787','123456789125',1)
 insert into TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
-values ('letrongtinh12',	'trongtinh12',	N'Lê Trọng Tính',	'0772623581',	'077123654789','0')
+values ('letrongtinh12','trongtinh12',N'Lê Trọng Tính','0123456786','123456789126',0)
 insert into TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
-values ('caotruongtoan21',	'truongtoan21',	N'Cao Trường Toàn',	'0355123876',	'659126518610',	'0')
-
-
+values ('caotruongtoan21','truongtoan21',N'Cao Trường Toàn','0123456785','123456789127',0)
+insert into TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
+values ('danhhoangtan','hoangtan',N'Danh Hoang Tan','0123456784','123456789128',0)
+insert into TaiKhoan(tenDangNhap,matKhau,tenNhanVien,SDT,CCCD,vaiTro)
+values ('thantrannghiep','trannghiep',N'Than Tran Nghiep','0123456783','123456789129',0)
 SELECT * FROM dbo.TaiKhoan
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -273,19 +286,19 @@ create table ChiTietHoaDon
 
 --insert CTHD
 insert into ChiTietHoaDon(maHD,maSP,soLuong,donGia)
-values (100000,	'001TGD001',	10,	3000)
+values (100000,	'001TGD100',	10,	3000)
 insert into ChiTietHoaDon(maHD,maSP,soLuong,donGia)
-values (100000,	'011TTM010',	10,	1500)
+values (100000,	'011TTM109',	10,	1500)
 insert into ChiTietHoaDon(maHD,maSP,soLuong,donGia)
-values (100000,	'014BTY013',	3,	11000)
+values (100000,	'014BTY112',	3,	11000)
 insert into ChiTietHoaDon(maHD,maSP,soLuong,donGia)
-values (100010,	'007CDK006',	10,	2000)
+values (100010,	'007CDK105',	10,	2000)
 insert into ChiTietHoaDon(maHD,maSP,soLuong,donGia)
-values (100010,	'006DTD005',	5,	3500)
+values (100010,	'006DTD104',	5,	3500)
 insert into ChiTietHoaDon(maHD,maSP,soLuong,donGia)
-values (100010,	'009CGT008',	10,	5000)
+values (100010,	'009CGT107',	10,	5000)
 insert into ChiTietHoaDon(maHD,maSP,soLuong,donGia)
-values (100010,	'015KTR013',	1,	50000)
+values (100010,	'015KTR112',	1,	50000)
 
 
 SELECT * FROM ChiTietHoaDon

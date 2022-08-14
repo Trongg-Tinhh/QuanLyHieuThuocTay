@@ -18,6 +18,16 @@ namespace DXApplication2
             InitializeComponent();
         }
 
+        private void ToggleButton(Button b, bool enable)
+        {
+            b.Enabled = enable;
+
+            if (enable)
+                b.BackColor = SystemColors.ActiveBorder;
+            else
+                b.BackColor = SystemColors.ButtonFace;
+        }
+
         private void frmBanHang_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.ChiTietHoaDon' table. You can move, or remove it, as needed.
@@ -34,19 +44,16 @@ namespace DXApplication2
             txbMaSP.Text = null;
             txbTenNSX.Text = null;
             numericSoLuong.Value = 0;
-            btnThem.Enabled = false;
-            btnThem.BackColor = SystemColors.ButtonFace;
-            btnXoaThuoc.Enabled = false;
-            btnXoaThuoc.BackColor = SystemColors.ButtonFace;
+            ToggleButton(btnThem, false);
+            ToggleButton(btnXoaThuoc, false);
         }
 
         // chức năng click vào 1 dòng ở dgv dữ liệu sẽ sổ lên trên textbox
         private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnThem.Enabled = true;
-            btnThem.BackColor = SystemColors.ActiveBorder;
-            btnXoaThuoc.Enabled = false;
-            btnXoaThuoc.BackColor = SystemColors.ButtonFace;
+            ToggleButton(btnXoaThuoc, false);
+            ToggleButton(btnThem, true);
+
             if (e.RowIndex < 0)
                 return;
             int index = e.RowIndex;
@@ -207,8 +214,7 @@ namespace DXApplication2
         private void listViewChiTietHoaDon_SelectedIndexChanged(object sender, EventArgs e)
         {
             ClearData();
-            btnXoaThuoc.Enabled = true;
-            btnXoaThuoc.BackColor = SystemColors.ActiveBorder;
+            ToggleButton(btnXoaThuoc, true);
         }
 
         private void txbTenKH_TextChanged(object sender, EventArgs e)
