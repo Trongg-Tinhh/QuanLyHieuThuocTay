@@ -128,6 +128,7 @@
             // btnDangNhap
             // 
             this.btnDangNhap.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDangNhap.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.Black;
             this.btnDangNhap.Location = new System.Drawing.Point(3, 3);
@@ -143,6 +144,7 @@
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.Black;
@@ -172,6 +174,7 @@
             // chbMatKhau
             // 
             this.chbMatKhau.AutoSize = true;
+            this.chbMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbMatKhau.Location = new System.Drawing.Point(257, 199);
             this.chbMatKhau.Name = "chbMatKhau";
@@ -204,7 +207,7 @@
             // 
             this.taiKhoanTableAdapter.ClearBeforeFill = true;
             // 
-            // errorProvider
+            // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 

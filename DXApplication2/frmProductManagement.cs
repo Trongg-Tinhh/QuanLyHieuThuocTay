@@ -17,6 +17,8 @@ namespace DXApplication2
         public frmProductManagement()
         {
             InitializeComponent();
+            DefaultState();
+            setTextNull();
         }
         private bool add = false;
         private bool edit = false;
@@ -36,20 +38,38 @@ namespace DXApplication2
             dataGridViewThuoc.AllowUserToAddRows = false;
             dataGridViewThuoc.AllowUserToDeleteRows = false;
             ChucNang(false);
+            setTextNull();
         }
 
         private void ChucNang(bool chucnang)
         {
-            txtTenSP.Enabled = chucnang;
-            txtThanhPhan.Enabled = chucnang;
-            nudSoLuong.Enabled = chucnang;
-            cmbLoaiSP.Enabled = chucnang;
-            txtCongDung.Enabled = chucnang;
-            cmbDonVi.Enabled = chucnang;
-            cmbMaNSX.Enabled = chucnang;
-            txtDoTuoi.Enabled = chucnang;
-            txtMoTa.Enabled = chucnang;
+            chucnang = !chucnang;
+            txtTenSP.ReadOnly = chucnang;
+            txtThanhPhan.ReadOnly = chucnang;
+            nudSoLuong.ReadOnly = chucnang;
+            cmbLoaiSP.Enabled = !chucnang;
+            txtCongDung.ReadOnly = chucnang;
+            cmbDonVi.Enabled = !chucnang;
+            cmbMaNSX.Enabled = !chucnang;
+            txtDoTuoi.ReadOnly = chucnang;
+            txtMoTa.ReadOnly = chucnang;
 
+        }
+        private void ToggleButton(Button b, bool enable)
+        {
+            b.Enabled = enable;
+            if (enable)
+                b.BackColor = SystemColors.ActiveBorder;
+            else
+                b.BackColor = SystemColors.ButtonFace;
+        }
+        private void DefaultState()
+        {
+            ToggleButton(btnThem, true);
+            ToggleButton(btnSua, true);
+            ToggleButton(btnHuy,false);
+            ToggleButton(btnThoat, true);
+            ToggleButton(btnLuu,false);
         }
 
         private void setTextNull()
@@ -61,19 +81,20 @@ namespace DXApplication2
             cmbDonVi.Text = "";
             txtDoTuoi.Text = "";
             txtMoTa.Text = "";
+            cmbMaNSX.SelectedItem = null;
+            cmbMaNSX.Text = "";
+            cmbLoaiSP.SelectedItem = null;
+            cmbLoaiSP.Text = "";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             this.add = true;
             ChucNang(true);
-            btnThem.Enabled = false;
-            btnThem.BackColor = SystemColors.ButtonFace;
-            btnSua.Enabled = false;
-            btnSua.BackColor = SystemColors.ButtonFace;
-            btnHuy.Enabled = true;
-            btnHuy.BackColor = SystemColors.ActiveBorder;
-            btnLuu.BackColor = SystemColors.ButtonFace;
+            ToggleButton(btnThem, false);
+            ToggleButton(btnSua, false);
+            ToggleButton(btnHuy, true);
+            ToggleButton(btnLuu, false);
         }
 
 
@@ -130,6 +151,17 @@ namespace DXApplication2
         {
             if (this.add == true)
             {
+                errorProvider1.Clear();
+                if (cmbLoaiSP.Text == "")
+                {
+                    errorProvider1.SetError(lblLoaiSP, "Chọn loại");
+                    return;
+                }
+                if (cmbMaNSX.Text == "")
+                {
+                    errorProvider1.SetError(lblNSX, "Chọn nhà sản xuất");
+                    return;
+                }
                 if (txtTenSP.Text.Trim().CompareTo("") != 0 && edit == false)
                 {
 

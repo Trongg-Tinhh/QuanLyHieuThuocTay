@@ -63,14 +63,6 @@ namespace DXApplication2
                 ckbVaiTro.Checked = true;
             else
                 ckbVaiTro.Checked = false;
-
-            /*
-            btnXoa.Enabled = true;
-            btnXoa.BackColor = SystemColors.ActiveBorder;
-            btnHuy.Enabled = true;
-            btnHuy.BackColor = SystemColors.ActiveBorder;
-            */
-
             ToggleButton(btnSua, true);
             ToggleButton(btnXoa, true);
             ToggleButton(btnHuy, true);
@@ -84,29 +76,13 @@ namespace DXApplication2
             txbNhanVien.Text = "";
             txbUserName.Text = "";
             txbPassWord.Text = "";
-            txbPassWord.Enabled = false;
+            txbPassWord.ReadOnly = true;
             txbCCCD.Text = "";
             txbSDT.Text = "";
-            // ckbVaiTro.Text = "Quản lý";
         }
 
-        public void DefaultState()
+        private void DefaultState()
         {
-            //dataGridViewDSTK.BackgroundColor =;
-            /*
-            errorProvider.Clear();
-            txbPassWord.Properties.UseSystemPasswordChar = true;
-            ckbVaiTro.Enabled=true;
-            txbNhanVien.Text = "";
-            txbUserName.Text = "";
-            txbPassWord.Text = "";
-            txbPassWord.Enabled = false;
-            txbCCCD.Text = "";
-            txbSDT.Text = "";
-            ckbVaiTro.Text = "Quản lý";
-            */
-            // -----------------------------
-
             ToggleButton(btnThem, true);
             ToggleButton(btnXoa, false);
             ToggleButton(btnHuy, false);
@@ -124,16 +100,14 @@ namespace DXApplication2
             isAdd = true;
             ClearData();
             DefaultState();
-            txbUserName.Enabled = true;
-            txbPassWord.Enabled=true;
+            txbPassWord.ReadOnly = false;
+            txbPassWord.Enabled = true;
             txbPassWord.Properties.UseSystemPasswordChar = false;
             dataGridViewDSTK.Enabled = false;
-            btnLuu.Enabled = true;
-            btnLuu.BackColor = SystemColors.ActiveBorder;
-            btnHuy.Enabled = true;
-            btnHuy.BackColor = SystemColors.ActiveBorder;
-            btnThem.Enabled=false;
-            btnThem.BackColor = SystemColors.ButtonFace;
+            ToggleButton(btnThem, false);
+            ToggleButton(btnHuy, true);
+            ToggleButton(btnLuu, true);
+            
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

@@ -16,6 +16,8 @@ namespace DXApplication2
         public frmBanHang()
         {
             InitializeComponent();
+            ToggleButton(btnThem, false);
+            ToggleButton(btnXoaThuoc, false);
         }
 
         private void ToggleButton(Button b, bool enable)
@@ -39,6 +41,7 @@ namespace DXApplication2
 
         private void ClearData()
         {
+            errorProvider1.Clear();
             txbTenSP.Text = null;
             txbLoaiSP.Text = null;
             txbMaSP.Text = null;
@@ -74,6 +77,7 @@ namespace DXApplication2
         // thêm sản phẩm vào bảng bên phải
         private void btnThem_Click(object sender, EventArgs e)
         {            
+            
             errorProvider1.Clear();
             string tenSP = txbTenSP.Text;
             string loaiSP = txbLoaiSP.Text;
@@ -83,7 +87,7 @@ namespace DXApplication2
 
             if (soLuong == 0)
             {
-                errorProvider1.SetError(numericSoLuong, "Số lượng phải lớn hơn 0");
+                errorProvider1.SetError(labSL, "Số lượng phải lớn hơn 0");
                 return;
             }
 

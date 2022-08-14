@@ -119,6 +119,7 @@
             // ckbMatKhau
             // 
             this.ckbMatKhau.AutoSize = true;
+            this.ckbMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbMatKhau.Location = new System.Drawing.Point(190, 50);
             this.ckbMatKhau.Name = "ckbMatKhau";
@@ -159,6 +160,7 @@
             // 
             // txbPasswordNew
             // 
+            this.txbPasswordNew.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbPasswordNew.Location = new System.Drawing.Point(183, 7);
             this.txbPasswordNew.Name = "txbPasswordNew";
             this.txbPasswordNew.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,6 +197,7 @@
             // ckbMatKhauNew
             // 
             this.ckbMatKhauNew.AutoSize = true;
+            this.ckbMatKhauNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbMatKhauNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbMatKhauNew.Location = new System.Drawing.Point(190, 48);
             this.ckbMatKhauNew.Name = "ckbMatKhauNew";
@@ -236,6 +239,7 @@
             // btnHuy
             // 
             this.btnHuy.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnHuy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Black;
@@ -252,6 +256,7 @@
             // btnLuu
             // 
             this.btnLuu.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.Black;
             this.btnLuu.Location = new System.Drawing.Point(183, 0);
@@ -264,7 +269,7 @@
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // errorProvider
+            // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 

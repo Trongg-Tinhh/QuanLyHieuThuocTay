@@ -270,6 +270,7 @@
             // 
             // txbNhanVien
             // 
+            this.txbNhanVien.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbNhanVien.Location = new System.Drawing.Point(0, 20);
             this.txbNhanVien.Name = "txbNhanVien";
             this.txbNhanVien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,6 +306,7 @@
             // 
             // txbCCCD
             // 
+            this.txbCCCD.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbCCCD.Location = new System.Drawing.Point(0, 18);
             this.txbCCCD.Name = "txbCCCD";
             this.txbCCCD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -381,6 +383,7 @@
             // 
             // txbPassWord
             // 
+            this.txbPassWord.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbPassWord.Location = new System.Drawing.Point(0, 20);
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -423,6 +426,7 @@
             // 
             // txbSDT
             // 
+            this.txbSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbSDT.Location = new System.Drawing.Point(0, 18);
             this.txbSDT.Name = "txbSDT";
             this.txbSDT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -463,6 +467,7 @@
             // ckbVaiTro
             // 
             this.ckbVaiTro.AutoSize = true;
+            this.ckbVaiTro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbVaiTro.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ckbVaiTro.Location = new System.Drawing.Point(0, 24);
             this.ckbVaiTro.Name = "ckbVaiTro";
@@ -512,6 +517,7 @@
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
             this.btnXoa.Location = new System.Drawing.Point(4, 57);
@@ -528,6 +534,7 @@
             // btnThem
             // 
             this.btnThem.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Black;
             this.btnThem.Location = new System.Drawing.Point(4, 2);
@@ -544,6 +551,7 @@
             // btnLuu
             // 
             this.btnLuu.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.Black;
             this.btnLuu.Location = new System.Drawing.Point(4, 167);
@@ -560,6 +568,7 @@
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Black;
             this.btnSua.Location = new System.Drawing.Point(4, 112);
@@ -576,6 +585,7 @@
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.Black;
@@ -593,6 +603,7 @@
             // btnHuy
             // 
             this.btnHuy.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnHuy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Black;

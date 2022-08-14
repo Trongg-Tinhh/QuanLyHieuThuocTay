@@ -38,6 +38,7 @@ namespace DXApplication2
         {
             frmAccoutProfile frmAccoutProfile = new frmAccoutProfile();
             addForm(frmAccoutProfile);
+
         }
 
         private void tabBanHang_Click(object sender, EventArgs e)
@@ -60,7 +61,7 @@ namespace DXApplication2
             this.Close();
         }
 
-        private void accordionControlElement3_Click(object sender, EventArgs e)
+        private void tabDoiMatKhau_Click(object sender, EventArgs e)
         {
             frmChangePassword frmChangePassword = new frmChangePassword();
             addForm(frmChangePassword);

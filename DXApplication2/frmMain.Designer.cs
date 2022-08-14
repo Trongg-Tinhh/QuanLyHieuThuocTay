@@ -35,7 +35,7 @@
             this.tabBanHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabThongTinCaNhan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.tabDoiMatKhau = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabDangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -115,7 +115,7 @@
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.tabThongTinCaNhan,
-            this.accordionControlElement3,
+            this.tabDoiMatKhau,
             this.tabDangXuat,
             this.accordionControlSeparator2});
             this.accordionControlElement1.Expanded = true;
@@ -135,13 +135,13 @@
             this.tabThongTinCaNhan.Text = "Thông tin cá nhân";
             this.tabThongTinCaNhan.Click += new System.EventHandler(this.tabThongTinCaNhan_Click);
             // 
-            // accordionControlElement3
+            // tabDoiMatKhau
             // 
-            this.accordionControlElement3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement3.ImageOptions.SvgImage")));
-            this.accordionControlElement3.Name = "accordionControlElement3";
-            this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement3.Text = "Đổi mật khẩu";
-            this.accordionControlElement3.Click += new System.EventHandler(this.accordionControlElement3_Click);
+            this.tabDoiMatKhau.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement3.ImageOptions.SvgImage")));
+            this.tabDoiMatKhau.Name = "tabDoiMatKhau";
+            this.tabDoiMatKhau.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.tabDoiMatKhau.Text = "Đổi mật khẩu";
+            this.tabDoiMatKhau.Click += new System.EventHandler(this.tabDoiMatKhau_Click);
             // 
             // tabDangXuat
             // 
@@ -260,7 +260,7 @@
         private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement tabThongTinCaNhan;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement tabDoiMatKhau;
         private DevExpress.XtraBars.Navigation.AccordionControlElement tabDangXuat;
         private DevExpress.XtraBars.Navigation.AccordionControlElement tabTaiKhoan;
         private DevExpress.XtraBars.Navigation.AccordionControlElement tabSanPham;

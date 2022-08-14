@@ -90,6 +90,7 @@
             // btnHuy
             // 
             this.btnHuy.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnHuy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Black;
@@ -105,6 +106,7 @@
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Black;
             this.btnSua.Location = new System.Drawing.Point(24, 0);
@@ -119,6 +121,7 @@
             // btnLuu
             // 
             this.btnLuu.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.Enabled = false;
             this.btnLuu.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.Black;
@@ -142,10 +145,13 @@
             // 
             // txbCCCD
             // 
+            this.txbCCCD.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbCCCD.Location = new System.Drawing.Point(183, 18);
             this.txbCCCD.Name = "txbCCCD";
             this.txbCCCD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCCCD.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txbCCCD.Properties.Appearance.Options.UseFont = true;
+            this.txbCCCD.Properties.Appearance.Options.UseForeColor = true;
             this.txbCCCD.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txbCCCD.Properties.MaskSettings.Set("mask", "\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d");
             this.txbCCCD.Properties.MaskSettings.Set("placeholder", '\0');
@@ -175,10 +181,13 @@
             // 
             // txbSDT
             // 
+            this.txbSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbSDT.Location = new System.Drawing.Point(185, 19);
             this.txbSDT.Name = "txbSDT";
             this.txbSDT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSDT.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txbSDT.Properties.Appearance.Options.UseFont = true;
+            this.txbSDT.Properties.Appearance.Options.UseForeColor = true;
             this.txbSDT.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txbSDT.Properties.MaskSettings.Set("mask", "0\\d\\d\\d\\d\\d\\d\\d\\d\\d");
             this.txbSDT.Properties.MaskSettings.Set("placeholder", '\0');
@@ -208,10 +217,13 @@
             // 
             // txbName
             // 
+            this.txbName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbName.Location = new System.Drawing.Point(184, 19);
             this.txbName.Name = "txbName";
             this.txbName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbName.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txbName.Properties.Appearance.Options.UseFont = true;
+            this.txbName.Properties.Appearance.Options.UseForeColor = true;
             this.txbName.Size = new System.Drawing.Size(275, 30);
             this.txbName.TabIndex = 2;
             // 

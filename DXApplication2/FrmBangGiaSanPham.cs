@@ -30,7 +30,14 @@ namespace DXApplication2
             else
                 b.BackColor = SystemColors.ButtonFace;
         }
-
+        private void DefaultState()
+        {
+            ToggleButton(btnThem, true);
+            ToggleButton(btnSua, true);
+            ToggleButton(btnLuu, false);
+            ToggleButton(btnHuy, false);
+            ToggleButton(btnThoat, true);
+        }
         private void FrmBangGiaSanPham_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLyHieuThuocTayDataSet.NhaSanXuat' table. You can move, or remove it, as needed.
@@ -49,11 +56,13 @@ namespace DXApplication2
 
             cmbNhaSX.SelectedItem = null;
             cmbNhaSX.Text = "";
+            DefaultState();
         }
 
         private void CellClick_SanPham(object sender, DataGridViewCellEventArgs e)
         {
             ToggleButton(btnHuy, true);
+            
             String MaSP = dataGridViewSanPham.CurrentRow.Cells[0].Value.ToString().Trim() ;
             bangGiaTableAdapter.FillByMaSP(this.quanLyHieuThuocTayDataSet.BangGia,MaSP);
             txtMaSP.Text = MaSP;
@@ -67,7 +76,7 @@ namespace DXApplication2
             {
                 nudGiaBan.Enabled = true;
                 txtNgay.Enabled = true;
-                btnLuu.Enabled = true;
+                ToggleButton(btnLuu, true);
                 txtMaSP.Text = MaSP;
                 dataGridViewBangGia.ClearSelection();
             }
@@ -202,6 +211,7 @@ namespace DXApplication2
                         bangGiaTableAdapter.UpdateQueryBangGia(Decimal.Parse(nudGiaBan.Value.ToString()), txtMaSP.Text, txtNgay.Text.Trim());
                         MessageBox.Show("Đã sửa giá cho sản phẩm có mã: " + txtMaSP.Text.Trim());
                         bangGiaTableAdapter.FillByMaSP(quanLyHieuThuocTayDataSet.BangGia, txtMaSP.Text);
+                        nudGiaBan.Value = 0;
                     }    
                 }
                 dataGridViewBangGia.ClearSelection();

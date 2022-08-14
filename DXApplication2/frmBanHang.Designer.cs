@@ -72,7 +72,7 @@
             this.txbLoaiSP = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.numericSoLuong = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labSL = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txbTenSP = new System.Windows.Forms.TextBox();
@@ -158,6 +158,7 @@
             // 
             this.btnClearData.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClearData.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnClearData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClearData.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClearData.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearData.Location = new System.Drawing.Point(59, 12);
@@ -173,7 +174,7 @@
             // 
             this.btnXoaThuoc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnXoaThuoc.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnXoaThuoc.Enabled = false;
+            this.btnXoaThuoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoaThuoc.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaThuoc.Location = new System.Drawing.Point(495, 10);
             this.btnXoaThuoc.MinimumSize = new System.Drawing.Size(120, 40);
@@ -392,6 +393,7 @@
             // 
             this.btnThanhToan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnThanhToan.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThanhToan.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.Location = new System.Drawing.Point(67, 10);
             this.btnThanhToan.MinimumSize = new System.Drawing.Size(120, 40);
@@ -514,6 +516,7 @@
             // txbSDT
             // 
             this.tablePanel1.SetColumn(this.txbSDT, 1);
+            this.txbSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbSDT.Dock = System.Windows.Forms.DockStyle.Left;
             this.txbSDT.Location = new System.Drawing.Point(215, 3);
             this.txbSDT.Name = "txbSDT";
@@ -562,6 +565,7 @@
             // txbTenKH
             // 
             this.tablePanel3.SetColumn(this.txbTenKH, 1);
+            this.txbTenKH.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbTenKH.Dock = System.Windows.Forms.DockStyle.Left;
             this.txbTenKH.Location = new System.Drawing.Point(215, 3);
             this.txbTenKH.Name = "txbTenKH";
@@ -598,12 +602,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel4, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnThem, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 23);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tablePanel.SetRow(this.tableLayoutPanel1, 0);
@@ -618,7 +622,6 @@
             // 
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.txbLoaiSP);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(447, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(216, 51);
@@ -648,8 +651,8 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.numericSoLuong);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Controls.Add(this.labSL);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(225, 60);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(216, 52);
@@ -658,23 +661,23 @@
             // numericSoLuong
             // 
             this.numericSoLuong.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.numericSoLuong.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericSoLuong.Location = new System.Drawing.Point(0, 26);
+            this.numericSoLuong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericSoLuong.Location = new System.Drawing.Point(0, 24);
             this.numericSoLuong.Name = "numericSoLuong";
-            this.numericSoLuong.Size = new System.Drawing.Size(216, 26);
+            this.numericSoLuong.Size = new System.Drawing.Size(216, 28);
             this.numericSoLuong.TabIndex = 9;
             this.numericSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label5
+            // labSL
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 21);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Số lượng:";
+            this.labSL.AutoSize = true;
+            this.labSL.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labSL.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labSL.Location = new System.Drawing.Point(0, 0);
+            this.labSL.Name = "labSL";
+            this.labSL.Size = new System.Drawing.Size(80, 21);
+            this.labSL.TabIndex = 8;
+            this.labSL.Text = "Số lượng:";
             // 
             // panel3
             // 
@@ -719,10 +722,12 @@
             // 
             // txbMaSP
             // 
+            this.txbMaSP.BackColor = System.Drawing.SystemColors.Window;
             this.txbMaSP.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbMaSP.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMaSP.Location = new System.Drawing.Point(0, 23);
             this.txbMaSP.Name = "txbMaSP";
+            this.txbMaSP.ReadOnly = true;
             this.txbMaSP.Size = new System.Drawing.Size(216, 28);
             this.txbMaSP.TabIndex = 5;
             // 
@@ -772,7 +777,7 @@
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnThem.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnThem.Enabled = false;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(495, 66);
             this.btnThem.MinimumSize = new System.Drawing.Size(120, 40);
@@ -906,7 +911,7 @@
         private DevExpress.XtraEditors.TextEdit txbTenKH;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericSoLuong;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labSL;
         private System.Windows.Forms.TextBox txbMaSP;
         private System.Windows.Forms.TextBox txbTenNSX;
         private System.Windows.Forms.Label label4;
